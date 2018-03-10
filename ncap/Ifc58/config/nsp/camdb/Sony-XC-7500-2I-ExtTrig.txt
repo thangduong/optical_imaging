@@ -1,0 +1,105 @@
+###################################################
+# IFC Generated Configuration File
+# Filename: Sony-XC-7500 2I ExtTrig.txt
+# Date: 04/22/03
+###################################################
+;
+; On the back of the Sony XC-7500:
+;   Signal = 2I  (1/60 second interlaced on Video Out 1 and 2)
+;   Shutter = N  (Normal)
+;   Gain = [Don't care]
+;
+; Cables:
+;  OC-PC2C-V3A00 breakout
+;  4814 connected to 15-pin Dsub connector of OC-PC2C-V3A00
+;  4609 connected to CAM0 of 4814
+;  Camera BNC of 4609 connector to Video Out 1 of XC-7500
+;
+; or
+;
+;  OC-PC2C-V3A00 breakout
+;  4609 connected to 15-pin Dsub connector of OC-PC2C-V3A00
+;  Camera BNC of 4609 connector to Video Out 1 of XC-7500
+; 
+; and
+;
+;  4813 connected to 26-pin Dsub connector of OC-PC2C-V3A00
+;  Trigger 0 BNC of 4813 connected to pulse generator
+;
+#########################################
+# IFC Generated Section Start
+#########################################
+ 
+[NSP:0]
+ 
+# Camera Sony-XC-7500 2I ExtTrig Definition
+ 
+Name = "Sony-XC-7500 2I ExtTrig"
+Camera_Structure = Create_Structure
+PIXEL_SIZE = 8
+STROBE_MODE = FAST_STROBE
+STROBE_POLARITY = ACTIVE_HIGH
+STROBE_DELAY = 63
+FRAME_RESET_MODE = DISABLE
+FRAME_RESET_POLARITY = ACTIVE_LOW
+FRAME_RESET_OFFSET = 63
+FRAME_RESET_SIZE = 1.000000
+TRIGGER_ENABLE = ENABLE
+TRIGGER_SRC = EXT_AUTO_TRIG
+TRIGGER_POLARITY = RISING_EDGE
+GEN_SW_TRIGGER = 1
+CONTRAST = 36.400000
+BRIGHTNESS = 40.800000
+HORZ_OFF = 0
+WIDTH_PIXELS = 640
+VERT_OFF = 0
+HEIGHT_PIXELS = 480
+FIRST_FIELD_CMD = ODD_FIELD
+SCAN_MODE_STAT = ILACED
+HSYNC_FREQ = 15.750000
+HSYNC_WIDTH = 56
+HSYNC_POLARITY = ACTIVE_LOW
+VSYNC_FREQ = 60.000000
+VSYNC_WIDTH = 3.000000
+VSYNC_POLARITY = ACTIVE_LOW
+PIXEL_CLK_FREQ = 12.270000
+PIXEL_CLK_POLARITY = RISING_EDGE
+PIXEL_CLK_SIGNAL_TYPE = PIXEL_CLOCK_INTERNAL
+NUM_EQ_PULSES_FPORCH = 3
+NUM_EQ_PULSES_BPORCH = 16
+CLAMP_MODE = ENABLE
+PARAM_GROUPS_APPLICABLE = 22
+PIXEL_COLOR = MONO
+STROBE_ENABLE = DISABLE
+INPUT_LUT1_FILE = ""
+COM_PORT_NAME = ""
+COM_PORT_BYTESIZE = COM_8BITS
+COM_PORT_BAUDRATE = BAUD_9600
+COM_PORT_PARITY = NOPARITY
+COM_PORT_STOPBITS = ONESTOPBIT
+VIDEO_STANDARD = VIDEO_STD_NTSC
+FRAMES_PER_TRIGGER = 1
+STROBE_DURATION = 1000.000000
+TRIGGER_DEBOUNCE = 1
+CLAMP_START = 4.900000
+CLAMP_END = 5.575000
+FIELD_PROCESS = FIELD_PROCESS_ALL
+MASTER_HSYNC = DISABLE
+VS_PULSE_ENABLE = VSYNC_DISABLE
+VS_PULSE_OFFSET = 1.000000
+VS_PULSE_DURATION = 1.000000
+LOW_PASS_FILTER = LPF_BYPASS
+SYNC_SOURCE = SYNC_COMPOSITE_VIDEO
+ADD_VSYNC_TO_FRAME_RESET = DISABLE
+ADD_FRAME_RESET_TO_VSYNC = DISABLE
+SELECT_UART_PORT = UART_PORT_AUTO
+MULTITAP_MODE = SINGLE_TAP
+HORZ_FRONT_PORCH = 23
+HORZ_BACK_PORCH = 61
+VSYNC_WAIT_COUNT = 0
+PLL_GAIN = 53 
+ 
+#########################################
+# IFC Generated Section End
+#########################################
+ 

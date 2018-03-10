@@ -1,0 +1,65 @@
+D/dsl////
+D/eegexp////
+D/given////
+D/klein////
+D/nidsim////
+/animatedata.m/1.1/Thu Dec 18 20:05:36 2003//
+/arraypeaksdemo.m/1.1/Thu Dec 18 20:05:36 2003//
+/createbcplut.dll/1.1/Mon Apr 19 21:21:50 2004/-kb/
+/createbcplut.m/1.1/Thu Dec 18 20:05:36 2003//
+/detectpeaks.dll/1.1/Mon Apr 19 21:21:52 2004/-kb/
+/detectpeaks.m/1.1/Thu Dec 18 20:05:36 2003//
+/fastm.m/1.1/Thu Dec 18 20:05:36 2003//
+/fastsimresponse.dll/1.1/Mon Apr 19 21:21:52 2004/-kb/
+/fastsimresponse.m/1.1/Thu Jan  8 02:03:16 2004//
+/fastwalsh.dll/1.1/Mon Apr 19 21:21:52 2004/-kb/
+/fastwalsh.m/1.1/Thu Dec 18 20:05:36 2003//
+/findmseqseed.dll/1.1/Mon Apr 19 21:21:52 2004/-kb/
+/findmseqseed.m/1.1/Thu Dec 18 20:05:36 2003//
+/findshift.m/1.1/Thu Dec 18 20:05:36 2003//
+/fixfastm.m/1.1/Wed Feb  4 23:06:18 2004//
+/genmseq.dll/1.1/Mon Apr 19 21:21:52 2004/-kb/
+/genmseq.m/1.1/Thu Jan  8 02:01:32 2004//
+/getkernellocation.dll/1.1/Mon Apr 19 21:21:52 2004/-kb/
+/getkernellocation.m/1.1/Fri Jan 23 00:57:26 2004//
+/getmseqk.m/1.1/Thu Dec 18 20:05:36 2003//
+/makemkernel.m/1.1/Thu Dec 18 20:05:36 2003//
+/makemseq.m/1.1/Thu Dec 18 20:05:36 2003//
+/makeseg.m/1.1/Sat Apr 17 00:09:22 2004//
+/makewalsh.m/1.1/Thu Dec 18 20:05:36 2003//
+/mergedata.m/1.1/Thu Dec 18 20:05:36 2003//
+/mergedtest.m/1.1/Thu Dec 18 20:05:36 2003//
+/mergedtest2.m/1.1/Thu Dec 18 20:05:36 2003//
+/mergedtest3.m/1.1/Thu Dec 18 20:05:36 2003//
+/mexmseqfindprod.dll/1.1/Mon Apr 19 21:21:52 2004/-kb/
+/mexmseqfindprod.m/1.1/Thu Dec 18 20:05:36 2003//
+/mfromwalsh.m/1.1/Thu Dec 18 20:05:36 2003//
+/mseqmult.m/1.1/Thu Dec 18 20:05:36 2003//
+/nmfastm.m/1.1/Thu Dec 18 20:05:36 2003//
+/nmfastwalsh.dll/1.1/Mon Apr 19 21:21:52 2004/-kb/
+/nmfastwalsh.m/1.1/Thu Dec 18 20:05:36 2003//
+/nmpostwalshperm.dll/1.1/Mon Apr 19 21:21:52 2004/-kb/
+/nmpostwalshperm.m/1.1/Thu Dec 18 20:05:36 2003//
+/nmprewalshperm.dll/1.1/Mon Apr 19 21:21:52 2004/-kb/
+/nmprewalshperm.m/1.1/Thu Dec 18 20:05:36 2003//
+/peaksdemo.m/1.1/Thu Dec 18 20:05:36 2003//
+/perfdump.dll/1.1/Mon Apr 19 21:21:52 2004/-kb/
+/perfdump.m/1.1/Thu Dec 18 20:05:36 2003//
+/postwalshperm.dll/1.1/Mon Apr 19 21:21:52 2004/-kb/
+/postwalshperm.m/1.1/Thu Dec 18 20:05:36 2003//
+/prewalshperm.dll/1.1/Mon Apr 19 21:21:52 2004/-kb/
+/prewalshperm.m/1.1/Thu Dec 18 20:05:36 2003//
+/readme.txt/1.1/Thu Dec 18 20:05:36 2003//
+/rotatevector.dll/1.1/Mon Apr 19 21:21:52 2004/-kb/
+/rotatevector.m/1.1/Thu Dec 18 20:05:36 2003//
+/rotatevectortest.m/1.1/Thu Dec 18 20:05:36 2003//
+/simpleresample.dll/1.1/Mon Apr 19 21:21:52 2004/-kb/
+/simpleresample.m/1.1/Thu Dec 18 20:05:36 2003//
+/sliceseq.m/1.1/Fri Jan 30 23:18:36 2004//
+/slowseqp.dll/1.1/Mon Apr 19 21:21:52 2004/-kb/
+/slowseqp.m/1.1/Thu Dec 18 20:05:36 2003//
+/thingy.m/1.1/Thu Dec 18 20:05:36 2003//
+/validatemseq.m/1.1/Fri Jan 30 23:18:36 2004//
+/xcorrdirect.dll/1.1/Mon Apr 19 21:21:52 2004/-kb/
+/xcorrdirect.m/1.1/Thu Dec 18 20:05:36 2003//
+/xcorrfast.m/1.1/Thu Jan  8 02:03:16 2004//

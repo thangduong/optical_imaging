@@ -1,0 +1,26 @@
+HKCR
+{
+	ImgDifOb.ImageDIff.1 = s 'ImageDIff Class'
+	{
+		CLSID = s '{00CDBE92-5607-11D6-B243-00105A0F576C}'
+	}
+	ImgDifOb.ImageDIff = s 'ImageDIff Class'
+	{
+		CLSID = s '{00CDBE92-5607-11D6-B243-00105A0F576C}'
+		CurVer = s 'ImgDifOb.ImageDIff.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {00CDBE92-5607-11D6-B243-00105A0F576C} = s 'ImageDIff Class'
+		{
+			ProgID = s 'ImgDifOb.ImageDIff.1'
+			VersionIndependentProgID = s 'ImgDifOb.ImageDIff'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Free'
+			}
+			'TypeLib' = s '{00CDBE85-5607-11D6-B243-00105A0F576C}'
+		}
+	}
+}

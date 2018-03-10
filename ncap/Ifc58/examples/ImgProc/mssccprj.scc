@@ -1,0 +1,5 @@
+SCC = This is a Source Code Control file
+
+[ImgProc.mak]
+SCC_Aux_Path = "\\cieng\sweng\vss"
+SCC_Project_Name = "$/ifc/examples/ImgProc", BXQAAAAA

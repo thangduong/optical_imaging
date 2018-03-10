@@ -1,0 +1,70 @@
+patch tgrating test0 { centerx 100; centery 100; width 100; height 100; spatialfrequency 64; temporalfrequency 1; blitangle 0; alpha 255 }
+patch tgrating test1 { centerx 200; centery 100; width 100; height 100; spatialfrequency 64; temporalfrequency 1; blitangle 10; alpha 255 }
+patch tgrating test2 { centerx 300; centery 100; width 100; height 100; spatialfrequency 64; temporalfrequency 1; blitangle 20; alpha 255 }
+patch tgrating test3 { centerx 400; centery 100; width 100; height 100; spatialfrequency 64; temporalfrequency 1; blitangle 30; alpha 255 }
+patch tgrating test4 { centerx 500; centery 100; width 100; height 100; spatialfrequency 64; temporalfrequency 1; blitangle 40; alpha 255 }
+patch tgrating test5 { centerx 100; centery 200; width 100; height 100; spatialfrequency 64; temporalfrequency 1; blitangle 50; alpha 255 }
+patch tgrating test6 { centerx 200; centery 200; width 100; height 100; spatialfrequency 64; temporalfrequency 1; blitangle 60; alpha 255 }
+
+
+sequence 0 0 test0
+sequence 2 1 test0
+sequence 2 0 test2
+sequence 4 1 test2
+sequence 4 0 test4
+sequence 6 1 test4
+sequence 6 0 test5
+sequence 8 1 test5
+sequence 8 0 test1
+sequence 10 1 test1
+sequence 10 0 test3
+sequence 12 1 test3
+sequence 12 0 test0
+sequence 14 1 test0
+sequence 14 0 test5
+sequence 16 1 test5
+sequence 16 0 test1
+sequence 18 1 test1
+sequence 18 0 test2
+sequence 20 1 test2
+sequence 20 0 test3
+sequence 22 1 test3
+sequence 22 0 test4
+sequence 24 1 test4
+sequence 24 0 test1
+sequence 26 1 test1
+sequence 26 0 test5
+sequence 28 1 test5
+sequence 28 0 test0
+sequence 30 1 test0
+sequence 30 0 test3
+sequence 32 1 test3
+sequence 32 0 test4
+sequence 34 1 test4
+sequence 34 0 test1
+sequence 36 1 test1
+sequence 36 0 test5
+sequence 38 1 test5
+sequence 38 0 test2
+sequence 40 1 test2
+sequence 40 0 test3
+sequence 42 1 test3
+sequence 42 0 test4
+sequence 44 1 test4
+sequence 44 0 test1
+sequence 46 1 test1
+sequence 46 0 test5
+sequence 48 1 test5
+sequence 48 0 test0
+
+patch tgrating mask { centerx 320; centery 240; width 300;height 200; spatialfrequency 50; temporalfrequency 1; blitangle 0; blitangle2 0; alpha 128 }
+patch tgrating mask { centerx 320; centery 240; width 300;height 200; spatialfrequency 50; temporalfrequency 1; blitangle 0; blitangle2 90; alpha 128 }
+
+patch tgrating mask { centerx 320; centery 240; width 300;height 200; spatialfrequency 50; temporalfrequency 1; blitangle 90; blitangle2 0; alpha 255; bidir 2 }
+patch tgrating mask { centerx 320; centery 240; width 300;height 200; spatialfrequency 50; temporalfrequency 1; blitangle 90; blitangle2 90; alpha 128 }
+patch tgrating test { centerx 320; centery 240; width 600; height 400; spatialfrequency 50; temporalfrequency 1; alpha 128 }
+
+patch tgrating mask { centerx 320; centery 240; width 300;height 200; spatialfrequency 50; temporalfrequency 1; blitangle 90; blitangle2 0; alpha 255; bidir 2; shape 0 }
+
+patch tgrating left { centerx 150; centery 240; width 300;height 200; spatialfrequency 50; temporalfrequency 1; blitangle 90; blitangle2 0; spatialphase 90; alpha 255; bidir 2; shape 0 }
+patch tgrating right { centerx 320; centery 240; width 300;height 200; spatialfrequency 50; temporalfrequency 1; blitangle 90; blitangle2 0; spatialphase 0; alpha 255; bidir 2; shape 0 }

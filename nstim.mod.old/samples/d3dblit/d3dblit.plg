@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: d3dblit - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\thang\LOCALS~1\Temp\RSP1504.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Debug/d3dblit.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\oi\nstim\samples\d3dblit\d3dblit.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\thang\LOCALS~1\Temp\RSP1504.tmp" 
+Creating command line "link.exe d3d8.lib d3dx8.lib dxerr8.lib user32.lib gdi32.lib Advapi32.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/d3dblit.pdb" /debug /machine:I386 /out:"Debug/d3dblit.exe" /pdbtype:sept  .\Debug\d3dblit.obj "
+<h3>Output Window</h3>
+Compiling...
+d3dblit.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+d3dblit.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

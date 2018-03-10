@@ -1,0 +1,121 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Developer Studio generated include file.
+// Used by IFC_PC2V_ThreadTrig.rc
+//
+#define IDC_DEFAULT                     2
+#define IDD_IFC_PC2V_THREADTRIG_DIALOG  102
+#define IDR_MAINFRAME                   128
+#define IDD_STROBE_PARAM_DIALOG         129
+#define IDD_DIALOG_PARAM                131
+#define IDD_CAM_SIG_PARAM_DIALOG        131
+#define IDD_CAMSEL                      137
+#define IDC_STATIC_PORT                 1000
+#define IDC_STATIC_SOT_LIGHT            1002
+#define IDC_STATIC_TRIG                 1003
+#define IDC_STATIC_MODE                 1003
+#define IDC_STATIC_SOF_LIGHT            1004
+#define IDC_BUTTON_MODE_SLOW            1004
+#define IDC_STATIC_DISPLAY              1005
+#define IDC_BUTTON_FR_LO                1005
+#define IDC_BUTTON_MODE_FAST            1005
+#define IDC_EDIT_FR                     1006
+#define IDC_STATIC_FR_TIMING            1006
+#define IDC_STATIC_SLOW_DESC            1006
+#define IDC_STATIC_FR                   1007
+#define IDC_STATIC_FAST_DESC            1007
+#define IDC_EDIT_FC                     1008
+#define IDC_BUTTON_FR_HI                1008
+#define IDC_BUTTON_CAM                  1009
+#define IDC_EDIT_FR_DELAY               1009
+#define IDC_BUTTON_POL_HI               1009
+#define IDC_BUTTON_TRIG_SINGLE          1010
+#define IDC_STATIC_FR_DELAY             1010
+#define IDC_BUTTON_POL_LO               1010
+#define IDC_BUTTON_TRIG                 1010
+#define IDC_BUTTON_TRIGGER              1010
+#define IDC_STATIC_LINES                1011
+#define IDC_STATIC_EOF_LIGHT            1011
+#define IDC_BUTTON_TRIG_AUTO            1012
+#define IDC_EDIT_FR_WIDTH               1012
+#define IDC_EDIT_DURATION               1012
+#define IDC_BUTTON_TRIG_EXT             1013
+#define IDC_STATIC_FR_WIDTH             1013
+#define IDC_STATIC_DUR                  1013
+#define IDC_STATIC_MS                   1014
+#define IDC_BUTTON_PARAM                1014
+#define IDC_BUTTON_CAM_SIG_PARAM        1014
+#define IDC_EDIT_DELAY                  1014
+#define IDC_BUTTON_TRIG_LO              1015
+#define IDC_STATIC_EOT_LIGHT            1015
+#define IDC_STATIC_DELAY                1015
+#define IDC_BUTTON_TRIG_HI              1016
+#define IDC_BUTTON_STROBE_PARAM         1016
+#define IDC_STATIC_MICROSEC             1016
+#define IDC_EDIT_TRIG_DEBOUNCE          1017
+#define IDC_STATIC_MICROSEC2            1017
+#define IDC_STATIC_ACQ                  1018
+#define IDC_STATIC_TRIG_DEBOUNCE        1018
+#define IDC_STATIC_SIG_GEN              1018
+#define IDC_BUTTON_START                1019
+#define IDC_STATIC_MS2                  1019
+#define IDC_BUTTON_ENABLE               1019
+#define IDC_BUTTON_GRAB                 1019
+#define IDC_BUTTON_STOP                 1020
+#define IDC_STATIC_TRIG_TIMING          1020
+#define IDC_BUTTON_DISABLE              1020
+#define IDC_BUTTON_FREEZE               1020
+#define IDC_STATIC_FC                   1021
+#define IDC_STATIC_VS                   1021
+#define IDC_EDIT_FL                     1022
+#define IDC_BUTTON_VS_LO                1022
+#define IDC_STATIC_FL                   1023
+#define IDC_STATIC_VS_TIMING            1023
+#define IDC_STATIC_FNOT                 1023
+#define IDC_STATIC_ND                   1023
+#define IDC_BUTTON_VS_HI                1024
+#define IDC_BUTTON_SNAP                 1024
+#define IDC_EDIT_CUR_PORT               1025
+#define IDC_EDIT_VS_DELAY               1025
+#define IDC_STATIC_CUR_PORT             1026
+#define IDC_STATIC_VS_DELAY             1026
+#define IDC_LIST_CAMNAME                1027
+#define IDC_STATIC_MS5                  1027
+#define IDC_STATIC_FNOT2                1027
+#define IDC_EDIT_CUR_CAM                1028
+#define IDC_EDIT_VS_WIDTH               1028
+#define IDC_STATIC_VS_WIDTH             1029
+#define IDC_STATIC_MS3                  1030
+#define IDC_STATIC_MS4                  1031
+#define IDC_STATIC_MS6                  1032
+#define IDC_STATIC_MS7                  1033
+#define IDC_STATIC_POL                  1034
+#define IDC_STATIC_POL2                 1035
+#define IDC_STATIC_STAT                 1035
+#define IDC_STATIC_POL3                 1036
+#define IDC_STATIC_TTI                  1036
+#define IDC_STATIC_INPUT                1037
+#define IDC_STATIC_MS8                  1037
+#define IDC_STATIC_PARAM                1038
+#define IDC_STATIC_STROBE               1038
+#define IDC_BUTTON_STROBE_PARM          1039
+#define IDC_STATIC_STROBE_TIMING        1040
+#define IDC_BUTTON_TRAP                 1040
+#define IDC_CHECK_TRIG_BEEP             1041
+#define IDC_PORT0                       1048
+#define IDC_STATIC_MS11                 1048
+#define IDC_PORT1                       1049
+#define IDC_PORT2                       1050
+#define IDC_PORT3                       1051
+#define IDC_PORT4                       1052
+#define IDC_PORT5                       1053
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        133
+#define _APS_NEXT_COMMAND_VALUE         32771
+#define _APS_NEXT_CONTROL_VALUE         1042
+#define _APS_NEXT_SYMED_VALUE           101
+#endif
+#endif

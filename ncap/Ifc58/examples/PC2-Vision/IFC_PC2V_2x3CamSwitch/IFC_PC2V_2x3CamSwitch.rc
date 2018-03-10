@@ -1,0 +1,226 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\IFC_PC2V_2x3CamSwitch.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\coreco.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_IFC_PC2V_2X3CAMSWITCH_DIALOG DIALOGEX 0, 0, 530, 366
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "IFC_PC2V_2x3CamSwitch"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Display11",IDC_STATIC_DISPLAY11,25,36,107,74
+    PUSHBUTTON      "Camera Type",IDC_BUTTON_TYPE_CAM,135,334,140,14
+    EDITTEXT        IDC_EDIT_TYPE_CAM,135,315,140,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    GROUPBOX        "Group # 1",IDC_STATIC_GROUP1,13,17,399,141
+    GROUPBOX        "Acquisition",IDC_STATIC_ACQ,421,17,93,107
+    PUSHBUTTON      "Grab",IDC_BUTTON_GRAB,435,35,65,14
+    PUSHBUTTON      "Freeze",IDC_BUTTON_FREEZE,435,98,65,14
+    LTEXT           "Display12",IDC_STATIC_DISPLAY12,159,36,107,74
+    LTEXT           "Display13",IDC_STATIC_DISPLAY13,291,36,107,74
+    LTEXT           "Display21",IDC_STATIC_DISPLAY21,25,180,107,74
+    GROUPBOX        "Group # 2",IDC_STATIC_GROUP2,13,164,399,141
+    LTEXT           "Display22",IDC_STATIC_DISPLAY22,159,180,107,74
+    LTEXT           "Display23",IDC_STATIC_DISPLAY23,291,180,107,74
+    DEFPUSHBUTTON   "Enter Trap",IDC_BUTTON_TRAP,441,282,50,10,NOT 
+                    WS_VISIBLE
+    LTEXT           "SOT Light",IDC_STATIC_SOT_LIGHT,432,210,71,17
+    LTEXT           "Trigger Presence",IDC_STATIC_TRIG_PRESENCE,439,232,57,8
+    LTEXT           "Pack 1 Light",IDC_STATIC_PAK1,25,134,373,11
+    LTEXT           "Pack 2 Light",IDC_STATIC_PAK2,25,282,373,11
+    EDITTEXT        IDC_EDIT_FR,435,151,33,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "per group",IDC_STATIC_FR,473,154,34,8
+    EDITTEXT        IDC_EDIT_FR_TOTAL,435,173,33,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "total",IDC_STATIC_FR_TOTAL,473,175,16,8
+    GROUPBOX        "Frame Rate (fps)",IDC_STATIC_STAT,421,133,93,60
+    LTEXT           "Camera # 1",IDC_STATIC_CAM1,59,116,41,8
+    LTEXT           "Camera # 2",IDC_STATIC_CAM2,191,116,41,8
+    LTEXT           "Camera # 3",IDC_STATIC_CAM3,323,116,41,8
+    LTEXT           "Camera # 4",IDC_STATIC_CAM4,59,266,41,8
+    LTEXT           "Camera # 5",IDC_STATIC_CAM5,191,266,41,8
+    LTEXT           "Camera # 6",IDC_STATIC_CAM6,323,266,41,8
+    PUSHBUTTON      "Soft Trigger",IDC_BUTTON_TRIGGER,435,77,65,14
+    PUSHBUTTON      "Snap",IDC_BUTTON_SNAP,435,56,65,14
+END
+
+IDD_CAMSEL DIALOG DISCARDABLE  0, 0, 186, 158
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Camera"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_CAMNAME,31,29,123,54,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,20,129,145,14
+    GROUPBOX        "Camera Type",-1,20,16,145,79
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "IFC_PC2V_2x3CamSwitch MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "IFC_PC2V_2x3CamSwitch\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "IFC_PC2V_2x3CamSwitch.EXE\0"
+            VALUE "ProductName", "IFC_PC2V_2x3CamSwitch Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_IFC_PC2V_2X3CAMSWITCH_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 523
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 359
+    END
+
+    IDD_CAMSEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 151
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\IFC_PC2V_2x3CamSwitch.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

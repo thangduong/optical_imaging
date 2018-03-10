@@ -1,0 +1,63 @@
+viewport left { x 0; y 0; width 320; height 480 }
+viewport right { x 320; y 0; width 320; height 480 }
+patch grating p1 { centerx -80; centery -120; width 160; height 240; shape 0; viewport left; temporalfrequency 4; bidir 1; blitangle 0; blitangle2 0; alpha 255 }
+sequence 0 0 p1
+
+patch colorrect cr { centerx 800; centery 500; width 400; height 400; color 16777215 }
+leech l1 { host cr; width 200 }
+
+
+patch colorrect cr { centerx 320; centery 240; width 400; height 400; color 16777215 }
+leech l1 { host cr; width 200 }
+
+
+viewport left { x 0; y 0; width 320; height 480 }
+viewport right { x 320; y 0; width 320; height 480 }
+patch grating p1 { centerx -80; centery -120; width 160; height 240; shape 0; viewport left; temporalfrequency 4 ; bidir 1; blitangle3 0; alpha 255 }
+leech l1 { host p1; blitangle3 0 }
+leech l2 { host p1; blitangle3 45 }
+leech l3 { host p1; blitangle3 90 }
+leech l4 { host p1; blitangle3 135 }
+leech l5 { host p1; blitangle3 180 }
+leech l6 { host p1; blitangle3 235 }
+
+patch colorrect cr { centerx 320; centery 240; width 400; height 400; color 16777215 }
+leech l1 { host cr; width 200 }
+
+
+lpt cameratrig { Port = 1; Bit = 5; Toggle = 0; Value = 0; }
+sequence 0 2 cameratrig Value 0
+sequence 600 2 cameratrig Value 1
+patch colorrect p1 { centerx = 320; centery = 240; width = 320; height = 240; color = 11776947 }
+sequence 60 0 p1
+sequence 120 1 p1
+patch colorrect p2 { centerx = 320; centery = 240; width = 320; height = 240; color = 16777215 }
+sequence 120 0 p2
+sequence 180 1 p2
+patch colorrect p3 { centerx = 320; centery = 240; width = 320; height = 240; color = 15132390 }
+sequence 180 0 p3
+sequence 240 1 p3
+patch colorrect p4 { centerx = 320; centery = 240; width = 320; height = 240; color = 0 }
+sequence 240 0 p4
+sequence 300 1 p4
+patch colorrect p5 { centerx = 320; centery = 240; width = 320; height = 240; color = 8421504 }
+sequence 300 0 p5
+sequence 360 1 p5
+patch colorrect p6 { centerx = 320; centery = 240; width = 320; height = 240; color = 3355443 }
+sequence 360 0 p6
+sequence 420 1 p6
+patch colorrect p7 { centerx = 320; centery = 240; width = 320; height = 240; color = 1710618 }
+sequence 420 0 p7
+sequence 480 1 p7
+patch colorrect p8 { centerx = 320; centery = 240; width = 320; height = 240; color = 5066061 }
+sequence 480 0 p8
+sequence 540 1 p8
+patch colorrect p9 { centerx = 320; centery = 240; width = 320; height = 240; color = 10066329 }
+sequence 540 0 p9
+sequence 600 1 p9
+patch colorrect p10 { centerx = 320; centery = 240; width = 320; height = 240; color = 6710886 }
+sequence 600 0 p10
+sequence 660 1 p10
+patch colorrect p11 { centerx = 320; centery = 240; width = 320; height = 240; color = 13421772 }
+sequence 660 0 p11
+sequence 720 1 p11

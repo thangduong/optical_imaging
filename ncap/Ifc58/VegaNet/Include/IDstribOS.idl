@@ -1,0 +1,104 @@
+//
+// DstribOS.idl : IDL source for a distributed OS base class
+// Derived interface IDL does #include "DstribOS.idl";
+//
+#ifndef _IDL_IDistribOS
+#define _IDL_IDistribOS
+
+import "oaidl.idl";
+import "ocidl.idl";
+import "vidsrct.h";
+
+
+ 	[
+		object,
+		uuid(7C396993-C9E7-11D4-B15D-00105A0F576C),
+		dual,
+		helpstring("IDistribOS Interface"),
+		pointer_default(unique)
+	]
+	interface IDistribOS : IDispatch
+	{
+
+		[id(701), helpstring("method CreateServerThread: Create a thread which is local to this object,with prototype: DWORD IVSAPI MyThreadFunc(CObjThread *threadObj); .")] 
+		HRESULT CreateServerThread([out]HSERVERTHREAD *hSrvThread,[string] LPSTR dllName,[string] LPSTR funcName,[in,size_is(numParamBytes)]BYTE *paramBlock,[in]DWORD numParamBytes);
+
+		[id(702), helpstring("method DeleteServerThread: Delete a server thread.")] 
+		HRESULT DeleteServerThread(HSERVERTHREAD hSrvThread);
+
+		[id(703), helpstring("InvokeServer: Invoke server-side DLL exported function with prototype: DWORD IVSAPI MyFunc(IVideoSrc *vidSrc)")] 
+		HRESULT InvokeServer([string] LPSTR dllName,[string] LPSTR funcName,[out]DWORD *retVal);
+
+		[id(704), helpstring("InvokeServerBlk: Invoke server-side DLL exported function with prototype: DWORD IVSAPI MyFunc(IVideoSrc *vidSrc,BYTE *paramBlock,DWORD numParamBytes), i.e. VS_INVOKE_PARM_BLK_FUNC type.")] 
+		HRESULT InvokeServerBlk([string] LPSTR dllName,[string] LPSTR funcName,[in,out,size_is(numParamBytes)]BYTE *paramBlock,[in]DWORD numParamBytes,[out]DWORD *retVal);
+
+		[id(705), helpstring("method CreateMessage: Create a message queue.")] 
+		HRESULT CreateMessage([out]HVSMESSAGE *hMessage);
+
+		[id(706), helpstring("method SendMessage: Send a message.")] 
+		HRESULT SendMessage(HVSMESSAGE hMessage,[in,size_is(numMessageBytes)]BYTE *message,[in]DWORD numMessageBytes);
+
+		[id(707), helpstring("method WaitMessage: Wait for a message.")] 
+		HRESULT WaitMessage([in]HVSMESSAGE hMessage,[out,size_is(bytesAvailable),length_is(*numMessageBytes)]BYTE *message,[out]DWORD *numMessageBytes,[in]DWORD bytesAvailable,DWORD waitTimeMilliSec);
+
+		[id(708), helpstring("method DeleteMessage: Delete a message queue.")] 
+		HRESULT DeleteMessage([in]HVSMESSAGE hMessage);
+
+		[id(709), helpstring("method WaitAnyMessage: Wait for any message in the list hMessages.")] 
+		HRESULT WaitAnyMessage([in]DWORD numMsgs,[in,size_is(numMsgs)]HVSMESSAGE *hMessages,[out]HVSMESSAGE *rcvMsg,[out,size_is(bytesAvailable),length_is(*numMessageBytes)]BYTE *message,[out]DWORD *numMessageBytes,[in]DWORD bytesAvailable,DWORD waitTimeMilliSec);
+
+		[id(710), helpstring("method InvokeClientBlk: Invoke a client-side function passing an in-out parameter block (funcName has VS_INVOKE_PARM_BLK_FUNC prototype).")] 
+		HRESULT InvokeClientBlk([string] LPSTR funcName,[in,out,size_is(numParamBytes)]BYTE *paramBlock,[in]DWORD numParamBytes);
+
+		[id(711), helpstring("method InvokeClientVar: Invoke a client-side function passing an in-out array if VSPARAMs.")] 
+		HRESULT InvokeClientVar([string] LPSTR funcName,[in] DWORD numParams,[in,out,size_is(numParams)] VSPARAM params[]);
+
+		[id(712), helpstring("private method SetSysMsgQ")] 
+		HRESULT SetSysMsgQ(HVSMESSAGE hSysMsgQ,DWORD hRpcServer, HVSEVENT serverShutdownEvent);
+
+		[id(713), helpstring("method InvokeClientBlkAsync: Invoke a client-side function passing an (in only) parameter block (funcName has VS_INVOKE_PARM_BLK_FUNC prototype).")] 
+		HRESULT InvokeClientBlkAsync([string]LPSTR funcName,[in,size_is(numParamBytes)] BYTE *paramBlock, [in]DWORD numParamBytes);
+
+		[id(714), helpstring("method InvokeClientVarAsync: Invoke a client-side function passing an (in only) array of VSPARAMs.")] 
+		HRESULT InvokeClientVarAsync([string] LPSTR funcName,[in] DWORD numParams,[in,size_is(numParams)] VSPARAM params[]);
+
+		[id(715), helpstring("method CreateServerEvent")] 
+		HRESULT CreateServerEvent([out]HVSEVENT *event,[in]VARIANT_BOOL bManualReset, [in]VARIANT_BOOL bInitialState);
+
+		[id(716), helpstring("method DeleteServerEvent")] 
+		HRESULT DeleteServerEvent([in]HVSEVENT event);
+
+		[id(717), helpstring("method WaitMessageOrEvents")] 
+		HRESULT WaitMessageOrEvents([in]HVSMESSAGE hMessage,[out,size_is(bytesAvailable),length_is(*numMessageBytes)]BYTE *message,[out]DWORD *numMessageBytes,[in]DWORD bytesAvailable,[in]DWORD waitTimeMilliSec,[in]DWORD numEvents,[in,size_is(numEvents)]HVSEVENT *events, [out]DWORD *waitResult);
+
+		[id(718), helpstring("method SetServerEvent")] 
+		HRESULT SetServerEvent([in]HVSEVENT event);
+
+		[id(719), helpstring("method CloseOs: Must be called before the final release of this object")] 
+		HRESULT CloseOs(DWORD dwFlags);
+
+		[id(720), helpstring("method FileCopy")] 
+		HRESULT FileCopy([string] LPSTR srcFileName, VS_FILESYS_DOMAIN_TYPE srcDomain,[string] LPSTR dstFileName, VS_FILESYS_DOMAIN_TYPE dstDomain);
+
+		[id(721), helpstring("method InvokeRpc")] 
+		HRESULT InvokeRpc([in]VS_RPC_INVOKE_STRUCT *desc,  [in,size_is(stkBlkSize)] DWORD *stkBlk, [in]DWORD stkBlkSize, [in,out,size_is(refParamNumBytes)]BYTE *refParams, [in]DWORD refParamNumBytes, [out]double *retVal);
+
+		[id(722), helpstring("method RegisterRpcDll: Register a DLL so that it's functions are available on the VS server side")] 
+		HRESULT RegisterRpcDll([string] LPSTR dllName);
+
+		[id(723), helpstring("method GetDerivedIID")] 
+		HRESULT GetDerivedIID([out]IID *derivedIID);
+
+		[id(724), helpstring("method CreateObject: Create an object which will be local to this object")] 
+		HRESULT CreateObject(REFCLSID rclsid,REFIID riid,[out]IDispatch **obj);
+
+		[id(725), helpstring("method RegisterServer: Register a server DLL in the domain of this object")] 
+		HRESULT RegisterServer([string] LPSTR serverDllName);
+
+		[id(726), helpstring("method IsCallerLocal: Determines if caller of this method")] 
+		HRESULT IsCallerLocal([string] LPSTR nodeName, DWORD processId);
+
+	};
+
+
+#endif

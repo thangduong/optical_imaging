@@ -1,0 +1,239 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\IFC_PC2V_Parallel_IO.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\coreco_pc2.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_IFC_PC2V_PARALLEL_IO_DIALOG DIALOGEX 0, 0, 505, 233
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "IFC_PC2V_Parallel_IO"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Rising Edge",IDC_RADIO_INT_RISE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,109,182,54,10
+    CONTROL         "Falling Edge",IDC_RADIO_INT_FALL,"Button",
+                    BS_AUTORADIOBUTTON,109,198,55,10
+    CONTROL         "Rising Edge",IDC_RADIO_IN_RISE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,276,182,54,10
+    CONTROL         "Falling Edge",IDC_RADIO_IN_FALL,"Button",
+                    BS_AUTORADIOBUTTON,276,198,55,10
+    CONTROL         "Active Low Level",IDC_RADIO_OUT_LOW,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,395,182,71,10
+    CONTROL         "Active High Level",IDC_RADIO_OUT_HIGH,"Button",
+                    BS_AUTORADIOBUTTON,395,198,72,10
+    PUSHBUTTON      "Read",IDC_BUTTON_I_READ,425,27,50,14
+    PUSHBUTTON      "Set",IDC_BUTTON_O_SET,425,102,50,14
+    CONTROL         "Strobed",IDC_CHECK_I_STROBE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,431,62,41,10
+    CONTROL         "Strobed",IDC_CHECK_O_STROBE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,431,135,41,10
+    DEFPUSHBUTTON   "Trap",IDC_BUTTON_TRAP,197,170,32,11,NOT WS_VISIBLE
+    GROUPBOX        "Output Port",IDC_STATIC_OUT,15,89,477,68
+    GROUPBOX        "Input Port",IDC_STATIC_IN,15,14,477,68
+    LTEXT           "Bit 0",IDC_STATIC_O_BIT0,311,126,15,8
+    LTEXT           "Bit 1",IDC_STATIC_O_BIT1,271,126,15,8
+    LTEXT           "Bit 2",IDC_STATIC_O_BIT2,231,126,15,8
+    LTEXT           "Bit 3",IDC_STATIC_O_BIT3,191,126,15,8
+    LTEXT           "Bit 4",IDC_STATIC_O_BIT4,151,126,15,8
+    LTEXT           "Bit 5",IDC_STATIC_O_BIT5,111,126,15,8
+    LTEXT           "Bit 6",IDC_STATIC_O_BIT6,71,126,15,8
+    LTEXT           "Bit 7",IDC_STATIC_O_BIT7,31,126,15,8
+    LTEXT           "Bit 0",IDC_STATIC_I_BIT0,311,51,15,8
+    LTEXT           "Bit 1",IDC_STATIC_I_BIT1,271,51,15,8
+    LTEXT           "Bit 2",IDC_STATIC_I_BIT2,231,51,15,8
+    LTEXT           "Bit 3",IDC_STATIC_I_BIT3,191,51,15,8
+    LTEXT           "Bit 4",IDC_STATIC_I_BIT4,151,51,15,8
+    LTEXT           "Bit 5",IDC_STATIC_I_BIT5,111,51,15,8
+    LTEXT           "Bit 6",IDC_STATIC_I_BIT6,71,51,15,8
+    LTEXT           "Bit 7",IDC_STATIC_I_BIT7,31,51,15,8
+    LTEXT           "Static",IDC_STATIC_OUT_0,305,113,26,8
+    LTEXT           "Static",IDC_STATIC_OUT_1,265,113,26,8
+    LTEXT           "Static",IDC_STATIC_OUT_2,225,113,26,8
+    LTEXT           "Static",IDC_STATIC_OUT_3,185,113,26,8
+    LTEXT           "Static",IDC_STATIC_OUT_4,145,113,26,8
+    LTEXT           "Static",IDC_STATIC_OUT_5,105,113,26,8
+    LTEXT           "Static",IDC_STATIC_OUT_6,65,113,26,8
+    LTEXT           "Static",IDC_STATIC_OUT_7,25,113,26,8
+    LTEXT           "Static",IDC_STATIC_IN_0,305,39,26,8
+    LTEXT           "Static",IDC_STATIC_IN_1,265,39,26,8
+    LTEXT           "Static",IDC_STATIC_IN_2,225,39,26,8
+    LTEXT           "Static",IDC_STATIC_IN_3,185,39,26,8
+    LTEXT           "Static",IDC_STATIC_IN_4,145,39,26,8
+    LTEXT           "Static",IDC_STATIC_IN_5,105,39,26,8
+    LTEXT           "Static",IDC_STATIC_IN_6,65,39,26,8
+    LTEXT           "Static",IDC_STATIC_IN_7,25,39,26,8
+    GROUPBOX        "Interrupt",IDC_STATIC_INT,13,163,165,56
+    EDITTEXT        IDC_EDIT_OUT_VAL,351,102,52,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Value",IDC_STATIC_O_VAL,369,117,20,8
+    EDITTEXT        IDC_EDIT_IN_VAL,351,27,52,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Value",IDC_STATIC_I_VAL,369,42,22,8
+    EDITTEXT        IDC_EDIT_INT_COUNT,35,182,45,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Count",IDC_STATIC_INT_COUNT,47,199,22,8
+    GROUPBOX        "Output Strobe Mode",IDC_STATIC_O_STROBE,371,163,120,56
+    GROUPBOX        "Input Strobe Mode",IDC_STATIC_I_STROBE,253,163,104,56
+    CONTROL         "High - Z",IDC_CHECK_O_HIZ,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,359,135,41,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,0,0
+ PRODUCTVERSION 2,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "Coreco Imaging, Inc.\0"
+            VALUE "FileDescription", "IFC_PC2V_Parallel_IO IFC Application\0"
+            VALUE "FileVersion", "2, 0, 0, 0\0"
+            VALUE "InternalName", "IFC_PC2V_Parallel_IO\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003-2004\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "IFC_PC2V_Parallel_IO.EXE\0"
+            VALUE "ProductName", "IFC_PC2V_Parallel_IO Application\0"
+            VALUE "ProductVersion", "2, 0, 0, 0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_IFC_PC2V_PARALLEL_IO_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 498
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 226
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\IFC_PC2V_Parallel_IO.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

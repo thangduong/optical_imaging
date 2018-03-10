@@ -1,0 +1,21 @@
+import "objidl.idl";
+import "unknwn.idl";
+import "wtypes.idl";
+interface INStimApp;
+interface IPort;
+
+[
+	object,
+	uuid(9DD58F94-E8DA-479c-A4A3-3198A728415D),
+	helpstring("INStimCmd Interface"),
+	pointer_default(unique)
+]
+interface INStimCmd : IUnknown
+{
+	HRESULT IsCmd(char* pCmd);
+	HRESULT Exec(char* pCmd, INStimApp* pApp, IPort* pPort);
+	HRESULT Help(unsigned char* Desc, INStimApp* pApp, IPort* pPort);
+};
+
+import "INStimApp.idl";
+import "IPort.idl";

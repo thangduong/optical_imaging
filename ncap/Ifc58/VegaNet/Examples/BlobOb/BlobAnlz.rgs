@@ -1,0 +1,26 @@
+HKCR
+{
+	BlobOb.BlobAnlz.1 = s 'BlobAnlz Class'
+	{
+		CLSID = s '{ADC7FF14-00EA-11D5-B17A-00105A0F576C}'
+	}
+	BlobOb.BlobAnlz = s 'BlobAnlz Class'
+	{
+		CLSID = s '{ADC7FF14-00EA-11D5-B17A-00105A0F576C}'
+		CurVer = s 'BlobOb.BlobAnlz.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {ADC7FF14-00EA-11D5-B17A-00105A0F576C} = s 'BlobAnlz Class'
+		{
+			ProgID = s 'BlobOb.BlobAnlz.1'
+			VersionIndependentProgID = s 'BlobOb.BlobAnlz'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Free'
+			}
+			'TypeLib' = s '{ADC7FF06-00EA-11D5-B17A-00105A0F576C}'
+		}
+	}
+}

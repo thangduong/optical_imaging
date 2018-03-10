@@ -1,0 +1,241 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\IFC_PC2V_CamSwitch.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\coreco_pc2.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_IFC_PC2V_CAMSWITCH_DIALOG DIALOGEX 0, 0, 561, 371
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "IFC_PC2V_CamSwitch"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Grab",IDC_BUTTON_GRAB,457,28,34,14
+    GROUPBOX        "Acquisition",IDC_STATIC_ACQ,443,13,103,77
+    LTEXT           "Display1",IDC_STATIC_DISPLAY1,25,27,107,74
+    EDITTEXT        IDC_EDIT_FR,457,115,33,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "per camera",IDC_STATIC_FR,495,118,38,8
+    EDITTEXT        IDC_EDIT_SEQ_COUNT,480,228,27,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Sequence Count",IDC_STATIC_SEQ_COUNT,467,244,54,8
+    DEFPUSHBUTTON   "Update",IDC_BUTTON_CAM_SEQ,457,202,72,14
+    EDITTEXT        IDC_EDIT_CAM_SEQ,449,185,89,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Cam 1 Light",IDC_STATIC_LIGHT_CAM1,25,106,106,14
+    GROUPBOX        "Camera # 1",IDC_STATIC_CAM1,13,13,131,118
+    LTEXT           "Display2",IDC_STATIC_DISPLAY2,167,27,106,74
+    LTEXT           "Cam 2 Light",IDC_STATIC_LIGHT_CAM2,167,106,106,14
+    GROUPBOX        "Camera # 2",IDC_STATIC_CAM2,155,13,131,118
+    LTEXT           "Display3",IDC_STATIC_DISPLAY3,311,27,106,74
+    LTEXT           "Cam 3 Light",IDC_STATIC_LIGHT_CAM3,311,106,106,14
+    GROUPBOX        "Camera # 3",IDC_STATIC_CAM3,299,13,131,118
+    LTEXT           "Display4",IDC_STATIC_DISPLAY4,26,155,106,74
+    LTEXT           "Cam 4 Light",IDC_STATIC_LIGHT_CAM4,26,235,106,14
+    GROUPBOX        "Camera # 4",IDC_STATIC_CAM4,13,140,131,118
+    LTEXT           "Display5",IDC_STATIC_DISPLAY5,167,155,106,74
+    LTEXT           "Cam 5 Light",IDC_STATIC_LIGHT_CAM5,167,235,106,14
+    GROUPBOX        "Camera # 5",IDC_STATIC_CAM5,155,140,131,118
+    LTEXT           "Display6",IDC_STATIC_DISPLAY6,311,155,106,74
+    PUSHBUTTON      "Camera Type",IDC_BUTTON_CAM_TYPE,359,305,152,14
+    EDITTEXT        IDC_EDIT_CAM_TYPE,359,287,152,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Cam 6 Light",IDC_STATIC_LIGHT_CAM6,311,235,106,14
+    GROUPBOX        "Camera # 6",IDC_STATIC_CAM6,299,140,131,118
+    PUSHBUTTON      "Freeze",IDC_BUTTON_FREEZE,457,68,76,14
+    DEFPUSHBUTTON   "Enter Trap",IDC_BUTTON_TRAP,466,342,72,10,NOT 
+                    WS_VISIBLE
+    GROUPBOX        "Camera Switch Sequence",IDC_STATIC_CAM_SEQ,443,167,103,
+                    91
+    EDITTEXT        IDC_EDIT_FR_TOTAL,457,137,33,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "total",IDC_STATIC_FR_TOTAL,495,139,16,8
+    GROUPBOX        "Frame Rate (fps)",IDC_STATIC_STAT,443,97,103,60
+    PUSHBUTTON      "Soft Trigger",IDC_BUTTON_TRIGGER,457,48,76,14
+    PUSHBUTTON      "Snap",IDC_BUTTON_SNAP,499,28,34,14
+    LTEXT           "SOT Light",IDC_STATIC_SOT_LIGHT,26,280,106,15
+    LTEXT           "SOF Light",IDC_STATIC_SOF_LIGHT,26,304,106,15
+    LTEXT           "EOF Light",IDC_STATIC_EOF_LIGHT,26,328,106,15
+    LTEXT           "EOT1 Light",IDC_STATIC_EOT1_LIGHT,167,280,106,15
+    LTEXT           "EOT2 Light",IDC_STATIC_EOT2_LIGHT,167,304,106,15
+    LTEXT           "EOT3 Light",IDC_STATIC_EOT3_LIGHT,167,328,106,15
+    GROUPBOX        "Trigger To Image",IDC_STATIC_TRIG2IMAGE,14,264,274,91
+END
+
+IDD_CAMSEL DIALOG DISCARDABLE  0, 0, 186, 158
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Camera"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_CAMNAME,31,29,123,54,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,20,129,145,14
+    GROUPBOX        "Camera Type",-1,20,16,145,79
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,0,0
+ PRODUCTVERSION 2,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "Coreco Imaging, Inc.\0"
+            VALUE "FileDescription", "IFC_PC2V_CamSwitch IFC Application\0"
+            VALUE "FileVersion", "2, 0, 0, 0\0"
+            VALUE "InternalName", "IFC_PC2V_CamSwitch\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003-2004\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "IFC_PC2V_CamSwitch.EXE\0"
+            VALUE "ProductName", "IFC_PC2V_CamSwitch Application\0"
+            VALUE "ProductVersion", "2, 0, 0, 0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_IFC_PC2V_CAMSWITCH_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 554
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 364
+    END
+
+    IDD_CAMSEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 151
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\IFC_PC2V_CamSwitch.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

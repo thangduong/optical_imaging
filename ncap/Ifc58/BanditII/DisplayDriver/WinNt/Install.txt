@@ -1,0 +1,39 @@
+
+DRIVER INSTALLATION PROCEDURE
+     
+
+      Log on the workstation as an administrator or with an account which has
+      administrator privileges on the workstation.
+
+      From the MAIN group in the Program Manager window, start the "Control
+      Panel" program.
+
+      Start the "Display" control panel applet program. 
+
+      If the driver has never been installed on the system, select the button
+      labeled "Change Display Type...".  From the "Display Type" dialog box,
+      select the "Change..." button.  From the "Select Device" dialog box,
+      select the "Other..." button. 
+
+      At this point, specify the path to the new driver and press the <ENTER>
+      key:
+
+          Example:  a:\
+
+      From the "Select Device" dialog box, select the resolution you would like.
+      Select the "Install" button.  Windows NT Setup will copy the miniport
+      driver and the display driver to the proper directories on your system.
+
+      The "Windows NT Setup" program will display a dialog box asking you to
+      enter the path where the actual files exist.  Enter the same path and
+      press the <ENTER> key:
+
+	  Example:  a:\
+
+      If you are instead prompted with a question to use 'Current' or 'New'
+      drivers, select 'New', then enter the path.
+
+      Reboot the system after exiting the "Windows NT Setup" program.
+
+      After the system is rebooted, you will be able to go back into the Control
+      Panel Display applet and select and test an alternate screen resolution.

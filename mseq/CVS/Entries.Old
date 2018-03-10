@@ -1,0 +1,32 @@
+D/archive////
+D/createbcplut////
+D/detectpeaks////
+D/digdetectedge////
+D/doc////
+D/fastsimresponse////
+D/fastwalsh////
+D/findmseqseed////
+D/genmseq////
+D/genregmseq////
+D/getkernellocation////
+D/gridprewalshperm////
+D/matlabaux////
+D/mexmseqfindprod////
+D/mseq////
+D/mseqmult////
+D/nmfastwalsh////
+D/nmpostwalshperm////
+D/nmprewalshperm////
+D/perfdump////
+D/postwalshperm////
+D/prewalshperm////
+D/rotatevector////
+D/simpleresample////
+D/slowseqp////
+D/xcorrdirect////
+/clean.m/0/dummy timestamp//
+/compile.m/0/dummy timestamp//
+/getmexfiles.m/0/dummy timestamp//
+/mseq.dsw/0/dummy timestamp//
+/readme.txt/0/dummy timestamp//
+/cvsTest.rtf/0/dummy timestamp/-kb/

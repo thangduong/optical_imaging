@@ -1,0 +1,188 @@
+/******************************************************************************
+ *
+ * MODULE   
+ *		PCRCam.h
+ *
+ * REVISION INFORMATION  
+ *		$Logfile: /ifc/include/PCRCam.h $
+ *		$Revision: 1.1 $
+ *		$Modtime: 11/21/03 9:40a $
+ *
+ * ABSTRACT  
+ *		IFC interface of the CPCRGB class.
+ *
+ * TECHNICAL NOTES 
+ *
+ *
+ * Copyright (c) 1999 Imaging Technology, Inc.  All rights reserved.
+ *
+ ******************************************************************************/
+
+#if !defined(AFX_PCRCAM_H__582D6F70_E7BC_11D2_B53F_00A0C99ACB20__INCLUDED_)
+#define AFX_PCRCAM_H__582D6F70_E7BC_11D2_B53F_00A0C99ACB20__INCLUDED_
+
+#if _MSC_VER > 1000
+#pragma once
+#endif // _MSC_VER > 1000
+
+#include <ifcstd.h>
+#include <ifcclass.h>
+#include <Camera.h>
+
+
+
+typedef enum {
+	PCR_LOW_IS_ODD,
+	PCR_LOW_IS_EVEN
+} PCR_PWG_FLD_POL_TYPE;
+
+typedef enum {
+	PCR_FLD_SRC_SYNC_STRIPPER,
+	PCR_FLD_SRC_GENERATED_BASED_ON_H_AND_V_SYNC
+} PCR_FLD_SRC_TYPE;
+
+typedef enum {
+	PCR_LPF_6MHZ,
+	PCR_LPF_10MHZ
+} PCR_LPF_TYPE;
+
+
+typedef enum {
+	PCR_GREEN_VIDEO_CHANNEL,
+	PCR_COMPOSITE_CHANNEL_0,
+	PCR_COMPOSITE_CHANNEL_1
+} PCR_SYNC_STRIPPER_SRC_TYPE;
+
+typedef enum {
+	PCR_SYNC_STRIPPER_BACK_PORCH,
+	PCR_PROGRAMMABLE
+} PCR_CLAMP_SRC_TYPE;
+
+#define PCR_NUM_LUT_ENTRIES 0x10000
+
+typedef enum {
+	PCR_SOFT_TRIG,
+	PCR_EXT_TRIG0,
+	PCR_EXT_TRIG1,
+	PCR_EXT_TRIG2,
+	PCR_OPTO_COUPLED_TRIG0,
+	PCR_OPTO_COUPLED_TRIG1,
+	PCR_RS422_DIFF_TRIG,
+} PCR_TRIG_SRC_TYPE; 
+
+typedef enum {
+	PCR_CREF_HSYNC_FROM_STRIPPER,
+	PCR_CREF_TIMING_MODE_DEPENDANT	
+
+} PCR_PRGM_CLAMP_REF_POINT_TYPE;
+
+typedef enum {
+	PCR_SINGLE_TAP,
+	PCR_2TAP_ILACE_TOGGLE
+
+
+} PCR_MULTITAP_MODE_TYPE;
+
+
+typedef enum {
+	PCR_PARTIAL_DISABLE,
+	PCR_PARTIAL_ENABLE,
+	PCR_PARTIAL_FIX_HIGH
+
+} PCR_PARTIAL_SCAN_MODE_TYPE;
+
+
+#include <PcRgb.h>
+
+#define PCR_PECULIAR_PARAM_BASE (MOD_PECULIAR_PARAM_BASE + 0x1000 * PCR_PCI_DEVICE_ID)
+
+typedef enum {
+
+	PCR_FIELD_SRC = PCR_PECULIAR_PARAM_BASE,			// IFC_ENABLE_TYPE
+	PCR_SKIP_FIELD_MODE,
+	PCR_STROBE_OUTPUT_ENABLE,
+	PCR_FRAME_RESET_ON_VSYNC_OUTPUT,
+	PCR_TRIG_CYCLE_LATCH_TRIG,
+	PCR_RED_A_TO_D_PREF,
+	PCR_GREEN_A_TO_D_PREF,
+	PCR_BLUE_A_TO_D_PREF,
+	PCR_RED_A_TO_D_NREF,
+	PCR_GREEN_A_TO_D_NREF,
+	PCR_BLUE_A_TO_D_NREF,
+	PCR_LOW_PASS_FILTER,
+	PCR_PWG_FIELD_POLARITY,
+	PCR_FIELD_SHIFT,
+	PCR_PTG_VSYNC_OUT_EN,
+	PCR_CLAMP_SOURCE,
+	PCR_SYNC_STRIPPER_SOURCE,
+	PCR_BACK_PORCH_CLAMP_START,
+	PCR_BACK_PORCH_CLAMP_END,
+	PCR_NO_CLAMP_REGION,
+	PCR_PRGM_CLAMP_REF_POINT,
+	PCR_FRONT_PORCH_CLAMP_START,
+	PCR_FRONT_PORCH_CLAMP_END,
+	PCR_FRONT_PORCH_ENABLE,
+	PCR_MULTITAP_MODE,
+	PCR_EDONPISHA_MODE,
+	PCR_PTG2PWG_HSYNC_FLIP,
+	PCR_PARTIAL_SCAN_START,
+	PCR_PARTIAL_SCAN_END,
+	PCR_PARTIAL_SCAN_POLARITY,
+	PCR_PARTIAL_SCAN_MODE,
+	
+
+	PCR_PARAM_END_MARKER
+} PCR_PARAMS_TYPE;
+
+
+typedef enum {
+	PCR_PGRP_COLOR_SPACE_CONV=IFC_PGRP_MOD_PECULIAR1,
+	PCR_PGRP_REF_VOLTAGE,
+	PCR_PGRP_CLAMP_SETTINGS,
+	PCR_PGRP_PARTIAL_SCAN
+
+} PCR_PARAM_GROUP_TYPE;
+
+#define PCR_PGRP_COLOR_SPACE_CONV_MASK	PGRP_ID_TO_MASK(PCR_PGRP_COLOR_SPACE_CONV)
+#define PCR_PGRP_REF_VOLTAGE_MASK		PGRP_ID_TO_MASK(PCR_PGRP_REF_VOLTAGE)
+#define PCR_PGRP_CLAMP_SETTINGS_MASK	PGRP_ID_TO_MASK(PCR_PGRP_CLAMP_SETTINGS)
+#define PCR_PGRP_PARTIAL_SCAN_MASK		PGRP_ID_TO_MASK(PCR_PGRP_PARTIAL_SCAN)
+
+#define PCR_NUM_PARAMS (GEN_PARAM_END_MARKER+PCR_PARAM_END_MARKER-PCR_PECULIAR_PARAM_BASE)
+
+#if defined __cplusplus && !defined NOIFCLINK
+
+
+class IFC_EXT_API CPCRCam : public CICamera  
+{
+public:
+
+	virtual int Freeze(HIFCGRAB grabID=NULL);
+	virtual void UpdateParams();
+	virtual BOOL SetLutFunction(LUTID_TYPE lutID,IFCLUTFUNC func,DWORD *constants,LUT_PORTION_TYPE lutPortion=LUT_INTELLI_WIDTH);
+	virtual void ReadLutBuf(LUTID_TYPE lutID, DWORD lutAdr, DWORD numEntries, pVOID buf,LUT_PORTION_TYPE lutPortion=LUT_FULL_WORD);
+	virtual void WriteLutBuf(LUTID_TYPE lutID, DWORD lutAdr,DWORD numEntries,pVOID buf,LUT_PORTION_TYPE lutPortion=LUT_FULL_WORD);
+	virtual void GetLUTCaps(LPLUTCAP caps);
+	virtual void SetLutPathPage(LUTID_TYPE lutID,IFC_LUT_PIX_SIZE_TYPE pxSize,DWORD pageNum) {return;};
+	virtual void SetWindowGen(short x, short y, short dx, short dy);
+	virtual BOOL SetCameraType(pSTRING camName,BOOL updateHW=TRUE);
+	virtual void GetAttr(LPCAM_ATTR lpAttr, BOOL zoomCorrected=TRUE);
+	virtual LPIFC_AOI_DESC GetPlanarAoi(IFC_COLOR eColorPlane, LPIFC_AOI_DESC lpAoiDesc);
+	virtual ACQ_PARAMS_TYPE GetParamIndex(ACQ_PARAMS_TYPE RawID);
+	virtual void AddApplicabilityFuncs(void);
+	virtual ACQ_PARAMS_TYPE GetParamAlias(ACQ_PARAMS_TYPE paramID);
+	virtual pSTRING GetStdCameraType(IFC_STD_CAM_TYPE stdCamType);
+
+	CPCRCam(CPcRgb *pcr,DWORD port);
+	virtual ~CPCRCam();
+	DWORD GetInterlaceFactor();
+	CPcRgb *m_pcr;
+
+protected:
+
+	WORD wPllRegsShadow;
+};
+
+#endif
+
+#endif // !defined(AFX_PCRCAM_H__582D6F70_E7BC_11D2_B53F_00A0C99ACB20__INCLUDED_)

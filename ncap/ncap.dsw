@@ -1,0 +1,233 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "camstoragelib"=.\camstoragelib\camstoragelib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "csfplayer"=.\csfplayer\csfplayer.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name camstoragelib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "filterwheelTest"=.\filterwheelTest\filterwheelTest.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name lpt
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "focus"=.\focus\focus.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "getcsfframes"=.\getcsfframes\getcsfframes.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name camstoragelib
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "imgviewer"=.\imgviewer\imgviewer.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "interface"=..\nstim\interface\interface.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name ui
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "loadcsf"=.\loadcsf\loadcsf.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "lpt"=..\nstim\lpt\lpt.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "ncap"=.\ncap\ncap.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name interface
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ncaplib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name tcpip
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ui
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name camstoragelib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name lpt
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ncaplib"=.\ncaplib\ncaplib.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "tcpip"=..\nstim\tcpip\tcpip.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "testapp"=.\testapp\testapp.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name camstoragelib
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name lpt
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ui"=..\nstim\ui\ui.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "winioinstall"=.\winioinstall\winioinstall.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

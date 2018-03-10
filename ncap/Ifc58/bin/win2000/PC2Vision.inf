@@ -1,0 +1,80 @@
+; PC2Vision.inf
+;
+; Installation inf for the  adapter.
+;
+; (c) Copyright 2000-2001 Coreco Imaging 
+;
+
+[Version]
+Signature="$CHICAGO$"
+Provider=%coreco%
+ClassGUID={6bdd1fc6-810f-11d0-bec7-08002be2092f}
+class=Image
+DriverVer=11/11/2002,1.00
+
+
+[DestinationDirs]
+DefaultDestDir   = 11
+PCV2.Sys	     = 12   ; drivers
+PC2Vision.Inf    = 11
+
+
+[Manufacturer]
+%coreco%   = coreco.Mfg
+
+[coreco.Mfg]
+%coreco.DeviceDesc0% = PCV2, PCI\VEN_11EC&DEV_0200&SUBSYS_00000000
+
+[PCV2]
+;CopyFiles =PCV2.Sys, PC2Vision.Inf 
+;DelFiles = PCV2.Sys
+
+;
+; File sections
+;
+
+[PCV2.Sys]
+PCV2.sys     
+
+[PC2Vision.Inf]
+PC2Vision.inf	     
+
+[PC2Vision.AddRegs]
+
+[PC2Vision.DelRegs]
+
+;
+; Service Installation
+;
+
+[PCV2.Services]
+AddService = PCV2, 0x00000002, PCV2_Service_Inst
+
+[PCV2_Service_Inst]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Coreco Drivers
+ServiceBinary  = %12%\PCV2.sys
+
+;
+; Source file information
+;
+
+[SourceDisksNames.x86]
+1 = %DiskId%,,,""
+
+[SourceDisksFiles]
+PCV2.sys       = 1      ; all files on Disk 1
+PC2Vision.inf        = 1
+
+
+
+[Strings]
+
+DiskId = "Coreco Imaging PC2 Vision Installation DISK (VIDEO)"
+coreco.DeviceDesc0 = "PC2 Vision Board"
+coreco = "Coreco Imaging"
+Coreco = "Coreco Imaging"
+CURVER = "Software\Microsoft\Windows\CurrentVersion"
+

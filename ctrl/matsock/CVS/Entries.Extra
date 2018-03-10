@@ -1,0 +1,13 @@
+/initwinsock.dll////*///
+/initwinsock.m////*///
+/readme.txt////*///
+/sockconnect.dll////*///
+/sockconnect.m////*///
+/sockdisconnect.dll////*///
+/sockdisconnect.m////*///
+/sockpendingdata.dll////*///
+/sockpendingdata.m////*///
+/sockread.dll////*///
+/sockread.m////*///
+/sockwrite.dll////*///
+/sockwrite.m////*///

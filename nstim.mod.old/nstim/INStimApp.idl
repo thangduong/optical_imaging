@@ -1,0 +1,27 @@
+import "objidl.idl";
+import "unknwn.idl";
+import "wtypes.idl";
+
+interface INStimEngine;
+interface INStimCmdEngine;
+interface INStimProfile;
+interface INStimAtom;
+
+[
+	object,
+	uuid(7A1B847C-B96B-4f96-AE47-EDB1473D65A0),
+	helpstring("INStimApp Interface"),
+	pointer_default(unique)
+]
+interface INStimApp : IUnknown
+{
+	HRESULT CreateAtom(unsigned char* pPatchType, INStimAtom** ppPatch);
+	HRESULT GetGraphicsEngine(INStimEngine** ppGraphicsEngine);
+	HRESULT GetCommandEngine(INStimCmdEngine** ppCmdEngine);
+	HRESULT GetProfile(INStimProfile** ppProfile);
+};
+
+import "INStimAtom.idl";
+import "INStimEngine.idl";
+import "INStimCmdEngine.idl";
+import "INStimProfile.idl";

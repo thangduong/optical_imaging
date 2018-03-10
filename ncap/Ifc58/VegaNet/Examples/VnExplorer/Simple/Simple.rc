@@ -1,0 +1,242 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Simple.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Simple.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 257, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Simple VegaNet Explorer Example"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Simple VegaNet Explorer Example Version 1.0",IDC_STATIC,
+                    43,16,145,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2001",IDC_STATIC,43,31,119,8
+    DEFPUSHBUTTON   "OK",IDOK,200,34,50,14,WS_GROUP
+END
+
+IDD_SIMPLE_DIALOG DIALOGEX 0, 0, 486, 338
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Simple VegaNet Explorer Example"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,436,321,49,16
+    CONTROL         "",IDC_VNEXPLORERCTRL,
+                    "{0B235836-5A83-11D5-A469-005004051D9B}",WS_TABSTOP,0,0,
+                    152,337
+    GROUPBOX        "",IDC_DISPLAYCTRL,153,0,333,235,0,WS_EX_CLIENTEDGE
+    LTEXT           "",IDC_MOD_NAME_STATIC,154,236,263,11,SS_CENTERIMAGE | 
+                    WS_BORDER
+    CTEXT           "",IDC_LOCAL_STATIC,420,236,65,11,SS_CENTERIMAGE | 
+                    WS_BORDER
+    GROUPBOX        "VegaNet Explorer Events",IDC_STATIC,154,255,250,82
+    LTEXT           "Event:",IDC_STATIC,170,271,22,8
+    LTEXT           "",IDC_EVENT_NAME,198,271,153,8
+    LTEXT           "Item Text:",IDC_STATIC,160,322,32,8
+    LTEXT           "",IDC_ITEM_TEXT,198,322,200,8
+    LTEXT           "x:",IDC_X_STATIC,363,271,8,8
+    LTEXT           "",IDC_X_VALUE,375,271,24,8
+    LTEXT           "y:",IDC_Y_STATIC,363,285,8,8
+    LTEXT           "",IDC_Y_VALUE,375,285,24,8
+    LTEXT           "",IDC_FLAG_TEXT,198,285,153,8
+    LTEXT           "Old Item:",IDC_OLD_ITEM_STATIC,163,307,29,8
+    LTEXT           "",IDC_OLD_ITEM_TEXT,198,307,200,8
+    LTEXT           "Details:",IDC_STATIC,168,285,24,8
+    GROUPBOX        "",IDC_STATIC,410,255,72,41
+    CONTROL         "Enable Drag",IDC_DRAG_ENABLE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,414,265,55,10
+    CONTROL         "Trace Drag",IDC_DRAG_TRACE,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,414,281,52,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "Simple MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "Simple\0"
+            VALUE "LegalCopyright", "Copyright (C) 2001\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Simple.EXE\0"
+            VALUE "ProductName", "Simple Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 250
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_SIMPLE_DIALOG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 337
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_SIMPLE_DIALOG DLGINIT
+BEGIN
+    IDC_VNEXPLORERCTRL, 0x376, 43, 0
+0x0000, 0x0000, 0x0000, 0x0001, 0x1791, 0x0000, 0x38a3, 0x0000, 0x0000, 
+0x0000, 0x0101, 0x0001, 0x0000, 0x0001, 0x0000, 0x0101, 0x0000, 0x0100, 
+0x0000, 0x0000, 0x0000, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About Simple..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Simple.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

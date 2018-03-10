@@ -1,0 +1,117 @@
+
+[Version]
+Signature=$CHICAGO$
+Class=MEDIA
+Provider=%String0%
+
+[ClassInstall]
+
+[DestinationDirs]
+DefaultDestDir=10,system
+
+[Manufacturer]
+%String1%=SECTION_0
+
+[SECTION_0]
+%String2%=ITI.Install,PCI\VEN_112F&DEV_0000
+%String3%=ITI.Install,PCI\VEN_112F&DEV_0001
+%String4%=ITI.Install,PCI\VEN_112F&DEV_0002
+%String5%=ITI.Install,PCI\VEN_112F&DEV_0003
+%String6%=ITI.Install,PCI\VEN_112F&DEV_0004
+%String7%=ITI.Install,PCI\VEN_112F&DEV_0005
+%String9%=ITI.Install,PCI\VEN_112F&DEV_0006
+%String10%=ITI.Install,PCI\VEN_112F&DEV_0007
+%String11%=ITI.Install,PCI\VEN_112F&DEV_0008
+%String8%=ITI.Install,PCI\VEN_112F&DEV_0100
+
+[PCI\VEN_112F&DEV_0000.Det]
+CopyFiles=ITI.CopyFiles
+AddReg=ITIDEV.Addreg,ITIPCI.Addreg
+LogConfig=ITI.LogConfig
+
+[PCI\VEN_112F&DEV_0001.Det]
+CopyFiles=ITI.CopyFiles
+AddReg=ITIPCI.Addreg,ITIDEV.Addreg
+LogConfig=ITI.LogConfig
+
+[PCI\VEN_112F&DEV_0002.Det]
+CopyFiles=ITI.CopyFiles
+AddReg=ITIPCI.Addreg,ITIDEV.Addreg
+LogConfig=ITI.LogConfig
+
+[PCI\VEN_112F&DEV_0003.Det]
+CopyFiles=ITI.CopyFiles
+AddReg=ITIPCI.Addreg,ITIDEV.Addreg
+LogConfig=ITI.LogConfig
+
+[PCI\VEN_112F&DEV_0004.Det]
+CopyFiles=ITI.CopyFiles
+AddReg=ITIPCI.Addreg,ITIDEV.Addreg
+LogConfig=ITI.LogConfig
+
+[PCI\VEN_112F&DEV_0005.Det]
+CopyFiles=ITI.CopyFiles
+AddReg=ITIPCI.Addreg,ITIDEV.Addreg
+LogConfig=ITI.LogConfig
+
+[PCI\VEN_112F&DEV_0006.Det]
+CopyFiles=ITI.CopyFiles
+AddReg=ITIPCI.Addreg,ITIDEV.Addreg
+LogConfig=ITI.LogConfig
+
+[PCI\VEN_112F&DEV_0007.Det]
+CopyFiles=ITI.CopyFiles
+AddReg=ITIPCI.Addreg,ITIDEV.Addreg
+LogConfig=ITI.LogConfig
+
+[PCI\VEN_112F&DEV_0008.Det]
+CopyFiles=ITI.CopyFiles
+AddReg=ITIPCI.Addreg,ITIDEV.Addreg
+LogConfig=ITI.LogConfig
+
+[PCI\VEN_112F&DEV_0100.Det]
+CopyFiles=ITI.CopyFiles
+AddReg=ITIPCI.Addreg,ITIDEV.Addreg
+LogConfig=ITI.LogConfig
+
+[ITI.Install]
+CopyFiles=ITI.CopyFiles
+AddReg=ITIPCI.Addreg,ITIDEV.Addreg
+Reboot
+
+[ITI.CopyFiles]
+itipci.vxd
+
+[ITIPCI.Addreg]
+HKR,,DevLoader,0,mmdevldr.vxd
+
+[ITIDEV.Addreg]
+HKR,,Driver,0,itipci.vxd
+
+
+[ITI.LogConfig]
+ConfigPriority=HARDRECONFIG
+
+[ControlFlags]
+
+[SourceDisksNames]
+1="Coreco Imaging Software",,0000-0000
+
+[SourceDisksFiles]
+itipci.vxd=1
+
+[Strings]
+String0="Coreco Imaging, Inc."
+String1="Coreco Imaging, Inc."
+String2="ITI Image Capture Device"
+String3="IM-PCI Image Manager"
+String4="CMC-PCI Computational Module Controller"
+String5="IC-ASYNC Multi-Image Capture"
+String6="PCDig Digital Image Capture"
+String7="PC-RGB Color Image Capture"
+String8="PC-Dig Test Generator"
+String9="PC-LineScan Digital Image Capture"
+String10="PCVision Plus Image Capture Device"
+String11="PC-CamLink Digital Image Capture"
+MediaClassName="Sound, video and game controllers"
+

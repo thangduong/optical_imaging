@@ -1,0 +1,554 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Record.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Record.ico"
+IDR_RECORDTYPE          ICON    DISCARDABLE     "res\\RecordDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 20
+BEGIN
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_STOP
+    BUTTON      ID_PAUSE
+    BUTTON      ID_READRANDOM
+    BUTTON      ID_CONVERTTOAVI
+    BUTTON      ID_QUERYAVICONVERT
+    BUTTON      ID_SETMAXSIZE
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    MENUITEM "Stop",                        ID_STOP
+    MENUITEM "Pause",                       ID_PAUSE
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About Record...",            ID_APP_ABOUT
+    END
+    MENUITEM "ReadRandom",                  ID_READRANDOM
+    MENUITEM "ConvertToAvi",                ID_CONVERTTOAVI
+    MENUITEM "SetRecParams",                ID_SETMAXSIZE
+    MENUITEM "QueryAviConvert",             ID_QUERYAVICONVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_DOWN,        ID_VOLUME_DOWN,         VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_UP,          ID_VOLUME_UP,           VIRTKEY, CONTROL, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Record"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Record Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2001",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_USERNAME DIALOG DISCARDABLE  0, 0, 260, 87
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Enter Network Password"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,214,7,39,14
+    PUSHBUTTON      "Cancel",IDCANCEL,214,24,39,14
+    LTEXT           "Incorrect password or unknown username for:",IDC_STATIC,
+                    7,9,145,8
+    LTEXT           "&Connect As:",IDC_STATIC,7,37,40,8
+    LTEXT           "&Password:",IDC_STATIC,7,53,34,8
+    EDITTEXT        IDC_USERNAME,50,34,143,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PASSWORD,50,50,143,12,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "&Domain:",IDC_STATIC,7,69,27,8
+    EDITTEXT        IDC_DOMAIN,50,66,143,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_NODE_NAME,11,19,115,10,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+END
+
+IDD_SELECTMODULE DIALOG DISCARDABLE  0, 0, 259, 237
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Open Module"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Open",IDOK,17,100,39,14
+    PUSHBUTTON      "Cancel",IDCANCEL,213,216,39,14
+    LISTBOX         IDC_MODULE_LIST,18,31,107,58,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Detected Module",IDC_SELECT_MODULE,18,22,78,8
+    PUSHBUTTON      "Browse",IDC_SELECT_CONFIG_FILE,143,216,39,14
+    EDITTEXT        IDC_CONFIG_FILENAME,7,216,130,14,ES_AUTOHSCROLL
+    LTEXT           "Configuration File (Optional):",-1,7,206,89,10
+    GROUPBOX        "Open Physical Module",-1,7,6,230,173
+    LISTBOX         IDC_NODE_LIST,139,31,82,58,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Group Node",-1,140,23,40,8
+    GROUPBOX        "DNS or UNC Node Name",-1,16,126,124,42
+    PUSHBUTTON      "Enter",IDC_ENTER_NODE,52,154,37,10
+    EDITTEXT        IDC_DNS_NODE,22,140,108,11,ES_AUTOHSCROLL
+    PUSHBUTTON      "Set User...",IDC_SET_USER,160,130,50,14
+END
+
+IDD_READ_RANDOM DIALOG DISCARDABLE  0, 0, 478, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Frame Sequencer"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,421,7,50,14
+    CONTROL         "Slider1",IDC_SLIDER1,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,7,26,464,14
+    LTEXT           "Frame Num:",IDC_STATIC,166,8,40,10
+    EDITTEXT        IDC_RND_FRAME_NUM,209,8,34,12,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_BORDER
+    EDITTEXT        IDC_TIMESTAMP,254,8,148,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    PUSHBUTTON      ">",IDC_PLAY,112,46,23,13
+    PUSHBUTTON      "Pause",IDC_PAUSE,84,46,23,13
+    PUSHBUTTON      "Stop",IDC_STOP,56,46,23,13
+    PUSHBUTTON      ">>",IDC_FAST,168,46,23,13
+    PUSHBUTTON      "<<",IDC_REWIND,140,46,23,13
+END
+
+IDD_CAMSEL DIALOG DISCARDABLE  0, 0, 263, 146
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Camera"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,206,125,50,14
+    LISTBOX         IDC_LIST_CAMNAME,37,33,164,76,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Camera Type",IDC_STATIC,28,21,183,96
+END
+
+IDD_MAX_SIZE DIALOG DISCARDABLE  0, 0, 281, 145
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Record Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_MAX_FILE_SIZE,87,20,38,12,ES_AUTOHSCROLL
+    CONTROL         "Stop",IDC_STOP,"Button",BS_AUTORADIOBUTTON | WS_GROUP,
+                    39,59,31,10
+    CONTROL         "Start a new file",IDC_START_NEW_FILE,"Button",
+                    BS_AUTORADIOBUTTON,39,74,63,10
+    CONTROL         "No Encoding",IDC_FILE_COMP,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,164,22,57,10
+    CONTROL         "JPEG",IDC_FILE_COMP_JPEG,"Button",BS_AUTORADIOBUTTON,
+                    164,39,34,10
+    CONTROL         "Motion Delta JPEG",IDC_COMP_DJPEG,"Button",
+                    BS_AUTORADIOBUTTON,164,56,76,10
+    DEFPUSHBUTTON   "OK",IDOK,224,124,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,156,124,50,14
+    LTEXT           "Max Frames per File:",IDC_STATIC,17,21,68,8
+    GROUPBOX        "Max Size Reached Action",IDC_STATIC,26,47,105,43
+    GROUPBOX        "File Max Size",IDC_STATIC,7,7,137,93
+    GROUPBOX        "File Compression Method",IDC_STATIC,150,7,102,69
+    CONTROL         "Record Sound",IDC_SOUND,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,110,62,10
+    LTEXT           "Quality",IDC_STATIC,155,84,22,8
+    CONTROL         "Slider1",IDC_QUALITY,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,177,83,61,12
+END
+
+IDD_DG_CONV_PROGRESS DIALOG DISCARDABLE  0, 0, 232, 93
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "AVI File Conversion Progress"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,165,68,50,14
+    EDITTEXT        IDC_CONV_TXT,14,33,204,15,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,2
+ PRODUCTVERSION 1,0,0,2
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "VegaNet Record Application\0"
+            VALUE "FileVersion", "1, 0, 0, 2\0"
+            VALUE "InternalName", "Record\0"
+            VALUE "LegalCopyright", "Copyright (C) 2001-2004\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Record.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Record Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 2\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_USERNAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+    END
+
+    IDD_SELECTMODULE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 252
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 230
+    END
+
+    IDD_READ_RANDOM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 471
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_CAMSEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 256
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 139
+    END
+
+    IDD_MAX_SIZE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 274
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 138
+    END
+
+    IDD_DG_CONV_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 225
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "Record\n\nRecord\n\n\nRecord.Document\nRecord Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Record"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing movie file\nOpen an existing movie file"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Record a new file\nRecord new movie file"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_STOP                 "Stop Record or Playback\nStop Record or Playback"
+    ID_READRANDOM           "Read a File with Random Frame Control\nRead a File with Random Frame Control"
+    ID_CONVERTTOAVI         "Convert VNM movie file to AVI file.\nConvert VNM movie file to AVI file."
+    ID_SETMAXSIZE           "Set Record Parameters\nSet Record Parameters"
+    ID_QUERYAVICONVERT      "Specify Codec and Convert VNM to AVI file\nSpecify Codec and Convert VNM to AVI file"
+    ID_PAUSE                "Pause or Resume Recording\nPause or Resume Recording"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_FRAMES_SAVED "Frames Saved:                "
+    ID_INDICATOR_FRAMES_ACQ "Frames Acquired:             "
+    ID_INDICATOR_TIMESTAMP  "Jan 01, 2002 01:01:01.000 GMT"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Record.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

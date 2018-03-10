@@ -1,0 +1,125 @@
+; ITIPCI2K.inf
+;
+; Installation inf for the ITI Image Capture Device adapters.
+;
+; (c) Copyright 2000 Imaging Technology Inc. 
+;
+
+
+[Version]
+Signature="$Windows NT$"
+Provider=%ITI%
+ClassGUID={4D36E96C-E325-11CE-BFC1-08002BE10318}
+Class=Media
+
+[DestinationDirs]
+DefaultDestDir   = 11
+mvcntp.CopyFiles = 12  ; drivers
+
+;
+; Driver information
+;
+
+[Manufacturer]
+%ITI%   = ITI.Mfg
+
+[ITI.Mfg]
+%ITI.DeviceDesc0% = mvcntp, PCI\VEN_112f&DEV_0000
+%ITI.DeviceDesc1% = mvcntp, PCI\VEN_112f&DEV_0001
+%ITI.DeviceDesc2% = mvcntp, PCI\VEN_112f&DEV_0002
+%ITI.DeviceDesc3% = mvcntp, PCI\VEN_112f&DEV_0003
+%ITI.DeviceDesc4% = mvcntp, PCI\VEN_112f&DEV_0004
+%ITI.DeviceDesc5% = mvcntp, PCI\VEN_112f&DEV_0005
+%ITI.DeviceDesc6% = mvcntp, PCI\VEN_112f&DEV_0006
+%ITI.DeviceDesc7% = mvcntp, PCI\VEN_112f&DEV_0007
+%ITI.DeviceDesc8% = mvcntp, PCI\VEN_112f&DEV_0008
+%ITI.DeviceDesc100% = mvcntp, PCI\VEN_112f&DEV_0100
+
+;
+; General installation section
+;
+
+[mvcntp]
+AddReg=mvcntp.AddReg
+;CopyFiles=mvcntp.CopyFiles
+
+
+[mvcntp.AddReg]
+
+
+;
+; File sections
+;
+
+[mvcntp.CopyFiles]
+mvcntp.sys,mvcntp2k.sys
+
+
+;
+; Service Installation
+;
+
+[mvcntp.Services]
+AddService = mvcntp, 0x00000002 , mvcntp_Service_Inst, mvcntp_EventLog_Inst
+
+[mvcntp_Service_Inst]
+DisplayName    = %mvcntp.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 1                  ; SERVICE_SYSTEM_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = ExtendedBase
+ServiceBinary  = %12%\mvcntp.sys
+
+
+[mvcntp_EventLog_Inst]
+AddReg = mvcntp_EventLog_AddReg
+
+[mvcntp_EventLog_AddReg]
+HKR,,EventMessageFile,0x00020000,"%SystemRoot%\System32\IoLogMsg.dll;%SystemRoot%\System32\drivers\mvcntp.sys"
+HKR,,TypesSupported,0x00010001,7
+
+
+
+
+;
+; Source file information
+;
+
+[SourceDisksNames.x86]
+1 = %DiskId1%,,,""
+
+[SourceDisksFiles]
+; Files for disk Imaging Technology Inc. Installation Disk #1 (Media)
+mvcntp2k.sys = 1,,
+
+
+[Strings]
+
+;
+; Non-Localizable Strings
+;
+
+REG_SZ         = 0x00000000
+REG_MULTI_SZ   = 0x00010000
+REG_EXPAND_SZ  = 0x00020000
+REG_BINARY     = 0x00000001
+REG_DWORD      = 0x00010001
+SERVICEROOT    = "System\CurrentControlSet\Services"
+
+;
+; Localizable Strings
+;
+
+ITI.DeviceDesc0 = "ITI Image Capture Device"
+ITI.DeviceDesc1 = "IM-PCI Image Manager"
+ITI.DeviceDesc2 = "CMC-PCI Computational Module Controller"
+ITI.DeviceDesc3 = "IC-ASYNC Multi-Image Capture"
+ITI.DeviceDesc4 = "PCDig Digital Image Capture"
+ITI.DeviceDesc5 = "PC-RGB Color Image Capture"
+ITI.DeviceDesc6 = "PC-LineScan Digital Image Capture"
+ITI.DeviceDesc7 = "PCVisionPlus Image Capture Device"
+ITI.DeviceDesc8 = "PC-CamLink Image Capture Device"
+ITI.DeviceDesc100 = "PC-Dig Test Generator"
+DiskId1 = "Coreco Imaging, Inc. Installation Disk (Media)"
+ITI = "Coreco Imaging, Inc."
+mvcntp.SvcDesc="mvcntp"

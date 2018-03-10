@@ -1,0 +1,194 @@
+; BdIIVGA.INF For Bandit II
+;
+; Installation inf for the Bandit II display driver
+;
+; Copyright (c) 2001-2002 Coreco Inc.
+;
+
+
+[Version]
+Signature="$CHICAGO$"
+Provider=%Coreco%
+ClassGUID={4D36E968-E325-11CE-BFC1-08002BE10318}
+Class=Display
+
+[DestinationDirs]
+DefaultDestDir   = 11
+BdIIVga_Drivers   = 12   ; drivers
+BdIIVga_System32  = 11   ; system32
+SBdIIVga_Drivers   = 12   ; drivers
+SBdIIVga_System32  = 11   ; system32
+
+;
+; Driver information
+;
+
+[Manufacturer]
+%Coreco%   = Coreco.Mfg
+
+;
+; This section should be modified to reflect the chip strings the
+; user will see in the Displays applet when the new driver is being
+; installed from the driver diskette.
+;
+
+[Coreco.Mfg]
+Coreco Imaging Bandit II Display Driver (IX)= BdIIVga,PCI\VEN_5333&DEV_8C12&SUBSYS_085111EC
+Coreco Imaging Bandit II Display Driver (S)= SBdIIVga,PCI\VEN_5333&DEV_8C2E&SUBSYS_085111EC
+Coreco Imaging Bandit II Display Driver (MX)= BdIIVga,PCI\VEN_5333&DEV_8C10&SUBSYS_085111EC
+
+
+;
+; General installation section
+;
+
+[BdIIVga]
+;CopyFiles=BdIIVga_Drivers, BdIIVga_System32
+;DelFiles = BdIIVga_Drivers, BdIIVga_System32
+
+[SBdIIVga]
+;CopyFiles=SBdIIVga_Drivers, SBdIIVga_System32
+;DelFiles =SBdIIVga_Drivers, SBdIIVga_System32
+
+;
+; File sections
+;
+
+[BdIIVga_Drivers]
+BdIIVgaM.sys     ; miniport driver
+
+[BdIIVga_System32]
+BdIIVga.dll      ; Bandit II display driver
+;BdIIVga.inf	     ; Bandit II
+mxicd.dll        ; OpenGL ICD driver
+
+[SBdIIVga_Drivers]
+BdIIVgaSM.sys     ; miniport driver
+
+[SBdIIVga_System32]
+BdIIVgaS.dll      ; Bandit II display driver
+;BdIIVga.inf	     ; Bandit II
+ssicdnt.dll        ; OpenGL ICD driver
+
+
+;Default path is WINDIR
+[RemoveFile]
+inf\s3savmx.inf
+
+;
+; Service Installation
+;
+
+[BdIIVga.Services]
+AddService = BdIIVgaM, 0x00000002, BdIIVga_Service_Inst, BdIIVga_EventLog_Inst
+
+[SBdIIVga.Services]
+AddService = BdIIVgaSM, 0x00000002, SBdIIVga_Service_Inst, SBdIIVga_EventLog_Inst
+
+[BdIIVga_Service_Inst]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 1                  ; SERVICE_SYSTEM_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\BdIIVgaM.sys
+
+[SBdIIVga_Service_Inst]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 1                  ; SERVICE_SYSTEM_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Video
+ServiceBinary  = %12%\BdIIVgaSM.sys
+
+[BdIIVga_EventLog_Inst]
+AddReg = BdIIVga_EventLog_AddReg
+
+[SBdIIVga_EventLog_Inst]
+AddReg = SBdIIVga_EventLog_AddReg
+
+[BdIIVga_EventLog_AddReg]
+HKR,,EventMessageFile,0x00020000,"%SystemRoot%\System32\IoLogMsg.dll;%SystemRoot%\System32\drivers\BdIIVgaM.sys"
+HKR,,TypesSupported,0x00010001,7
+
+[SBdIIVga_EventLog_AddReg]
+HKR,,EventMessageFile,0x00020000,"%SystemRoot%\System32\IoLogMsg.dll;%SystemRoot%\System32\drivers\BdIIVgaSM.sys"
+HKR,,TypesSupported,0x00010001,7
+
+;
+; Software Installation
+;
+
+[BdIIVga.SoftwareSettings]
+AddReg = BdIIVga_SoftwareDeviceSettings
+DelReg = BdIIVga_UserPreferences  
+
+[SBdIIVga.SoftwareSettings]
+AddReg = SBdIIVga_SoftwareDeviceSettings
+DelReg = BdIIVga_UserPreferences  
+
+[BdIIVga_SoftwareDeviceSettings]
+HKLM,Software\Microsoft\%WinNTDir%\CurrentVersion\OpenGLdrivers,SavageMx,,"mxicd"
+HKR,, InstalledDisplayDrivers,      %REG_MULTI_SZ%, BdIIVga
+HKR,, VgaCompatible,                %REG_DWORD%,    0
+HKR,, SupportIcd,                %REG_DWORD%,    1
+
+[SBdIIVga_SoftwareDeviceSettings]
+HKLM,Software\Microsoft\%WinNTDir%\CurrentVersion\OpenGLdrivers,SSavage,,"ssicdnt"
+HKR,, InstalledDisplayDrivers,      %REG_MULTI_SZ%, BdIIVgaS
+HKR,, VgaCompatible,                %REG_DWORD%,    0
+HKR,, SupportIcd,                %REG_DWORD%,    1
+
+; user-selected preferences
+[BdIIVga_UserPreferences]
+HKR,, UseDDCInfo
+HKR,, PanelCenterExpandMode
+HKR,, SingleController
+HKR,, NtscTvPositionX
+HKR,, NtscTvPositionY
+HKR,, Pal6TvPositionX
+HKR,, Pal6TvPositionY
+HKR,, Pal8TvPositionX
+HKR,, Pal8TvPositionY
+HKR,, DisplaysActivePreference
+HKR,, TvStandardPreference
+HKR,, DdcMaxRefresh
+
+;
+; Source file information
+;
+
+[SourceDisksNames.x86]
+1 = %DiskId%,,,""
+
+[SourceDisksFiles]
+BdIIVgaM.sys       = 1      ; all files on Disk 1
+BdIIVgaSM.sys       = 1
+BdIIVga.dll        = 1
+BdIIVgaS.dll        = 1
+;BdIIVga.inf        = 1
+mxicd.dll          = 1
+ssicdnt.dll			= 1
+
+[Strings]
+
+;
+; Non-Localizable Strings
+;
+
+REG_SZ         = 0x00000000
+REG_MULTI_SZ   = 0x00010000
+REG_DWORD      = 0x00010001
+
+;
+; Localizable Strings
+;
+
+DiskId      = "Coreco Imaging Bandit II Installation DISK (VIDEO)"
+Coreco      = "Coreco Imaging"
+WinNTDir    = "Windows NT"
+Coreco         = "Coreco Imaging"
+CURVER      = "Software\Microsoft\Windows\CurrentVersion"
+
+
+
+
+

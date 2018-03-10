@@ -1,0 +1,294 @@
+/******************************************************************************
+ *
+ * MODULE
+ *    pctreg.h
+ *
+ * REVISION INFORMATION
+ *    $Logfile: /ifc/include/pctreg.h $
+ *    $Revision: 1.1 $
+ *    $Modtime: 12/01/99 2:37p $
+ *
+ * ABSTRACT
+ *    IFC PCTstDig Register names
+ *
+ * TECHNICAL NOTES
+ *
+ *
+ * Copyright (c) 1999 Imaging Technology, Inc.  All rights reserved.
+ *
+ ******************************************************************************/
+
+#ifndef _PCT_REG
+#define _PCT_REG
+
+
+
+enum {                    /* PCI configuration space registers */
+
+    PCT_VENDOR_ID_32,
+    PCT_DEVICE_ID_32,
+    PCT_PCICMDSTAT_32,
+    PCT_PCICMD_32,
+    PCT_IOEN_32,
+    PCT_MEMEN_32,
+    PCT_PCIBMEN_32,
+    PCT_PAREN_32,
+    PCT_SEREN_32,
+    PCT_FBB_32,
+    PCT_PCISTAT_32,
+    PCT_DTPAR_32,
+    PCT_STABT_32,
+    PCT_RTABT_32,
+    PCT_RMABT_32,
+    PCT_SSERR_32,
+    PCT_DPARE_32,
+    PCT_REVID_32,
+    PCT_MEMSZ_32,
+    PCT_CLASSCODE_32,
+    PCT_CALN_32,
+    PCT_LAT_32,
+    PCT_HDR_32,
+    PCT_BIST_32,
+    PCT_BADR0_32,
+    PCT_BADR1_32,
+    PCT_BADR2_32,
+    PCT_BADR3_32,
+    PCT_BADR4_32,
+    PCT_BADR5_32,
+    PCT_XROM_32,
+    PCT_INTLN_32,
+    PCT_INTPIN_32,
+    PCT_MINGNT_32,
+    PCT_MAXLAT_32,
+    PCT_MAX_CFGREG
+};
+
+enum {
+    PCT_MBOX1_32 = PCT_MAX_CFGREG,   /* PCI Interface Control Register Set  */
+    PCT_MB_FXSZ_32,
+    PCT_MB_ILACE_32,
+    PCT_MB_HSHK_32,
+    PCT_MB_FYSZ_32,
+    PCT_MB_PIX_32,
+    PCT_MB0X2_32,
+    PCT_MB_AOIXST_32,
+    PCT_MB_AOIYST_32,
+    PCT_MB0X3_32,
+    PCT_MB_AOIXSZ_32,
+    PCT_MB_AOIYSZ_32,
+    PCT_MB_FYSZHI_32,
+    PCT_MB_STFLD_32,
+    PCT_MB_BMSEMA_32,
+    PCT_MB0X4_32,
+    PCT_MB_IMGADR_32,
+    PCT_MB_BMINITFLG_32,
+    PCT_MB_CONT_32,
+    PCT_BMDST_32,
+    PCT_BMXC_32,
+    PCT_INTCTL_32,
+    PCT_INTEN_32,
+    PCT_BINTEN_32,
+    PCT_INTST_32,
+    PCT_BINTST_32,
+    PCT_MAINT_32,
+    PCT_TAINT_32,
+    PCT_ENDIAN_32,
+    PCT_BMCTL_32,
+    PCT_FIFOFL_32,
+    PCT_FIFO4P_32,
+    PCT_FIFOEM_32,
+    PCT_BMDONE_32,
+    PCT_BMREQ_32,
+    PCT_NVAD_32,
+    PCT_RST_32,
+    PCT_FIFOCLR_32,
+    PCT_NVCTL_32,
+    PCT_MAXREGS1
+};
+
+enum {
+    PCT_BRDSTAT = PCT_MAXREGS1,
+	PCT_FPGADONE,
+	PCT_FPGARDY,
+	PCT_REV,
+	PCT_ORCAPRGM,
+	PCT_ORCARST,
+
+	PCT_DT1_STAT,
+    PCT_DT1_SYNC1,
+    PCT_DT1_SYNC2,
+    PCT_DT1_EXPRIN1,
+    PCT_DT1_EXPRIN2,
+    PCT_DT1_CCTL,
+
+    PCT_DT1_CON,
+    PCT_DT1_CMULTI,
+    PCT_DT1_OPINTR,
+    PCT_DT1_INPSEL,
+	PCT_DT1_RS422_EN,
+    PCT_DT1_TSEL,
+    PCT_DT1_EXTEN,
+    PCT_DT1_FPGA,
+    PCT_DT1_RFPGA,
+
+    PCT_DT1_PLL,
+    PCT_DT1_SYNDAT,
+    PCT_DT1_SYNCLKA,
+    PCT_DT1_SYNCLKB,
+    PCT_DT1_SYNMUXA,
+    PCT_DT1_SYNMUXB,
+    PCT_DT1_TRIG,
+    PCT_DT1_TRIG1,
+    PCT_DT1_TRIG2,
+    PCT_DT1_OPSTRB,
+    PCT_DT1_FRST,
+    PCT_DT1_HTOTAL,
+    PCT_DT1_HESYNC,
+    PCT_DT1_HOFF,
+    PCT_DT1_VTOTAL,
+    PCT_DT1_VESYNC,
+    PCT_DT1_PTGCTL,
+	PCT_DT1_EXT,
+	PCT_DT1_FLD,
+	PCT_DT1_HPOL,
+	PCT_DT1_VPOL,
+    PCT_DT1_CNTVAL,
+    PCT_DT1_CNTCTL,
+    PCT_DT1_B0UD,
+    PCT_DT1_B1UD,
+    PCT_DT1_B2UD,
+    PCT_DT1_B3UD,
+    PCT_DT1_CNTSEL0,
+    PCT_DT1_TIMCTL,
+    PCT_DT1_TSTART,
+    PCT_DT1_TIMSEL,
+    PCT_DT1_TPOL,
+    PCT_DT1_TIMER,
+    PCT_DT1_OPORT,
+    PCT_DT1_IPORT,
+
+
+    PCT_DT2_STAT,
+    PCT_DT2_SYNC1,
+    PCT_DT2_SYNC2,
+    PCT_DT2_EXPRIN1,
+    PCT_DT2_EXPRIN2,
+    PCT_DT2_CCTL,
+    PCT_DT2_CON,
+    PCT_DT2_CMULTI,
+    PCT_DT2_OPINTR,
+    PCT_DT2_INPSEL,
+	PCT_DT2_RS422_EN,
+    PCT_DT2_TSEL,
+    PCT_DT2_EXTEN,
+    PCT_DT2_FPGA,
+    PCT_DT2_RFPGA,
+    PCT_DT2_PLL,
+    PCT_DT2_SYNDAT,
+    PCT_DT2_SYNCLKA,
+    PCT_DT2_SYNCLKB,
+    PCT_DT2_SYNMUXA,
+    PCT_DT2_SYNMUXB,
+    PCT_DT2_TRIG,
+    PCT_DT2_TRIG1,
+    PCT_DT2_TRIG2,
+    PCT_DT2_OPSTRB,
+    PCT_DT2_FRST,
+    PCT_DT2_HTOTAL,
+    PCT_DT2_HESYNC,
+    PCT_DT2_HOFF,
+    PCT_DT2_VTOTAL,
+    PCT_DT2_VESYNC,
+    PCT_DT2_PTGCTL,
+	PCT_DT2_EXT,
+	PCT_DT2_FLD,
+	PCT_DT2_HPOL,
+	PCT_DT2_VPOL,
+    PCT_DT2_CNTVAL,
+    PCT_DT2_CNTCTL,
+    PCT_DT2_B0UD,
+    PCT_DT2_B1UD,
+    PCT_DT2_B2UD,
+    PCT_DT2_B3UD,
+    PCT_DT2_CNTSEL0,
+    PCT_DT2_TIMCTL,
+    PCT_DT2_TSTART,
+    PCT_DT2_TIMSEL,
+    PCT_DT2_TPOL,
+    PCT_DT2_TIMER,
+    PCT_DT2_OPORT,
+    PCT_DT2_IPORT,
+
+
+    PCT_PLLPROG_32,
+
+    PCT_CTL_32,
+
+	PCT_CAMSEL_32,
+	PCT_LPFSEL_32,
+	PCT_PLLCS_32,
+	PCT_PLLREF_SEL_32,
+	PCT_PCTEN_32,
+	PCT_DACCS_32,
+	PCT_GAIN_SEL_32,
+
+    PCT_PIX_32,
+
+    PCT_DAC_32,
+
+	PCT_PLLA0_16,
+    PCT_PLLA1_16,  
+    PCT_PLLA2_16,  
+    PCT_PLLA3_16,  
+    PCT_PLLA4_16,  
+    PCT_PLLA5_16,  
+    PCT_PLLA6_16,
+	
+    PCT_FDIV_16,  
+    PCT_LO_16,    
+    PCT_HI_16,    
+    PCT_RDIV_16,  
+    PCT_REFPOL_16,
+    PCT_VCO_16,   
+    PCT_PFD_16,   
+    PCT_PDEN_16,  
+    PCT_INTFLT_16,
+    PCT_INTVCO_16, 
+    PCT_CLKSEL_16,
+	
+    PCT_FBKSEL_16, 
+    PCT_FBKPOL_16, 
+    PCT_ADD_16,    
+    PCT_SWLW_16,   
+    PCT_PDA_16,    
+    PCT_PDB_16,    
+    PCT_LDLG_16,   
+    PCT_FINEEN_16,
+	
+    PCT_LCOUNT_16, 
+    PCT_OMUX1_16,  
+    PCT_OMUX2_16,  
+    PCT_OMUX3_16,  
+    PCT_OMUX4_16,  
+    PCT_DACRST_16, 
+    PCT_AUXEN_16,  
+    PCT_AUXCLK_16, 
+    PCT_EXTREF_16, 
+
+	PCT_PREF_16,
+	PCT_NREF_16,
+	PCT_GAIN_VOLT_16,
+	PCT_CLMP_VOLT_16,
+	PCT_STRIP_VOLT_16,
+	PCT_IN_DAC0_16,
+	PCT_IN_DAC1_16,
+	PCT_SPARE_DAC_16,
+
+
+    PCT_MAXREGS2       /* keep it last */
+};
+
+
+
+
+#endif

@@ -1,0 +1,7 @@
+/IPort.idl////*///
+/IPortCallback.idl////*///
+/IPortServer.idl////*///
+/IPortServerCallback.idl////*///
+/ITcpIpConnection.idl////*///
+/ITcpIpServer.idl////*///
+/interface.dsp////*///

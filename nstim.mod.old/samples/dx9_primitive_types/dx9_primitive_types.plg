@@ -1,0 +1,25 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: dx9_primitive_types - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\thang\LOCALS~1\Temp\RSP12BE.tmp" with contents
+[
+d3dx9dt.lib d3d9.lib winmm.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:yes /pdb:"Debug/dx9_primitive_types.pdb" /debug /machine:I386 /out:"Debug/dx9_primitive_types.exe" /pdbtype:sept 
+.\Debug\dx9_primitive_types.obj
+.\Debug\dx9_primitive_types.res
+]
+Creating command line "link.exe @C:\DOCUME~1\thang\LOCALS~1\Temp\RSP12BE.tmp"
+<h3>Output Window</h3>
+Linking...
+
+
+
+<h3>Results</h3>
+dx9_primitive_types.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

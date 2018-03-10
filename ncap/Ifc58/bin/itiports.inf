@@ -1,0 +1,189 @@
+; ITIPorts.inf
+;
+; Installation inf for the ITI Image Capture Serial Port Devices .
+;
+; (c) Copyright 2000-2001 Imaging Technology Inc. 
+;
+
+
+[Version]
+Signature="$Windows NT$"
+Provider=%ITI%
+Class=Ports
+ClassGuid={4D36E978-E325-11CE-BFC1-08002BE10318}
+
+[DestinationDirs]
+DefaultDestDir   = 11
+mvcntp.CopyFiles = 12  ; drivers
+
+;
+; Driver information
+;
+
+[Manufacturer]
+%ITI%   = ITI.Mfg
+
+[ITI.Mfg]
+%ITI.DeviceDesc0% = mvcntp, Mvcntp\PCD00
+%ITI.DeviceDesc1% = mvcntp, Mvcntp\PCD01
+%ITI.DeviceDesc2% = mvcntp, Mvcntp\PCD10
+%ITI.DeviceDesc3% = mvcntp, Mvcntp\PCD11
+%ITI.DeviceDesc4% = mvcntp, Mvcntp\PCD20
+%ITI.DeviceDesc5% = mvcntp, Mvcntp\PCD21
+%ITI.DeviceDesc6% = mvcntp, Mvcntp\PCD30
+%ITI.DeviceDesc7% = mvcntp, Mvcntp\PCD31
+%ITI.DeviceDesc8% = mvcntp, Mvcntp\PCD40
+%ITI.DeviceDesc9% = mvcntp, Mvcntp\PCD41
+%ITI.DeviceDesc10% = mvcntp, Mvcntp\PCD50
+%ITI.DeviceDesc11% = mvcntp, Mvcntp\PCD51
+%ITI.DeviceDesc12% = mvcntp, Mvcntp\PCD60
+%ITI.DeviceDesc13% = mvcntp, Mvcntp\PCD61
+%ITI.DeviceDesc14% = mvcntp, Mvcntp\PCD70
+%ITI.DeviceDesc15% = mvcntp, Mvcntp\PCD71
+%ITI.DeviceDesc16% = mvcntp, Mvcntp\PCL00
+%ITI.DeviceDesc17% = mvcntp, Mvcntp\PCL01
+%ITI.DeviceDesc18% = mvcntp, Mvcntp\PCL10
+%ITI.DeviceDesc19% = mvcntp, Mvcntp\PCL11
+%ITI.DeviceDesc20% = mvcntp, Mvcntp\PCL20
+%ITI.DeviceDesc21% = mvcntp, Mvcntp\PCL21
+%ITI.DeviceDesc22% = mvcntp, Mvcntp\LNK00
+%ITI.DeviceDesc23% = mvcntp, Mvcntp\LNK10
+%ITI.DeviceDesc24% = mvcntp, Mvcntp\LNK20
+%ITI.DeviceDesc25% = mvcntp, Mvcntp\LNK30
+%ITI.DeviceDesc26% = mvcntp, Mvcntp\LNK40
+%ITI.DeviceDesc27% = mvcntp, Mvcntp\LNK50
+%ITI.DeviceDesc28% = mvcntp, Mvcntp\LNK60
+%ITI.DeviceDesc29% = mvcntp, Mvcntp\LNK70
+%ITI.DeviceDesc30% = mvcntp, Mvcntp\COM3
+%ITI.DeviceDesc31% = mvcntp, Mvcntp\COM4
+%ITI.DeviceDesc32% = mvcntp, Mvcntp\COM5
+%ITI.DeviceDesc33% = mvcntp, Mvcntp\COM6
+%ITI.DeviceDesc34% = mvcntp, Mvcntp\COM7
+%ITI.DeviceDesc35% = mvcntp, Mvcntp\COM8
+%ITI.DeviceDesc36% = mvcntp, Mvcntp\COM9
+%ITI.DeviceDesc37% = mvcntp, Mvcntp\COM10
+%ITI.DeviceDesc38% = mvcntp, Mvcntp\COM11
+%ITI.DeviceDesc39% = mvcntp, Mvcntp\COM12
+%ITI.DeviceDesc40% = mvcntp, Mvcntp\COM13
+%ITI.DeviceDesc41% = mvcntp, Mvcntp\COM14
+%ITI.DeviceDesc42% = mvcntp, Mvcntp\COM15
+
+
+
+;
+; General installation section
+;
+
+[mvcntp]
+AddReg=mvcntp.AddReg
+CopyFiles=mvcntp.CopyFiles
+
+
+[mvcntp.AddReg]
+
+
+;
+; File sections
+;
+
+[mvcntp.CopyFiles]
+;mvcntp.sys,mvcntpxp.sys
+
+
+;
+; Service Installation
+;
+
+[mvcntp.Services]
+AddService = mvcntp, 0x00000002 , mvcntp_Service_Inst
+
+[mvcntp_Service_Inst]
+DisplayName    = %mvcntp.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 1                  ; SERVICE_SYSTEM_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = ExtendedBase
+ServiceBinary  = %12%\mvcntp.sys
+
+
+
+
+
+;
+; Source file information
+;
+
+[SourceDisksNames.x86]
+1 = %DiskId1%,,,""
+
+[SourceDisksFiles]
+; Files for disk Imaging Technology Inc. Installation Disk #1 (Media)
+mvcntpxp.sys = 1,,
+
+
+[Strings]
+
+;
+; Non-Localizable Strings
+;
+
+REG_SZ         = 0x00000000
+REG_MULTI_SZ   = 0x00010000
+REG_EXPAND_SZ  = 0x00020000
+REG_BINARY     = 0x00000001
+REG_DWORD      = 0x00010001
+SERVICEROOT    = "System\CurrentControlSet\Services"
+
+;
+; Localizable Strings
+;
+
+ITI.DeviceDesc0 = "PCDig 0 Serial Port 0"
+ITI.DeviceDesc1 = "PCDig 0 Serial Port 1"
+ITI.DeviceDesc2 = "PCDig 1 Serial Port 0"
+ITI.DeviceDesc3 = "PCDig 1 Serial Port 1"
+ITI.DeviceDesc4 = "PCDig 2 Serial Port 0"
+ITI.DeviceDesc5 = "PCDig 2 Serial Port 1"
+ITI.DeviceDesc6 = "PCDig 3 Serial Port 0"
+ITI.DeviceDesc7 = "PCDig 3 Serial Port 1"
+ITI.DeviceDesc8 = "PCDig 4 Serial Port 0"
+ITI.DeviceDesc9 = "PCDig 4 Serial Port 1"
+ITI.DeviceDesc10 = "PCDig 5 Serial Port 0"
+ITI.DeviceDesc11 = "PCDig 5 Serial Port 1"
+ITI.DeviceDesc12 = "PCDig 6 Serial Port 0"
+ITI.DeviceDesc13 = "PCDig 6 Serial Port 1"
+ITI.DeviceDesc14 = "PCDig 7 Serial Port 0"
+ITI.DeviceDesc15 = "PCDig 7 Serial Port 1"
+ITI.DeviceDesc16 = "PCLineScan 0 Serial Port 0"
+ITI.DeviceDesc17 = "PCLineScan 0 Serial Port 1"
+ITI.DeviceDesc18 = "PCLineScan 1 Serial Port 0"
+ITI.DeviceDesc19 = "PCLineScan 1 Serial Port 1"
+ITI.DeviceDesc20 = "PCLineScan 2 Serial Port 0"
+ITI.DeviceDesc21 = "PCLineScan 2 Serial Port 1"
+ITI.DeviceDesc22 = "PC-CamLink 0 Serial Port"
+ITI.DeviceDesc23 = "PC-CamLink 1 Serial Port"
+ITI.DeviceDesc24 = "PC-CamLink 2 Serial Port"
+ITI.DeviceDesc25 = "PC-CamLink 3 Serial Port"
+ITI.DeviceDesc26 = "PC-CamLink 4 Serial Port"
+ITI.DeviceDesc27 = "PC-CamLink 5 Serial Port"
+ITI.DeviceDesc28 = "PC-CamLink 6 Serial Port"
+ITI.DeviceDesc29 = "PC-CamLink 7 Serial Port"
+ITI.DeviceDesc30 = "Coreco Imaging Serial Port COM3"
+ITI.DeviceDesc31 = "Coreco Imaging Serial Port COM4"
+ITI.DeviceDesc32 = "Coreco Imaging Serial Port COM5"
+ITI.DeviceDesc33 = "Coreco Imaging Serial Port COM6"
+ITI.DeviceDesc34 = "Coreco Imaging Serial Port COM7"
+ITI.DeviceDesc35 = "Coreco Imaging Serial Port COM8"
+ITI.DeviceDesc36 = "Coreco Imaging Serial Port COM9"
+ITI.DeviceDesc37 = "Coreco Imaging Serial Port COM10"
+ITI.DeviceDesc38 = "Coreco Imaging Serial Port COM11"
+ITI.DeviceDesc39 = "Coreco Imaging Serial Port COM12"
+ITI.DeviceDesc40 = "Coreco Imaging Serial Port COM13"
+ITI.DeviceDesc41 = "Coreco Imaging Serial Port COM14"
+ITI.DeviceDesc42 = "Coreco Imaging Serial Port COM15"
+
+
+
+DiskId1 = "Coreco Imaging, Inc. Installation Disk (Media)"
+ITI = "Coreco Imaging, Inc."
+mvcntp.SvcDesc="mvcntp"

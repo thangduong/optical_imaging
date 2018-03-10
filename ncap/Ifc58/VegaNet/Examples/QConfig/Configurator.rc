@@ -1,0 +1,672 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Configurator.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Configurator.ico"
+IDR_CONFIGTYPE          ICON    DISCARDABLE     "res\\ConfiguratorDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 16
+BEGIN
+    BUTTON      ID_FILE_NEW
+    SEPARATOR
+    BUTTON      ID_EDIT_CONFIG
+    SEPARATOR
+    BUTTON      ID_EDIT_TRANSFORM
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New Module",                 ID_FILE_NEW
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About QConfig...",           ID_APP_ABOUT
+    END
+END
+
+IDR_CONFIGTYPE MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New Module",                 ID_FILE_NEW
+        MENUITEM "&Close",                      ID_FILE_CLOSE
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "Edit"
+    BEGIN
+        MENUITEM "&Configuration",              ID_EDIT_CONFIG
+        MENUITEM "Transform",                   ID_EDIT_TRANSFORM
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&New Window",                 ID_WINDOW_NEW
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icons",              ID_WINDOW_ARRANGE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About QConfig...",           ID_APP_ABOUT
+    END
+END
+
+IDR_MENU_GRP MENU DISCARDABLE 
+BEGIN
+    POPUP "Group Menu"
+    BEGIN
+        MENUITEM "Properties",                  ID_GROUPMENU_PROPERTIES
+        MENUITEM "Edit Dialog",                 ID_GROUPMENU_EDITDIALOG
+        MENUITEM "Why Not Applicable?",         ID_GROUPMENU_APPLICABILITY
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About QConfig"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "VegaNet QConfig Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 1999-2001",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_SELECTMODULE DIALOG DISCARDABLE  0, 0, 244, 228
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Open Module"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Open",IDOK,17,96,39,14
+    PUSHBUTTON      "Cancel",IDCANCEL,197,198,39,14
+    LISTBOX         IDC_MODULE_LIST,18,31,107,58,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Detected Module",IDC_SELECT_MODULE,18,22,78,8
+    PUSHBUTTON      "Browse",IDC_SELECT_CONFIG_FILE,143,198,39,14
+    EDITTEXT        IDC_CONFIG_FILENAME,7,198,130,14,ES_AUTOHSCROLL
+    LTEXT           "Configuration File (Optional):",IDC_STATIC,7,188,89,10
+    GROUPBOX        "Open Physical Module",IDC_STATIC,7,6,207,165
+    LISTBOX         IDC_NODE_LIST,138,30,58,58,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Group Node",IDC_STATIC,139,22,40,8
+    GROUPBOX        "DNS or UNC Node Name",IDC_STATIC,16,116,105,37
+    PUSHBUTTON      "Enter",IDC_ENTER_NODE,52,140,37,10
+    EDITTEXT        IDC_DNS_NODE,22,126,95,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Set User...",IDC_SET_USER,141,120,50,14
+END
+
+IDD_MANAGE_CAMERAS DIALOG DISCARDABLE  0, 0, 271, 62
+STYLE DS_3DLOOK | DS_CONTROL | WS_CHILD | WS_CLIPSIBLINGS | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Recursive",IDC_RECURSIVE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,18,37,48,10
+    GROUPBOX        "File Selection Options",IDC_STATIC,7,16,257,39
+    CONTROL         "Select All",IDC_ALL_FILES,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,99,37,45,10
+    CONTROL         "Treat Files As Lists",IDC_FILES_AS_LISTS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,177,37,75,10
+END
+
+IDD_CONFIGURE DIALOG DISCARDABLE  0, 0, 441, 335
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Configure"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Read",IDC_READ_CAM_FILES,113,24,39,14
+    PUSHBUTTON      "Copy Camera",IDC_BUTTON_COPY_CAMERA,97,71,65,14
+    CONTROL         "",IDC_MSFLEXGRID_PARAMS,
+                    "{6262D3A0-531B-11CF-91F6-C2863C385E30}",WS_TABSTOP,138,
+                    145,296,184
+    PUSHBUTTON      "Save",IDC_BUTTON_SAVE,113,41,39,14
+    PUSHBUTTON      "Close",IDCANCEL,4,110,50,14
+    EDITTEXT        IDC_EDIT_PARAM_VAL,71,101,40,12,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE | NOT WS_BORDER
+    LTEXT           "Cameras",IDC_STATIC,221,5,28,8
+    COMBOBOX        IDC_COMBO_PARAM_VAL,81,115,105,54,CBS_DROPDOWNLIST | 
+                    CBS_SORT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Applicable Parameters",IDC_STATIC,140,134,71,8
+    LTEXT           "Parameter Group",IDC_STATIC,4,134,54,8
+    LTEXT           "Port Number",IDC_STATIC,5,70,40,8
+    COMBOBOX        IDC_PORT_LIST,4,79,57,55,CBS_DROPDOWNLIST | WS_TABSTOP
+    PUSHBUTTON      "Save",IDC_SAVE_USER_CFG,19,42,39,14
+    PUSHBUTTON      "Read",IDC_READ_USER_CFG,19,24,39,14
+    CONTROL         "Tree1",IDC_PGRP_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | 
+                    TVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,4,145,132,184
+    GROUPBOX        "User Config File",IDC_STATIC,4,11,72,52
+    GROUPBOX        "Camera Definition File",IDC_STATIC,91,11,82,52
+    CONTROL         "Show Subgroup Params",IDC_INC_SUBGROUP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,274,132,92,10
+    LISTBOX         IDC_CAMERA_LIST,221,15,184,106,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL
+    PUSHBUTTON      "Librarian Mode Off",IDC_LIBR_MODE,97,89,65,14
+END
+
+IDD_NEW_CAMERA DIALOG DISCARDABLE  0, 0, 206, 87
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New Camera"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT_NEW_CAMERA_NAME,17,28,171,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,45,66,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,111,66,50,14
+    LTEXT           "Please Enter New Camera Name:",IDC_STATIC,17,16,121,12
+END
+
+IDD_GROUP_PROPS DIALOG DISCARDABLE  0, 0, 233, 153
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Group Properties"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,176,132,50,14
+    LTEXT           "Group Name:",IDC_STATIC,24,32,43,8
+    LTEXT           "Group Mask:",IDC_STATIC,24,86,42,8
+    LTEXT           "Enum Value:",IDC_STATIC,24,59,41,8
+    EDITTEXT        IDC_EDIT_GNAME,69,32,121,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_GMASK,69,86,121,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    EDITTEXT        IDC_EDIT_GENUM,69,59,124,12,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    GROUPBOX        "Properties",IDC_STATIC,16,14,189,93
+END
+
+IDD_NOT_APPL DIALOG DISCARDABLE  0, 0, 264, 181
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Item Not Currently Applicable"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,207,160,50,14
+    EDITTEXT        IDC_NOT_APPL_REASON,26,61,207,70,ES_MULTILINE | 
+                    ES_READONLY
+    GROUPBOX        "",IDC_STATIC,15,21,229,121
+    EDITTEXT        IDC_NA_ITEM_NAME,26,34,181,23,ES_MULTILINE | ES_READONLY | 
+                    NOT WS_BORDER
+END
+
+IDD_TRANSFORM DIALOG DISCARDABLE  0, 0, 196, 180
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Transforms"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,139,142,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,139,159,50,14
+    CONTROL         "No Transform",IDC_TRANSFORM,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,31,33,92,11
+    CONTROL         "Flip Transform",IDC_FLIP_TRANSFORM,"Button",
+                    BS_AUTORADIOBUTTON,31,57,92,11
+    CONTROL         "Mirror Transform",IDC_MIRROR_TRANSFORM,"Button",
+                    BS_AUTORADIOBUTTON,31,81,92,11
+    CONTROL         "Rotate 180 Transform",IDC_ROT180_TRANSFORM,"Button",
+                    BS_AUTORADIOBUTTON,31,105,92,11
+END
+
+IDD_USERNAME DIALOG DISCARDABLE  0, 0, 260, 87
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Enter Network Password"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,214,7,39,14
+    PUSHBUTTON      "Cancel",IDCANCEL,214,24,39,14
+    LTEXT           "Incorrect password or unknown username for:",IDC_STATIC,
+                    7,9,145,8
+    LTEXT           "&Connect As:",IDC_STATIC,7,37,40,8
+    LTEXT           "&Password:",IDC_STATIC,7,53,34,8
+    EDITTEXT        IDC_USERNAME,50,34,143,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PASSWORD,50,50,143,12,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "&Domain:",IDC_STATIC,7,69,27,8
+    EDITTEXT        IDC_DOMAIN,50,66,143,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_NODE_NAME,11,19,115,10,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,2
+ PRODUCTVERSION 1,0,0,2
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Imaging Technology Inc.\0"
+            VALUE "FileDescription", "QConfig MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 2\0"
+            VALUE "InternalName", "QConfig\0"
+            VALUE "LegalCopyright", "Copyright (C) 1999-2001\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "QConfig.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "QConfig Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 2\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_SELECTMODULE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 237
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 221
+    END
+
+    IDD_MANAGE_CAMERAS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 264
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_CONFIGURE, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 434
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 328
+    END
+
+    IDD_NEW_CAMERA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 199
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 80
+    END
+
+    IDD_GROUP_PROPS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 226
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 146
+    END
+
+    IDD_NOT_APPL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 257
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 174
+    END
+
+    IDD_TRANSFORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 189
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 173
+    END
+
+    IDD_USERNAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_CONFIGURE DLGINIT
+BEGIN
+    IDC_MSFLEXGRID_PARAMS, 0x37a, 306, 0
+0x0024, 0x0000, 0x0037, 0x0032, 0x0045, 0x0036, 0x0037, 0x0031, 0x0032, 
+0x0030, 0x002d, 0x0035, 0x0039, 0x0035, 0x0039, 0x002d, 0x0031, 0x0031, 
+0x0063, 0x0066, 0x002d, 0x0039, 0x0031, 0x0046, 0x0036, 0x002d, 0x0043, 
+0x0032, 0x0038, 0x0036, 0x0033, 0x0043, 0x0033, 0x0038, 0x0035, 0x0045, 
+0x0033, 0x0030, 0x0012, 0x0000, 0x0001, 0x0000, 0x000a, 0x0000, 0x004c, 
+0x0000, 0x0000, 0x4321, 0x1234, 0x0008, 0x0000, 0x2de4, 0x0000, 0x1ee7, 
+0x0000, 0x6f42, 0x506f, 0x0000, 0x0006, 0x0080, 0x0000, 0x0002, 0x0000, 
+0x0002, 0x0000, 0x0001, 0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0005, 
+0x8000, 0x0008, 0x8000, 0x000f, 0x8000, 0x0012, 0x8000, 0x000d, 0x8000, 
+0x000e, 0x8000, 0x8080, 0x0080, 0xc0c0, 0x00c0, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0001, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0xffff, 0xffff, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 0x0002, 
+0x0003, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0001, 0x0000, 0x0001, 
+0x0004, 0x0000, 0x0000, 0x0000, 0x5203, 0x0be3, 0x8f91, 0x11ce, 0xe39d, 
+0xaa00, 0x4b00, 0x51b8, 0x0001, 0x0000, 0x0190, 0x4244, 0x0001, 0x4d0d, 
+0x2053, 0x6153, 0x736e, 0x5320, 0x7265, 0x6669, 0x5204, 0x0be3, 0x8f91, 
+0x11ce, 0xe39d, 0xaa00, 0x4b00, 0x51b8, 0x746c, 0x0000, 0x0000, 0x0000, 
+
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "QConfig"
+    IDR_CONFIGTYPE          "\nConfig\nConfig\n\n\nConfigurator.Document\nConfig Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "QConfig"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new module view\nNew Module"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_MODULE_SELECT        "Select a module from list of physically present modules"
+    ID_OPEN_MODULE          "Select a module from a list of physically present modules\nOpen Module"
+    ID_EDIT_CONFIG          "Edit Module Parameters\nEdit Configuration"
+    ID_EDIT_TRANSFORM       "Change the acquisition transform\nChange the acquisition transform"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\Configurator.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,19 @@
+import "objidl.idl";
+import "unknwn.idl";
+import "wtypes.idl";
+
+// prev event
+cpp_quote("#define	PSE_ON_CONNECT		0")
+cpp_quote("#define	PSE_SERVER_START	1")
+cpp_quote("#define	PSE_SERVER_STOP		2")
+
+[
+	object,
+	uuid(F197538F-094E-49f3-8517-A2BB41B8697E),
+	helpstring("IPort Interface"),
+	pointer_default(unique)
+]
+interface IPortServerCallback : IUnknown
+{
+	HRESULT OnPortEvent(IUnknown* caller, DWORD event, DWORD param1, DWORD param2);
+};

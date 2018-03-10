@@ -1,0 +1,24 @@
+import "objidl.idl";
+import "unknwn.idl";
+import "wtypes.idl";
+
+[
+	object,
+	uuid(85D85EAD-4839-4085-93D3-30C8B3DF8262),
+	helpstring("INStimProfile Interface"),
+	pointer_default(unique)
+]
+interface INStimProfile : IUnknown
+{
+	HRESULT IsFullscreen();
+	HRESULT GetTcpIpCmdPort(DWORD* pPort);
+	HRESULT GetTcpIpBindAddress(char** pBindAddr);
+	HRESULT MapXCoordinate(const char* pData, int* pXCoord);
+	HRESULT MapYCoordinate(const char* pData, int* pYCoord);
+	HRESULT ShouldHideCursor();
+	HRESULT GetLptSyncPortInfo(int* pPortNum, int* pPreFrame, int* pPostFrame, int* pStimOnStrobeBit, int* pFrameDropBit);
+	HRESULT GetGraphicsEngineThreadPriority(int* pPriority);
+	HRESULT GetWindowedResolution(int* pWidth, int* pHeight);
+	HRESULT GetFullscreenResolution(int* pWidth, int* pHeight, int* pFramerate);
+	HRESULT GetLogPath(char* pLogPath);
+};

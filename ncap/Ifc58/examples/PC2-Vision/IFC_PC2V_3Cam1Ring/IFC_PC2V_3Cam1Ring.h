@@ -1,0 +1,68 @@
+//------------------------------------------------------------------------------
+//
+//  APPLICATION:    IFC Demo for the PC2-Vision Frame Grabber
+//
+//  FILE:           IFC_PC2V_3Cam1Ring.h
+//
+//  BIRTH DATE:     July 2003
+//
+//  LANGUAGE:       C++
+//
+//  LIBRARY:        -MFC (Visual C++ V6.0)
+//                  -IFC V5.8
+//
+//  OS:             Windows 2000 (Win32)
+//
+//  PLATFORM:       Intel Pentium (IA-32)
+//
+//  COMPANY:        Coreco Imaging
+//                  St-Laurent, Quebec, Canada
+//
+//------------------------------------------------------------------------------
+
+#if !defined(AFX_IFC_PC2V_3CAM1RING_H__713F0DBB_5014_4DEF_99C1_216C7224427B__INCLUDED_)
+#define AFX_IFC_PC2V_3CAM1RING_H__713F0DBB_5014_4DEF_99C1_216C7224427B__INCLUDED_
+
+#if _MSC_VER > 1000
+#pragma once
+#endif // _MSC_VER > 1000
+
+#ifndef __AFXWIN_H__
+	#error include 'stdafx.h' before including this file for PCH
+#endif
+
+#include "resource.h"		// main symbols
+
+/////////////////////////////////////////////////////////////////////////////
+// CIFC_PC2V_3Cam1RingApp:
+// See IFC_PC2V_3Cam1Ring.cpp for the implementation of this class
+//
+
+class CIFC_PC2V_3Cam1RingApp : public CWinApp
+{
+public:
+	CIFC_PC2V_3Cam1RingApp();
+
+// Overrides
+	// ClassWizard generated virtual function overrides
+	//{{AFX_VIRTUAL(CIFC_PC2V_3Cam1RingApp)
+	public:
+	virtual BOOL InitInstance();
+	//}}AFX_VIRTUAL
+
+// Implementation
+
+	//{{AFX_MSG(CIFC_PC2V_3Cam1RingApp)
+		// NOTE - the ClassWizard will add and remove member functions here.
+		//    DO NOT EDIT what you see in these blocks of generated code !
+	//}}AFX_MSG
+	DECLARE_MESSAGE_MAP()
+};
+
+
+/////////////////////////////////////////////////////////////////////////////
+
+//{{AFX_INSERT_LOCATION}}
+// Microsoft Visual C++ will insert additional declarations immediately before the previous line.
+
+#endif // !defined(AFX_IFC_PC2V_3CAM1RING_H__713F0DBB_5014_4DEF_99C1_216C7224427B__INCLUDED_)

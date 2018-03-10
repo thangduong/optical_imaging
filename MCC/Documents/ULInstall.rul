@@ -1,0 +1,805 @@
+//////////////////////////////////////////////////////////////////////////////
+//
+//    Example InstallShield 3 Script to install your 
+//	  Custom Universal Library application
+//    and Instacal/UL for Windows 95/8/ME and NT/2000/XP.
+//
+//    Copyright (c) 1996-2002 by Measurement Computing Corp.
+//    All Rights Reserved.
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+//    !!!!!!!   IMPORTANT NOTE   !!!!!!!
+//
+//    The disk space requirements that are specified below
+//    should be updated for every new product release!
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+//    This installation script will perform the following steps:
+//      1.  Copy all required files to the selected destination directory tree
+//      2.  Update the registry and system files as needed
+//      3.  Create a desktop folder and add icons for readme.txt and (optionally) InsCal32.exe
+//      4.  Ask the user if they'd like to view readme.txt, and if so, run notepad.exe
+//      5.  Offer to restart the system.
+//
+//    The user may later uninstall the entire package using Add / Remove Programs...
+//
+//////////////////////////////////////////////////////////////////////////////
+//
+//	List of CBI files to install:
+//
+//      inscal32.exe ( InstaCal executable )
+//      cbi_cal.dll, cbi_node.dll, cbi_prop.dll, cbi_test.dll ( Instacal support library )
+//		cberrcode.txt, ulprops.txt, ndercode.txt ( CBI messages )
+//		cbw32.dll  ( Universal Library DLL )
+//		cbi95.inf, cbicom.inf  ( Windows device info )
+//		mfc42.dll, msvcrt.dll, olepro32.dll, oleaut32.dll  ( InstaCal system support )
+//		readme.txt  ( CBI InstaCal information )
+//      Win95/98/ME:  cbul32.vxd  ( Win32 Virtual device driver )
+//      WinNT/2000:  cbul32.sys, cbulwdm.sys	( NT and WDM device driver )
+//		vicomponents.ocx	( InstaCal support )
+//
+//
+//	List of files for your custom application:
+//
+//  Files for MY custom example applications, yours may be different
+//  	aitest01.exe
+//		NOTE: 	aitest01.exe is provided for demonstration purposes only.
+//		Measurement Computing does not provide support for this application.
+//		You are not allowed to redistribute aitest01.exe.
+//		support files for aitest01.exe are the same as those installed for InstaCal: MFC42.DLL and MSVCRT.DLL
+
+//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+declare //  ***** begin declarations *****
+//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+// Include declarations for the list dialogs:
+#include "Sddialog.h"
+
+// = = = = = = = = = = = = 
+// Constant declarations
+// = = = = = = = = = = = = 
+// *** CUSTOMIZE STEP 1 ***
+// --> Edit the default strings below to reflect your intended installation
+#define APP_NAME        "\n  Application for Universal Library"
+#define BASE_PATH		"MCC\\"
+#define COMPANY_NAME    "My Company Name"
+#define PRODUCT_NAME    "Analog Input Testing"
+#define PRODUCT_VERSION "1.0" 
+#define DEINSTALL_KEY   "ULAppDeinstKey"
+#define UNINSTALL_NAME  "UL Application"
+#define PRODUCT_KEY     "Aitest01.exe"
+//==================================================================
+
+//    !!!!!!!   IMPORTANT NOTE   !!!!!!!
+//    The following disk space requirement estimates should be updated for every new product release:
+#define SIZEOF_INSTACAL       3300000 // Disk space required for Instacal
+#define SIZEOF_UL95           3500000 // Disk space required for Universal Library and Windows 95 support files
+#define SIZEOF_ULNT           3500000 // Disk space required for Universal Library and Windows NT support files
+
+//==================================================================
+// *** CUSTOMIZE STEP 2 ***
+// --> Edit the size of your custom UL application below
+#define SIZEOF_CUSTOM_UL_APP  100000 // Disk space required for custom UL application
+//===================================================================
+
+// Global variable declarations.
+	STRING  szMsg1, szMsg2;
+	STRING  szFileSet, szTitle, svUninstLogFile, svUninstallName, svDeinstallKey, szUninstDLL;
+	STRING  svTarget, szPath, szProgram;
+	STRING  svReturnLine;
+	STRING  szWorkFile, szWorkFileP;
+	STRING  szCBULDev;
+	STRING  szKey, szName, szValue,szClass;
+	STRING  szDefFolder, svResultFolder, szCommandLine, szItemName;
+	NUMBER  nvResult;
+	STRING  svResult, svFileFound;
+	STRING  szNotePad;
+	STRING  szWorkingDir, szIconPath, szShortCutKey;
+	BOOL    bSpaceOk, bWin95, bWinNT;
+	BOOL    bModAuto, bModSysINI, bMustRestart;
+	NUMBER  nResult, nExclusive, nLineNum, nFlag, nFileHandle;
+	NUMBER  nDiskSpaceRequired, nvItemCount;
+	NUMBER  nIcon;
+	STRING  svOldPath;
+	NUMBER  nvType, nvSize, nTmp;
+	STRING	szCompanyLongName, szCompanyShortName, szAppName;
+	STRING	szLine, szLineNoSpc, szTemp, szTemp2;
+	NUMBER	nColon, nStart, nEnd, nLine, nLength;
+
+//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+program //\\ ***** end declarations, begin code *****
+//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+/////////
+StartHere:
+/////////
+	Disable(BACKGROUND);
+	Disable(FEEDBACK_FULL);     // Don't show vertical progress meters
+	bMustRestart = FALSE;
+
+	// 1 // Define long company name
+	szCompanyLongName = COMPANY_NAME;		// A reasonable default
+
+	// 2 // Create a "short" company name string
+	szCompanyShortName = szCompanyLongName;
+	nEnd = StrFind(szCompanyLongName, ",");
+	if (nEnd > 0) then
+		StrSub(szCompanyShortName, szCompanyLongName, 0, nEnd);
+	endif;
+	
+    // 3 //  Concat Company name and App name for setup screen
+	szAppName = szCompanyLongName + APP_NAME;
+
+// - - - - - - - - - - - - - - - - 
+//  prep the install process
+// - - - - - - - - - - - - - - - - 
+
+	// Set installation info, which is required for registry entries.
+	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	InstallationInfo(szCompanyShortName, PRODUCT_NAME, PRODUCT_VERSION, PRODUCT_KEY);
+
+	// Set up the installation screen.
+	// - - - - - - - - - - - - - - - - 
+	SetTitle(szAppName, 24, WHITE);
+	SetColor(BACKGROUND, BK_BLUE); // Dark blue.
+	SetColor(STATUSBAR, BLUE);     // Bright blue.
+	SetTitle("Setup", 0, BACKGROUNDCAPTION); // Caption bar text.
+	Enable(FULLWINDOWMODE);
+	Enable(BITMAP256COLORS);
+	Enable(BACKGROUND);
+	Enable(DIALOGCACHE);
+
+// Display your company logo in the main setup screen:
+//=========================================================================
+// *** CUSTOMIZE STEP 3 ***
+// --> You may wish to add bitmap files to be used as a background during setup
+// --> Create a  TRANLOGO.BMP and OPAQLOGO.BMP and place them
+// --> in the DISK1 directory 
+//=========================================================================
+	// If TRANLOGO.BMP is on disk 1, display as a transparent bitmap:
+	szWorkFile = "TRANLOGO.BMP";
+	if (FindFile(SRCDIR, szWorkFile, svResult) >= 0) then
+		szWorkFileP = SRCDIR ^ szWorkFile;
+		PlaceBitmap(szWorkFileP, 0, 7, 7, BITMAPICON | LOWER_RIGHT);
+	else // Else if OPAQLOGO.BMP is on disk 1, display as an opaque bitmap:
+		szWorkFile = "OPAQLOGO.BMP";
+		if (FindFile(SRCDIR, szWorkFile, svResult) >= 0) then
+			szWorkFileP = SRCDIR ^ szWorkFile;
+			PlaceBitmap(szWorkFileP, 0, 7, 7, LOWER_RIGHT);
+		endif;
+	endif;
+
+// Create a Welcome dialog:
+// - - - - - - - - - - - - 
+WelcomeDlg:
+	Disable(BACKBUTTON);
+	Welcome("", 0);
+	Enable(BACKBUTTON);
+	GetSystemInfo(OS, nvResult, svResult); // get the target operating system
+	bWin95 = FALSE;
+	bWinNT = FALSE;
+	switch (nvResult)
+		case IS_WINDOWS95:	// Running Windows 95.
+			bWin95 = TRUE;
+		case IS_WINDOWSNT:	 // Running Windows NT.
+			bWinNT = TRUE;
+		default:
+			MessageBox( "This program requires Windows 95/98 or NT.", WARNING );
+			exit;
+	endswitch;
+
+// - - - - - - - - - - - - - 
+//   get target directory
+// - - - - - - - - - - - - - 
+
+	svTarget = TARGETDISK ^ BASE_PATH;
+
+GetCBTargetDirectory: // <-- Ask the user for a destination location
+                      //     - - - - - - - - - - - - - - - - - - - - 
+	szMsg1 = "Setup will install Instacal in the following directory.\n\n" +
+		"To install in this directory, click Next.\n\n" +
+		"To install in a different directory, click Browse " +
+		"and select another directory.\n\n" +
+		"Click Cancel to exit the Setup program.";
+	if (AskDestPath("", szMsg1, svTarget, 0) = BACK) then
+		goto WelcomeDlg;
+	endif;
+
+// Calculate the disk space required for the selected components:
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	nDiskSpaceRequired = 0;
+	if (bWin95) then
+		nDiskSpaceRequired = nDiskSpaceRequired + SIZEOF_UL95 + SIZEOF_INSTACAL;
+	else
+		nDiskSpaceRequired = nDiskSpaceRequired + SIZEOF_ULNT + SIZEOF_INSTACAL;
+	endif;
+
+	nDiskSpaceRequired = nDiskSpaceRequired + SIZEOF_CUSTOM_UL_APP;
+
+// Perform space check of target drive.
+// - - - - - - - - - - - - - - - - - - 
+	bSpaceOk = TRUE;
+	if (GetDiskSpace(svTarget) < nDiskSpaceRequired) then
+		szMsg1 = "There is not enough space available on the disk\n" +
+			"'" + svTarget + "' \n" +
+			"Please free up some space or change the target location\n" +
+			"to a different disk";
+		MessageBox(szMsg1, WARNING);
+		bSpaceOk = FALSE;
+	endif;
+
+// If not enough space, ask user to try again.
+// - - - - - - - - - - - - - - - - - - - - - - 
+	if (bSpaceOk = FALSE)
+		goto GetCBTargetDirectory;
+
+// Set the App Paths key for InstaCal
+// - - - - - - - - - - - - - - - - - - 
+	RegDBSetItem(REGDB_APPPATH, svTarget);
+	szProgram = svTarget ^ "InsCal32.exe";
+	RegDBSetItem(REGDB_APPPATH_DEFAULT, szProgram);
+
+
+SelectDesktopFolderForIcons:	// <-- setup desktop folder
+								//     - - - - - - - - - - - 
+	szTitle = "Create Program Folder";
+	szDefFolder = szCompanyShortName;
+	if (SelectFolder(szTitle, szDefFolder, svResultFolder) = BACK) then
+		goto GetCBTargetDirectory;
+	endif;
+
+SetupFilesToTransfer:	// <-- file transfer prep
+						//     - - - - - - - - - -					
+	Disable(DIALOGCACHE);
+
+// Prepare InstallShield to record deinstallation information
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+	svDeinstallKey = DEINSTALL_KEY;
+	svUninstallName = UNINSTALL_NAME;
+	DeinstallStart(svTarget, svUninstLogFile, svDeinstallKey, 0);
+	RegDBSetItem(REGDB_UNINSTALL_NAME, svUninstallName);
+
+// Set up cbUninst.DLL file for auto inclusion when removing this program.
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    szUninstDLL = svTarget ^ "cbUninst.dll";
+    _ConfigureUninstInfo (svDeinstallKey, szUninstDLL,""); 
+
+//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+//   ***** begin the file installation SETUP *****
+//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+		szFileSet = "CBI32"; // Define the file set.
+		FileSetBeginDefine(szFileSet);
+		TARGETDIR = svTarget;
+		CopyFile("ReadMe.txt", "ReadMe.txt");  // <-- install readme.txt (not compressed)
+
+// Install the non-compressed ULPROPS.TXT, LOGO.BMP and CBI95.INF
+//=========================================================================
+		TARGETDIR = svTarget;
+		CopyFile("ULPROPS.TXT", "ULPROPS.TXT");
+		CopyFile("LOGO.BMP", "LOGO.BMP");
+		CopyFile("CBI95.INF", "CBI95.INF");
+		CopyFile ( "CBICOM.INF", "CBICOM.INF" );
+
+//=========================================================================
+// *** CUSTOMIZE STEP 4 ***
+// --> Unpack your custom UL application
+		TARGETDIR = svTarget ^ "custom_app";
+		CompressGet("DATA.Z", "CUSTOM\\", COMP_NORMAL);
+//=========================================================================
+//=========================================================================
+// *** CUSTOMIZE STEP 5 ***
+// --> Handle custom registry entries for unique shared files/DLLs here
+//		PUT YOUR CODE HERE
+//=========================================================================
+// --> The rest of this file sets up the Universal Library and InstaCal
+//=========================================================================
+// -->	Install the cbUninst.DLL file
+//		- - - - - - - - - - - - - - - 	
+		TARGETDIR = svTarget;
+		CompressGet("DATA.Z", "UNINST\\", COMP_NORMAL);
+
+// -->	Install Instacal files
+//		- - - - - - - - - - - -	
+		TARGETDIR = svTarget;
+		CompressGet("DATA.Z", "INSTACAL\\", COMP_UPDATE_DATE);
+
+// -->	Install shared UL files 
+//		- - - - - - - - - - - -	
+		TARGETDIR = svTarget;
+		CompressGet("DATA.Z", "UL32\\", COMP_UPDATE_DATE);
+
+// -->	Install Windows 95-specific files
+//		- - - - - - - - - - - -	- - - - - 
+		if (bWin95) then
+			TARGETDIR = svTarget;
+			CompressGet("DATA.Z", "UL95\\", COMP_UPDATE_DATE);
+		endif;
+// -->	Install Windows NT-specific files
+//		- - - - - - - - - - - -	- - - - - 
+		if (bWinNT) then
+			TARGETDIR = svTarget;
+			CompressGet("DATA.Z", "ULNT\\", COMP_UPDATE_DATE);
+		endif;
+
+// -->	Install MS support files for VIX Components (required by InstaCal)
+//		- - - - - - - - - - - -	- - - - - -	- - - - - - - - - - - - - - - -
+// NOTE:	SHAREDFILE option seems to cause installation to fail if file 
+//			not already installed ... hence, the FindFile() test is necessary.
+
+		TARGETDIR = WINSYSDIR;
+		if ( FindFile( WINSYSDIR, "MFC42.DLL", svFileFound ) < 0 ) then 
+			CompressGet("DATA.Z", "MSDLLS\\MFC42.DLL", COMP_UPDATE_VERSION);
+		else
+			CompressGet("DATA.Z", "MSDLLS\\MFC42.DLL", COMP_UPDATE_VERSION | SELFREGISTER | SHAREDFILE);
+		endif;
+
+		if ( FindFile( WINSYSDIR, "MSVCRT.DLL", svFileFound ) < 0 ) then 
+			CompressGet("DATA.Z", "MSDLLS\\MSVCRT.DLL", COMP_UPDATE_VERSION );
+		else
+			CompressGet("DATA.Z", "MSDLLS\\MSVCRT.DLL", COMP_UPDATE_VERSION | SHAREDFILE); 
+		endif;
+
+		if ( FindFile( WINSYSDIR, "OLEPRO32.DLL", svFileFound ) < 0 ) then 
+			CompressGet("DATA.Z", "MSDLLS\\OLEPRO32.DLL", COMP_UPDATE_VERSION);
+		else
+			CompressGet("DATA.Z", "MSDLLS\\OLEPRO32.DLL", COMP_UPDATE_VERSION | SELFREGISTER | SHAREDFILE);
+		endif;
+
+		if ( FindFile( WINSYSDIR, "OLEAUT32.DLL", svFileFound ) < 0 ) then 
+			CompressGet("DATA.Z", "MSDLLS\\OLEAUT32.DLL", COMP_UPDATE_VERSION);
+		else
+			CompressGet("DATA.Z", "MSDLLS\\OLEAUT32.DLL", COMP_UPDATE_VERSION | SELFREGISTER | SHAREDFILE);
+		endif;
+		 
+// -->	Install 32-bit VIX Components into the CB directory:
+//		- - - - - - - - - - - -	- - - - - -	- - - - - - - - 
+// NOTE:	VIX requires that there exist :	
+//					HKEY_LOCAL_MACHINE\SOFTWARE\ComputerBoards
+//			key in the registry.
+
+// --> VIX registry entries
+//     - - - - - - - - - - -
+		TARGETDIR = svTarget;
+	    RegDBSetDefaultRoot( HKEY_LOCAL_MACHINE);
+		szKey="\\Software\\ComputerBoards";
+		szClass="";
+		if ( 1>RegDBKeyExist(szKey) ) then
+			RegDBCreateKeyEx( szKey, szClass );
+		endif;
+		szPath = svTarget;
+		LongPathToShortPath(szPath);
+		szKey = "\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce";
+
+// -->	Install VIX Components (required by InstaCal)
+//		- - - - - - - - - - - -	- - - - - -	- - - - -
+// NOTE:	SHAREDFILE option seems to cause installation to fail if file 
+//			not already installed ... hence, the FindFile() test is necessary.
+
+		if ( 0=FindFile( WINSYSDIR, "VICOMPONENTS.OCX", svFileFound ) ) then
+			TARGETDIR = WINSYSDIR;
+			CompressGet( "DATA.Z", "VIX\\VICOMPONENTS.OCX", COMP_UPDATE_VERSION | SELFREGISTER | SHAREDFILE );
+			TARGETDIR = svTarget;
+            RegDBSetKeyValueEx(szKey, "ComputerBoards3", REGDB_STRING, 
+			WINSYSDIR ^ "regsvr32 /s " + WINSYSDIR ^ "vicomponents.ocx", -1);
+		elseif ( 0>FindFile( svTarget, "VICOMPONENTS.OCX", svFileFound ) ) then
+			CompressGet("DATA.Z", "VIX\\VICOMPONENTS.OCX", COMP_UPDATE_VERSION);
+		    RegDBSetKeyValueEx(szKey, "ComputerBoards3", REGDB_STRING, 
+			WINSYSDIR ^ "regsvr32 /s " + szPath ^ "vicomponents.ocx", -1);
+      else
+			CompressGet("DATA.Z", "VIX\\VICOMPONENTS.OCX", COMP_UPDATE_VERSION | SELFREGISTER | SHAREDFILE);
+		    RegDBSetKeyValueEx(szKey, "ComputerBoards3", REGDB_STRING, 
+			WINSYSDIR ^ "regsvr32 /s " + szPath ^ "vicomponents.ocx", -1);
+      endif;
+		
+
+// -->	Create registry entries to register DLLs after system restart:
+//		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// NOTE:	This is necessary because these DLLs can be shared among
+//		many applications, and are likely to have been in use when
+//		we tried to install them.  InstallShield will replace the
+//		original files with these new copies the next time the system
+//		is restarted, but the SELFREGISTER step above will have been
+//		performed under the wrong filename!
+
+		RegDBSetDefaultRoot( HKEY_LOCAL_MACHINE);
+		szKey = "\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce";
+		RegDBSetKeyValueEx(szKey, "ComputerBoards1", REGDB_STRING, 
+			WINSYSDIR ^ "regsvr32 /s " + WINSYSDIR ^ "mfc42.dll", -1);
+		RegDBSetKeyValueEx(szKey, "ComputerBoards2", REGDB_STRING, 
+			WINSYSDIR ^ "regsvr32 /s " + WINSYSDIR ^ "olepro32.dll", -1);
+		RegDBSetKeyValueEx(szKey, "ComputerBoards4", REGDB_STRING, 
+			WINSYSDIR ^ "regsvr32 /s " + WINSYSDIR ^ "oleaut32.dll", -1);
+//the OCX might already be in WINSYSDIR...see above
+		
+	FileSetEndDefine(szFileSet);
+
+//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+//   ***** end the file installation SETUP *****
+//\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+// Set up progress indicator and information gauge.
+// - - - - - - - - - - - - - - - - - - - - - - - - 
+	Disable(DIALOGCACHE);
+	Disable(STATUSOLD);
+	Enable(STATUSDLG);
+	Enable(STATUS);
+	Enable(INDVFILESTATUS);
+	SetStatusWindow(0, "Copying program files...");
+	StatusUpdate(ON, 95);
+
+// execute the installation
+// - - - - - - - - - - - - -
+	nResult = FileSetPerformEz(szFileSet, 0);
+
+// check for errors
+// - - - - - - - - -
+	switch (nResult)
+		case FS_DONE:    // Successful completion.
+
+		case FS_CREATEDIR:    // Create directory error.
+			MessageBox("Unable to create a directory under " + TARGETDIR + "."+
+				"Please check write access to this directory.", SEVERE);
+			exit;
+
+		case FS_FILENOTINLIB:    // Tried to install a file that wasn't on the disk!
+			MessageBox("A file that is needed for the configuration you "+
+				"have selected is missing from the setup disks.  "+
+				"Please contact Technical Support to resolve this problem."+
+				"\nMissing File: "+ERRORFILENAME, SEVERE);
+			exit;
+
+		default:    // Group all other errors under default label.
+			MessageBox("There was an error during installation of this software.  "+
+				"Please make sure that:"+
+				"\n  1. You are using a complete set of installation diskettes"+
+				"\n  2. The target disk volume has sufficient free space"+
+				"\n  3. You have proper access rights to the installation directory",
+				SEVERE);
+			exit;
+	endswitch;
+
+// Install the library and drivers in the Windows Registry Database:
+
+	SetStatusWindow(97, "Updating drivers...");
+
+// Create registry database entries for CBW32.DLL:
+	RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+	szKey = "SOFTWARE\\Universal Library";
+	szClass = "";
+	RegDBCreateKeyEx( szKey, szClass );
+
+	szName = "RootDir";
+	szValue = svTarget;             // eg: "C:\\CB"
+	RegDBSetKeyValueEx(szKey, szName, REGDB_STRING, szValue, -1);
+
+// = = = = = = = = = = = =	
+//  Install on Windows NT
+// = = = = = = = = = = = =	
+	if (bWinNT) then
+        // Copy the NT and WDM drivers to the System Drivers directory
+        VarSave(SRCTARGETDIR);
+	    SRCDIR = svSrc;
+	    TARGETDIR = WINSYSDIR ^ "drivers";
+	    CopyFile("CBUL32.SYS", "CBUL32.SYS");  // copy driver to system
+		CopyFile("CBULWDM.SYS", "CBULWDM.SYS");  // copy driver to system
+		
+        // Copy the device description file to the Windows INF directory
+		TARGETDIR = WINDIR ^ "inf";
+		CopyFile("CBI95.INF","CBI95.INF");
+	    VarRestore(SRCTARGETDIR);
+
+		// - - - - - - - - - - - - - - - - - - - - - - - - 
+		// Create registry database entries for CBUL32.SYS:
+		// - - - - - - - - - - - - - - - - - - - - - - - - 
+		szKey = "System\\CurrentControlSet\\Services\\CBUL32";
+		RegDBCreateKeyEx( szKey, szClass );
+		szName = "DisplayName";
+		szValue = szCompanyShortName + " DataAcq";
+		RegDBSetKeyValueEx(szKey, szName, REGDB_STRING, szValue, -1);
+
+		szName = "ImagePath";
+		szValue = "System32\\drivers\\CBUL32.SYS";
+		RegDBSetKeyValueEx(szKey, szName, REGDB_STRING, szValue, -1);
+
+		szName = "Type";
+		RegDBSetKeyValueEx(szKey, szName, REGDB_NUMBER, "1", -1);
+
+		szName = "Start";
+		RegDBSetKeyValueEx(szKey, szName, REGDB_NUMBER, "1", -1);
+
+		szName = "Group";
+		szValue = "Extended Base";
+		RegDBSetKeyValueEx(szKey, szName, REGDB_STRING, szValue, -1);
+
+		szName = "ErrorControl";
+		RegDBSetKeyValueEx(szKey, szName, REGDB_NUMBER, "1", -1);
+
+	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+	//	Create the following key to allocate resources for PCI boards:
+	//	[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\CBUL32\CBUL32]
+	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		szKey = "System\\CurrentControlSet\\Services\\CBUL32\\CBUL32";
+		szName = "";
+		RegDBCreateKeyEx(szKey, szName);	// szName is actually 'szClass'
+
+	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+	//	Add the CB installation directory to the user's path setting
+	//	in the registry: 
+	//  [HKEY_ LOCAL_MACHINE] \System \CurrentControlSet\ Control\Session Manager\Environment
+	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+		szKey = "\\System\\CurrentControlSet\\Control\\Session Manager\\Environment";
+		szName = "Path";
+		nTmp = RegDBGetKeyValueEx(szKey, szName, nvType, svOldPath, nvSize);
+	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+	//	ERROR: RegDBGetKeyValueEx() returned 0-length key value!
+	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		if (0 >= nvSize) then  
+			nvType = REGDB_STRING;  // initialize nvType for a PATH string:
+		endif;
+	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+	//	ERROR: RegDBGetKeyValueEx() returned REGDB_BINARY key value!
+	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+		if (REGDB_BINARY = nvType) then // This doesn't ,make any sense for a PATH string
+			nvType = REGDB_STRING;		// registry was probably corrupted
+		endif;
+
+		if (0>nTmp) then
+			PathSet( svTarget );
+		else
+			PathSet( svOldPath );
+			PathAdd( svTarget, "", PARTIAL, BEFORE );
+		endif;
+
+		nTmp = PathGet( szValue );
+		if (0>nTmp) then
+			szValue = svTarget + ";" + svOldPath;
+		endif;
+
+		RegDBSetKeyValueEx(szKey, szName, nvType, szValue, -1);
+	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+	//	Unfortunately, dynamically loading the driver is not 100% reliable.
+	//	We installed a new driver, so tell the user they must reboot:
+	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+		bMustRestart = TRUE;
+	endif;	// bWinNT
+
+// = = = = = = = = = = = =	
+//  Install on Windows 95
+// = = = = = = = = = = = =	
+	if (bWin95) then  
+		bMustRestart = TRUE;
+	// - - - - - - - - - 
+	//	install INF files
+	// - - - - - - - - - 
+		VarSave ( SRCTARGETDIR ); 
+		SRCDIR = svTarget;
+		TARGETDIR = WINDIR ^ "INF";
+		CopyFile ( "CBI95.INF", "CBI95.INF" );
+		CopyFile ( "CBICOM.INF", "CBICOM.INF" );
+		VarRestore ( SRCTARGETDIR );
+	// - - - - - - - - - 
+	//	edit autoexec.bat
+	// - - - - - - - - - 
+		if (AskYesNo("Would you like Setup to modify AUTOEXEC.BAT for you?",
+				YES) = YES) then
+			bModAuto = TRUE;
+			szMsg1 = "Your old AUTOEXEC.BAT will be saved as AUTOEXEC.BAK.";
+			MessageBox(szMsg1, INFORMATION);
+		else
+			bModAuto = FALSE;
+			szMsg1 = "Changes needed for this installation will be placed in AUTOEXEC.NEW.";
+			MessageBox(szMsg1, INFORMATION);
+		endif;
+		VarSave(SRCTARGETDIR);
+		SRCDIR = WINSYSDISK;			// "C:\\";
+		TARGETDIR = WINSYSDISK;		// "C:\\";
+		if (bModAuto) then
+			CopyFile("AUTOEXEC.BAT", "AUTOEXEC.BAK");
+			szWorkFileP = WINSYSDISK ^ "AUTOEXEC.BAT";
+		else
+			CopyFile("AUTOEXEC.BAT", "AUTOEXEC.NEW");
+			szWorkFileP = WINSYSDISK ^ "AUTOEXEC.NEW";
+		endif;
+		BatchSetFileName(szWorkFileP);
+		szPath = svTarget;
+		LongPathToShortPath(szPath);
+		EzBatchAddPath("PATH", szPath, "", BEFORE);
+		VarRestore(SRCTARGETDIR);
+	// - - - - - - - - - - 
+	//	update system.ini
+	// - - - - - - - - - - 
+		if (AskYesNo("Would you like Setup to modify SYSTEM.INI for you?",
+					YES) = YES) then
+			bModSysINI = TRUE;
+			szMsg1 = "Your old SYSTEM.INI will be saved as SYSTEM.BAK.";
+			MessageBox(szMsg1, INFORMATION);
+		else
+			bModSysINI = FALSE;
+			szMsg1 = "Changes needed for this installation will be placed in SYSTEM.NEW.";
+			MessageBox(szMsg1, INFORMATION);
+		endif;
+		VarSave(SRCTARGETDIR);
+		SRCDIR = WINDIR;
+		TARGETDIR = WINDIR;
+		CopyFile("SYSTEM.INI", "SYSTEMC.INI");
+		if ( bModSysINI ) then
+			szWorkFile = "SYSTEM.INI";
+		else
+			szWorkFile = "SYSTEMC.INI";
+		endif;
+		nFlag = RESTART;
+	// - - - - - - - - - - - - - - - - - - - - - -
+	//	delete all refs to CBUL32 from SYSTEM.INI
+	// - - - - - - - - - - - - - - - - - - - - - -
+		repeat  
+			nResult = FileGrep(szWorkFile, "cbul32", svReturnLine, nLineNum, nFlag);
+			if (nResult = 0) then
+				FileDeleteLine(szWorkFile, nLineNum, nLineNum);
+			endif;
+			nFlag = CONTINUE;
+		until (nResult != 0);
+	// - - - - - - - - - - - - - - - - - - - - -
+	//	insert reference to driver in [386Enh]
+	// - - - - - - - - - - - - - - - - - - - - -
+		szCBULDev = svTarget ^ "CBUL32.vxd";  // string points to driver
+		LongPathToShortPath(szCBULDev);
+		szCBULDev = "device=" + szCBULDev;  // build "device=" entry
+		nFlag = RESTART;  // locate [386ENH] section in system.ini
+		nResult = FileGrep(szWorkFile, "386Enh", svReturnLine, nLineNum, nFlag);
+		if (nResult = 0) then
+			FileInsertLine(szWorkFile, szCBULDev, nLineNum, AFTER);
+		endif;
+		if (bModSysINI) then
+			CopyFile("SYSTEMC.INI", "SYSTEM.BAK");
+		else
+			CopyFile("SYSTEMC.INI", "SYSTEM.NEW");
+		endif;
+		DeleteFile("SYSTEMC.INI");
+		VarRestore(SRCTARGETDIR);
+	endif;	// bWin95
+
+// = = = = = = = = = = = = = = = = = 
+// Create program folders and icons.
+// = = = = = = = = = = = = = = = = = 
+InstallProgramItems:
+
+// We create a folder on the desktop containing two items,
+// a shortcut to Instacal, and another shortcut to ReadMe.txt
+
+	SetStatusWindow(99, "Creating program folders and icons...");
+
+// Create the folder which the folder icon will point to:
+	CreateProgramFolder(svResultFolder);
+
+// The command line for the folder icon must be the folder path, and 
+// it must be enclosed in quotation marks if the path is longer than 
+// eight characters.
+
+	szCommandLine = svTarget ^ "InsCal32.exe";
+	szItemName = "Instacal";
+	LongPathToQuote(szCommandLine, TRUE);
+	szWorkingDir  = "";
+	szIconPath    = "";
+	nIcon         = 0;
+	szShortCutKey = "";
+	nFlag         = REPLACE;
+	AddFolderIcon(svResultFolder, szItemName, szCommandLine,
+		szWorkingDir, szIconPath, nIcon, szShortCutKey, nFlag);
+
+	szCommandLine = svTarget ^ "ReadMe.txt";
+	szItemName = "Read Me";
+	LongPathToQuote(szCommandLine, TRUE);
+	AddFolderIcon(svResultFolder, szItemName, szCommandLine,
+		szWorkingDir, szIconPath, nIcon, szShortCutKey, nFlag);
+
+//=========================================================================
+// *** CUSTOMIZE STEP 6 ***
+// --> Add ICON(s) for your custom application(s) here
+//=========================================================================
+
+	szCommandLine = svTarget ^ "custom_app\\aitest01.exe";
+	szItemName = "Analog Input Test";
+	LongPathToQuote(szCommandLine, TRUE);
+	AddFolderIcon(svResultFolder, szItemName, szCommandLine,
+		szWorkingDir, szIconPath, nIcon, szShortCutKey, nFlag);
+
+// Announce setup complete and offer to read README file.
+FinalInstallProcess:
+
+	SetStatusWindow(100, "Installation complete.");
+	Delay(2);
+	Disable(STATUSDLG);
+
+	if (AskYesNo("Do you want to view the README file now?", YES) = YES) then
+		szNotePad = "notepad.exe";
+		LaunchAppAndWait(szNotePad, svTarget ^ "ReadMe.txt", WAIT);
+		//Delay(2);
+	endif;
+
+	if (bMustRestart) then
+		szMsg1 = "Setup has finished copying files to your computer.\n" +
+			"Before Instacal can be run you must restart your computer.\n\n" +
+			"Click OK to finish setup.";
+		if (RebootDialog("Restarting Computer", szMsg1, SYS_BOOTMACHINE) = 0) then
+			CommitSharedFiles(0);
+		endif;
+		Delay(1);
+	else
+		szMsg1 = "Setup has finished copying files to your computer.\n" +
+			"Click OK to finish setup.";
+	endif;
+	exit;
+
+/*---------------------------------------------------------------------------*\
+* function _ConfigureUninstInfo()
+*
+* This function configures the uninstall key in the registry or the uninstall
+* icon. It should be called once during the installation AFTER creating the
+* uninstall icon and calling the normal uninstall functions.
+\*---------------------------------------------------------------------------*/
+
+function _ConfigureUninstInfo(szUninstallName,szUninstDll,szUninstIconName)
+    STRING szRegKey;
+    BOOL bExplorer;
+    NUMBER nvResult;
+    STRING svResult;
+    STRING svWrkDir,svIconPath,svShortCutKey;
+    NUMBER nvIconIndex,nvMinimizeFlag;
+    NUMBER nvType,nvSize;
+    STRING svValue;
+    NUMBER nReturn;
+
+begin
+
+	bExplorer=_IsExplorer();
+
+	GetSystemInfo( ISTYPE, nvResult, svResult);
+
+	if(nvResult=16)then
+		bExplorer=FALSE;
+	endif;
+
+    if(!bExplorer)then
+	    if(szUninstIconName="")then
+		    szUninstIconName="unInstallShield";
+	    endif;
+    endif;
+
+    nReturn=0;
+
+    if(bExplorer) then
+        RegDBSetDefaultRoot(HKEY_LOCAL_MACHINE);
+        szRegKey="SOFTWARE\\MICROSOFT\\WINDOWS\\CURRENTVERSION\\UNINSTALL" ^ szUninstallName;
+        RegDBGetKeyValueEx(szRegKey,"UninstallString",nvType,svValue,nvSize);
+    else
+        QueryProgItem(szUninstallName,szUninstIconName,svValue,svWrkDir,svIconPath,
+			nvIconIndex,svShortCutKey,nvMinimizeFlag);
+	    if(svShortCutKey="NONE") then
+		    svShortCutKey="";
+	    endif;
+
+    endif;
+
+	// Modify uninstall string.
+	svValue = svValue + " -c" + "\"" + szUninstDll;
+
+    if(bExplorer)then
+        nReturn=RegDBSetKeyValueEx(szRegKey,"UninstallString",nvType,svValue,nvSize);
+    else
+        nReturn=AddFolderIcon(szUninstallName,szUninstIconName,svValue,svWrkDir,svIconPath,
+        nvIconIndex,svShortCutKey,nvMinimizeFlag|REPLACE);
+    endif;
+
+    return(nReturn);
+end;
+
+// Now include the actual code to support the list dialogs:
+
+#define SD_SINGLE_DIALOGS 1
+#define SD_ASKOPTIONS     1
+
+// SdDialog.rul is part of the IS3 package
+#include "Sddialog.rul"

@@ -1,0 +1,231 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\IFC_PC2V_3CamPlanarVertical.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\coreco_pc2.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_IFC_PC2V_3CAMPLANARVERTICAL_DIALOG DIALOGEX 0, 0, 439, 430
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "IFC_PC2V_3CamPlanarVertical"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Display",IDC_STATIC_DISPLAY,17,17,213,397
+    EDITTEXT        IDC_EDIT_FR,371,140,40,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Frame Rate",IDC_STATIC_FR,372,155,38,8
+    PUSHBUTTON      "Camera and Connector Select",IDC_BUTTON_CAM,256,316,149,
+                    14
+    EDITTEXT        IDC_EDIT_CUR_CONN,319,340,24,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Connector #",IDC_STATIC_CUR_GROUP,311,356,40,8
+    EDITTEXT        IDC_EDIT_CUR_CAM,256,298,149,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "Soft Trigger",IDC_BUTTON_TRIGGER,340,58,71,14
+    GROUPBOX        "Acquisition",IDC_STATIC_ACQ,243,15,179,71
+    PUSHBUTTON      "Grab",IDC_BUTTON_GRAB,255,33,71,14
+    PUSHBUTTON      "Freeze",IDC_BUTTON_FREEZE,255,58,71,14
+    EDITTEXT        IDC_EDIT_FC,371,109,40,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Frame Count",IDC_STATIC_FC,371,124,41,8
+    EDITTEXT        IDC_EDIT_ND,371,233,40,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Not Displayed",IDC_STATIC_ND,369,250,45,8
+    LTEXT           "SOT Light",IDC_STATIC_SOT_LIGHT,257,112,84,15
+    GROUPBOX        "Statistics",IDC_STATIC_STAT,359,95,63,174
+    LTEXT           "SOF Light",IDC_STATIC_SOF_LIGHT,257,138,84,15
+    LTEXT           "EOF Light",IDC_STATIC_EOF_LIGHT,257,164,84,15
+    GROUPBOX        "Trigger to Image",IDC_STATIC_TTI,243,95,108,174
+    LTEXT           "EOT 1 Light",IDC_STATIC_EOT1_LIGHT,257,190,84,15
+    GROUPBOX        "Input",IDC_STATIC_INPUT,243,282,178,91
+    DEFPUSHBUTTON   "Enter Trap",IDC_BUTTON_TRAP,305,391,50,14,NOT 
+                    WS_VISIBLE
+    PUSHBUTTON      "Snap",IDC_BUTTON_SNAP,340,33,71,14
+    LTEXT           "EOT2 Light",IDC_STATIC_EOT2_LIGHT,257,216,84,15
+    LTEXT           "EOT 3 Light",IDC_STATIC_EOT3_LIGHT,257,242,84,15
+    EDITTEXT        IDC_EDIT_NA,371,202,40,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Not Acquired",IDC_STATIC_NA,370,218,44,8
+    EDITTEXT        IDC_EDIT_FLOST,371,171,40,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Frame Lost",IDC_STATIC_FL,372,186,38,8
+END
+
+IDD_CONNSEL DIALOG DISCARDABLE  0, 0, 261, 135
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Connector"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Group 1",IDC_CONNECTOR_GRP1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,189,45,41,10
+    CONTROL         "Group 2",IDC_CONNECTOR_GRP2,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,189,62,41,10
+    DEFPUSHBUTTON   "OK",IDOK,20,105,218,14,WS_GROUP
+    LISTBOX         IDC_LIST_CAMNAME,31,29,123,54,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Camera Type",-1,20,16,145,79
+    GROUPBOX        "Connector #",IDC_STATIC_CONNECTOR,175,16,62,79
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,0,0
+ PRODUCTVERSION 2,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "Coreco Imaging, Inc.\0"
+            VALUE "FileDescription", "IFC_PC2V_3CamPlanarVertical IFC Application\0"
+            VALUE "FileVersion", "2, 0, 0, 0\0"
+            VALUE "InternalName", "IFC_PC2V_3CamPlanarVertical\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003-2004\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "IFC_PC2V_3CamPlanarVertical.EXE\0"
+            VALUE "ProductName", "IFC_PC2V_3CamPlanarVertical Application\0"
+            VALUE "ProductVersion", "2, 0, 0, 0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_IFC_PC2V_3CAMPLANARVERTICAL_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 432
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 423
+    END
+
+    IDD_CONNSEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 254
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\IFC_PC2V_3CamPlanarVertical.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

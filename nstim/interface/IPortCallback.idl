@@ -1,0 +1,20 @@
+import "objidl.idl";
+import "unknwn.idl";
+import "wtypes.idl";
+
+
+// prev event
+cpp_quote("#define	PE_DATA_ARRIVED		0")
+cpp_quote("#define	PE_PORT_OPENED		1")
+cpp_quote("#define	PE_PORT_CLOSED		2")
+
+[
+	object,
+	uuid(1709F049-59F6-479d-BB0B-C910D57C0633),
+	helpstring("IPort Interface"),
+	pointer_default(unique)
+]
+interface IPortCallback : IUnknown
+{
+	HRESULT OnPortEvent(IUnknown* caller, DWORD event, DWORD param1, DWORD param2);
+};

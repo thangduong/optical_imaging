@@ -1,0 +1,42 @@
+// ImgDifOb.idl : IDL source for ImgDifOb.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (ImgDifOb.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+import "vidsrct.h";
+
+	[
+		object,
+		uuid(00CDBE91-5607-11D6-B243-00105A0F576C),
+		dual,
+		helpstring("IImageDIff Interface"),
+		pointer_default(unique)
+	]
+	interface IImageDIff : IDispatch
+	{
+		[id(1), helpstring("method ThreadFunction")] HRESULT ThreadFunction(HCProcThread threadObj);
+	};
+
+[
+	uuid(00CDBE85-5607-11D6-B243-00105A0F576C),
+	version(1.0),
+	helpstring("ImgDifOb 1.0 Type Library")
+]
+library IMGDIFOBLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(00CDBE92-5607-11D6-B243-00105A0F576C),
+		helpstring("ImageDIff Class")
+	]
+	coclass ImageDIff
+	{
+		[default] interface IImageDIff;
+	};
+};

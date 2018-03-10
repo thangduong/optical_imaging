@@ -1,0 +1,66 @@
+/Adimec 4000MD 2KX2K Rules .txt/1.1/Wed Jan  5 11:55:42 2005//
+/Adimec 4000MD 2Kx2K 10Bit PWC.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Adimec 4000MD 2Kx2K 10Bit.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Adimec 4000MD 2Kx2K 8Bit.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Adimec-1000m-8b.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Adimec-1600m-1tap.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Adimec-1600m-2tap.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Atmel-AVIIVA-M2CL4k-1tap-60MHz-12bit.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Basler 501K Rules.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Basler-A202K-10-bits.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Basler-A202k.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Basler-A301b_10b.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Basler-A301b_8b.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Basler-A302b-10-bit.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Basler-A302b-8-bit.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Basler-L301bc.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Cohu 7500 CL Rules.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Cohu 7512-2002.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Cohu-7500-CL-Pulse-Integrate.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Dalsa-2M30-SA-Exp-Mode-4.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Dalsa-2M30-SA-Exp-Mode-6.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Dalsa-P2-21-6144W-8bit.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Dalsa-P2-22-06K40.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Hitach KP-F120CL 1TM.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Hitach KP-F120CL 1TM_PS_CEN_512L.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Hitach KP-F120CL 1TM_PS_TOP_64L.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Hitach KP-F120CL 2TM.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Hitachi KP-F100ACL PWC.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Hitachi KP-F100ACL.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Hitachi KP-F120CL PS_CEN_128L_112fps.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Hitachi KP-F120CL PS_TOP_256L_84fps.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Hitachi KP-F120CL.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Illunis-MMV-2000.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Imperx IPX-1M48 Dual Tap 10 bit HBinning.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Imperx IPX-1M48 Dual Tap 10 bit.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Imperx IPX-1M48 Dual Tap 8 bit HBinning.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Imperx IPX-1M48 Dual Tap 8 bit.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Imperx IPX-1M48 Single Tap 10 bit.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Imperx IPX-1M48 Single Tap 8 bit.txt/1.1/Wed Jan  5 11:55:42 2005//
+/JA CV-A33 PWC 10b.txt/1.1/Wed Jan  5 11:55:42 2005//
+/JAI CV-M2 DC 10b PWC.txt/1.1/Wed Jan  5 11:55:42 2005//
+/JAI CV-M2 SC 10b PWC.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Jai-CV-M4.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Jai-CV-M7CL.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Pulnix TM-1400CL PWC.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Pulnix TM-1400CL.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Pulnix TM-1400CL_bin_98fps.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Pulnix TM-4000CL.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Pulnix TMC-1000CL PWC.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Pulnix-PC-640-CL.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Pulnix-TM-1020-15CL.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Pulnix-TM-1320-15CL.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Pulnix-TM-2016-8CL.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Pulnix-TM-6710CL-PWC.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Pulnix-TM-6710CL.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Pulnix-TMC-1000-CL.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Pulnix-TMC-6700-CL.txt/1.1/Wed Jan  5 11:55:42 2005//
+/RedLakeES4.0E_Full-Res_mode_CD.txt/1.1/Wed Jan  5 11:55:42 2005//
+/RedLakeES4.0E_Full-Res_mode_TR.txt.txt/1.1/Wed Jan  5 11:55:42 2005//
+/SI3170_FullRes_SlowS.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Sony XC-HR50 PWC M1 PartialScan.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Sony XC-HR50 PWC M1.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Toshiba-IK-SX1.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Uniq UP-2000CL 2x2 bin.txt/1.1/Wed Jan  5 11:55:42 2005//
+/Uniq UP-2000CL.txt/1.1/Wed Jan  5 11:55:42 2005//
+D

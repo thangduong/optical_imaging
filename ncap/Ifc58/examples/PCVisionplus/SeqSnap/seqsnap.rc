@@ -1,0 +1,742 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\seqsnap.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\seqsnap.ico"
+IDR_SEQSNATYPE          ICON    DISCARDABLE     "res\\seqsnapD.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Cmds"
+    BEGIN
+        MENUITEM "Seq Snap",                    ID_CMDS_SEQSNAP
+        MENUITEM "Trig Ops",                    ID_CMDS_TRIGOPS
+        MENUITEM "Select Cam",                  ID_CMDS_SELECTCAM
+        MENUITEM "Write Image File",            ID_CMDS_WRITETIFF
+        MENUITEM "Read Image File",             ID_CMDS_READTIFF
+        MENUITEM "Performance",                 ID_CMDS_PERFORMANCE
+        MENUITEM "Out Port",                    ID_CMDS_OUTPORT
+        MENUITEM "In Port",                     ID_CMDS_INPORT
+        MENUITEM "Window Gen",                  ID_CMDS_WINDOWGEN
+        MENUITEM "HW Zoom",                     ID_CMDS_HWZOOM
+        MENUITEM "SW Overlay",                  ID_CMDS_SWOVERLAY
+        MENUITEM "Over Sample",                 ID_CMDS_OVERSAMPLE, CHECKED
+    END
+    POPUP "&LUT"
+    BEGIN
+        MENUITEM "Linear",                      ID_LUT_LINEAR
+        MENUITEM "Invert",                      ID_LUT_INVERT
+        MENUITEM "Thresh",                      ID_LUT_THRESH
+    END
+    MENUITEM "&Params",                     ID_BRD_PARAMS
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About seqsnap...",           ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 217, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "About Seqsnap"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Seqsnap Version 2.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 1999",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,32,14,WS_GROUP
+    LTEXT           "Imaging Technology Inc.",IDC_STATIC,40,40,79,8
+END
+
+IDD_DLGSNAP DIALOG DISCARDABLE  0, 0, 454, 73
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Sequential Snap Control"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Slider2",IDC_SLIDER2,"msctls_trackbar32",TBS_AUTOTICKS | 
+                    TBS_BOTH | WS_TABSTOP,15,40,282,24
+    PUSHBUTTON      "Snap",IDC_SNAP,15,5,50,14
+    EDITTEXT        IDC_NUMFRAMES,268,7,26,13,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Number of Frames",IDC_STATIC,207,9,58,8
+    PUSHBUTTON      "Play",IDC_PLAY,74,5,50,14
+    PUSHBUTTON      "Live",IDC_LIVE,134,5,50,14
+    PUSHBUTTON      "Close",IDOK,393,5,50,14
+    GROUPBOX        "Time",IDC_STATIC,305,35,138,30
+    PUSHBUTTON      "Save Images",IDC_SAVE,305,5,50,14
+    EDITTEXT        IDC_FRAME_TIME,355,50,20,12,ES_AUTOHSCROLL | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_TOTAL_TIME,420,50,20,12,ES_AUTOHSCROLL | NOT 
+                    WS_BORDER
+    LTEXT           "Frame Time",IDC_STATIC,315,50,40,10
+    LTEXT           "Total Time",IDC_STATIC,380,50,35,10
+    PUSHBUTTON      "Save AVI",IDC_SAVEAVI,305,21,50,14
+END
+
+IDD_CAMSEL DIALOG DISCARDABLE  0, 0, 309, 146
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Camera"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,252,125,50,14
+    LISTBOX         IDC_LIST_CAMNAME,58,34,123,54,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Camera Type",IDC_STATIC,47,21,145,79
+    CONTROL         "Port 0",IDC_PORT0,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,217,38,35,10
+    CONTROL         "Port 1",IDC_PORT1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,217,52,35,10
+    GROUPBOX        "Port No.",IDC_STATIC,204,21,61,79
+END
+
+IDD_LUTFLOOR DIALOG DISCARDABLE  0, 0, 186, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "LUT Threshold"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_LUTTHRESH,28,45,47,16,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    GROUPBOX        "LUT Threshold Value",IDC_STATIC,15,29,86,40
+END
+
+IDD_OUTPORT DIALOG DISCARDABLE  0, 0, 186, 162
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Output Ports"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_OUTPORT_VAL,31,43,53,14,ES_AUTOHSCROLL
+    CONTROL         "Generate Strobe",IDC_GENSTROBE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,31,65,68,10
+    DEFPUSHBUTTON   "OK",IDOK,13,115,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,71,115,50,14
+    GROUPBOX        "Parallel Output Port",IDC_STATIC,18,20,94,67
+    LTEXT           "Value:",IDC_STATIC,31,32,21,8
+END
+
+IDD_DLGWIN DIALOG DISCARDABLE  0, 0, 321, 109
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Window Generator"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,175,88,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,89,88,50,14
+    LTEXT           "H. Offset:",IDC_STATIC,100,25,31,8
+    EDITTEXT        IDC_WGEN_X,100,36,31,12,ES_AUTOHSCROLL
+    LTEXT           "V. Offset:",IDC_EDIT5,156,25,32,8
+    EDITTEXT        IDC_WGEN_Y,156,36,32,12,ES_AUTOHSCROLL
+    LTEXT           "Width:",IDC_STATIC3,214,25,22,8
+    EDITTEXT        IDC_WGEN_DX,214,36,31,12,ES_AUTOHSCROLL
+    LTEXT           "Height:",IDC_STATIC4,269,25,24,8
+    EDITTEXT        IDC_WGEN_DY,269,36,32,12,ES_AUTOHSCROLL
+    GROUPBOX        "Window Origin",IDC_STATIC,7,7,62,56
+    GROUPBOX        "Window Size",IDC_STATIC,205,7,105,56
+    CONTROL         "Relative",IDC_RELATIVE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,15,22,42,10
+    CONTROL         "Absolute",IDC_ABSOLUTE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,15,43,43,10
+    GROUPBOX        "Window Offset",IDC_STATIC,92,7,105,56
+END
+
+IDD_HWZOOM DIALOG DISCARDABLE  0, 0, 207, 130
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Hardware Zoom"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "No Zoom",IDC_XZ_NO,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,20,21,45,10
+    CONTROL         "Zoom Out x2",IDC_XZ_FACTOR_2,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,20,42,57,10
+    PUSHBUTTON      "Cancel",IDCANCEL,45,109,50,14
+    DEFPUSHBUTTON   "OK",IDOK,111,109,50,14
+    GROUPBOX        "X - Zoom",IDC_STATIC,7,3,88,76
+END
+
+IDD_GRABTRIG DIALOG DISCARDABLE  0, 0, 272, 434
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Triggered Grab"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Trigger",IDC_STATIC,7,7,251,98
+    GROUPBOX        "Trigger Enable",IDC_STATIC,180,16,73,40
+    GROUPBOX        "Trigger Source",IDC_STATIC,11,18,164,72
+    GROUPBOX        "Trigger Polarity",IDC_STATIC,180,58,73,40
+    CONTROL         "Falling Edge",IDC_FALLING_EDGE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,192,71,55,10
+    CONTROL         "Rising Edge",IDC_RISING_EDGE,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,192,82,55,10
+    GROUPBOX        "Strobe",IDC_STATIC,7,109,251,100
+    GROUPBOX        "Strobe Enable",IDC_STATIC,13,125,72,40
+    CONTROL         "Disable",IDC_STROBE_DISABLE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,24,136,38,10
+    CONTROL         "Enable",IDC_STROBE_ENABLE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,24,149,39,10
+    GROUPBOX        "Strobe Mode",IDC_STATIC,92,125,76,40
+    CONTROL         "Fast",IDC_FASTSTROBE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,98,149,29,10
+    CONTROL         "Slow",IDC_SLOWSTROBE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,98,136,31,10
+    GROUPBOX        "Strobe Polarity",IDC_STATIC,174,125,71,40
+    CONTROL         "Active Low",IDC_STROBE_POL_LOW,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,185,136,51,10
+    CONTROL         "Active Hi",IDC_STROBE_POL_HI,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,185,150,45,10
+    GROUPBOX        "Strobe Delay",IDC_STATIC,13,170,232,30
+    CONTROL         "Slider1",IDC_STROBE_DELAY,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,19,184,185,12
+    EDITTEXT        IDC_STROBE_DELAY_E,213,183,24,12,ES_CENTER | ES_READONLY | 
+                    NOT WS_TABSTOP
+    GROUPBOX        "Frame Reset",IDC_STATIC,7,214,251,95
+    GROUPBOX        "Frame Reset Mode",IDC_STATIC,13,226,72,40
+    CONTROL         "Disable",IDC_FRAME_DISABLE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,24,253,39,10
+    CONTROL         "Enable",IDC_FRAME_ENABLE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,24,237,38,10
+    GROUPBOX        "Frame Reset Polarity",IDC_STATIC,92,226,76,40
+    CONTROL         "Active Hi",IDC_FRAME_POL_HI,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,98,254,45,10
+    CONTROL         "Active Low",IDC_FRAME_POL_LOW,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,98,240,51,10
+    GROUPBOX        "Frame Reset Size",IDC_STATIC,174,226,71,40
+    CONTROL         "Offset Period",IDC_FRAME_SIZE_PERIOD,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,185,238,57,10
+    CONTROL         "One Line",IDC_FRAME_SIZE_LINE,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,185,253,45,10
+    GROUPBOX        "Frame Reset Delay",IDC_STATIC,13,272,232,30
+    CONTROL         "Slider1",IDC_FRAME_DELAY,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,19,285,185,12
+    EDITTEXT        IDC_FRAME_DELAY_E,213,285,24,12,ES_CENTER | ES_READONLY | 
+                    NOT WS_TABSTOP
+    PUSHBUTTON      "Start",IDC_TRGSTART,145,379,95,14
+    PUSHBUTTON      "Exit",IDOK,167,400,49,14
+    CONTROL         "Software Trigger",IDC_SOFT_TRIG,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,19,31,69,10
+    CONTROL         "TTL Trigger 0",IDC_TTL0_TRIG,"Button",
+                    BS_AUTORADIOBUTTON,19,43,64,10
+    CONTROL         "TTL Trigger 1",IDC_TTL1_TRIG,"Button",
+                    BS_AUTORADIOBUTTON,19,57,59,10
+    CONTROL         "TTL Trigger 2",IDC_TTL2_TRIG,"Button",
+                    BS_AUTORADIOBUTTON,19,70,60,10
+    CONTROL         "Opto Trigger 0",IDC_OPTO0_TRIG,"Button",
+                    BS_AUTORADIOBUTTON,91,31,77,10
+    CONTROL         "Opto Trigger 1",IDC_OPTO1_TRIG,"Button",
+                    BS_AUTORADIOBUTTON,91,43,77,10
+    CONTROL         "Differential Trigger 0",IDC_DIFF0_TRIG,"Button",
+                    BS_AUTORADIOBUTTON,91,57,77,10
+    CONTROL         "Differential Trigger 1",IDC_DIFF1_TRIG,"Button",
+                    BS_AUTORADIOBUTTON,91,70,77,10
+    GROUPBOX        "Triggers",IDC_STATIC,135,348,115,70
+    CONTROL         "Continuous",IDC_CONTINUOUS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,145,363,51,9
+    EDITTEXT        IDC_IMAGES_NUM,207,363,33,12,ES_AUTOHSCROLL
+    LTEXT           "# of Images",IDC_STATIC,207,353,37,9
+    LTEXT           "",IDC_STATIC1,5,346,125,79,WS_BORDER
+    CONTROL         "Disable",IDC_TRIGGER_ENABLE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,191,30,39,10
+    CONTROL         "Enable",IDC_TRIGGER_DISABLE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,191,41,38,10
+    GROUPBOX        "Verification Parameters",IDC_STATIC2,7,311,251,30
+    EDITTEXT        IDC_Y_START,40,322,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_Y_END,120,322,24,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_THRESHOLD,210,322,24,12,ES_AUTOHSCROLL
+    LTEXT           "Y Start",IDC_STATIC,15,323,21,9
+    LTEXT           "Y End",IDC_STATIC,95,323,20,8
+    LTEXT           "Threshold",IDC_STATIC,172,323,31,8
+END
+
+IDD_COLOR DIALOG DISCARDABLE  0, 0, 251, 119
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Color Mode"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "          ",IDC_RADIO_RED,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,18,15,29,10
+    CONTROL         "          ",IDC_RADIO_GREEN,"Button",BS_AUTORADIOBUTTON,
+                    18,33,29,10
+    CONTROL         "          ",IDC_RADIO_BLUE,"Button",BS_AUTORADIOBUTTON,
+                    18,51,29,10
+    CONTROL         "          ",IDC_RADIO_RGB,"Button",BS_AUTORADIOBUTTON,
+                    18,69,29,10
+    CONTROL         "          ",IDC_RADIO_RGB_24,"Button",
+                    BS_AUTORADIOBUTTON,107,15,29,10
+    CONTROL         "          ",IDC_RADIO_RGB_PLANAR,"Button",
+                    BS_AUTORADIOBUTTON,107,33,29,10
+    CONTROL         "          ",IDC_RADIO_aRGB_PLANAR,"Button",
+                    BS_AUTORADIOBUTTON,107,51,29,10
+    PUSHBUTTON      "OK",IDOK,67,98,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,133,98,50,14
+    LTEXT           "Red",IDC_STATIC,52,15,14,8
+    LTEXT           "Green",IDC_STATIC,52,33,20,8
+    LTEXT           "Blue",IDC_STATIC,52,51,15,8
+    LTEXT           "RGB (32 Bit)",IDC_STATIC,52,69,40,8
+    LTEXT           "Packed RGB (24 bit)",IDC_STATIC,141,15,66,8
+    LTEXT           "Planar RGB",IDC_STATIC,141,33,38,8
+    LTEXT           "Planar aRGB",IDC_STATIC,141,51,42,8
+END
+
+IDD_COLOR_SPACE_CONV DIALOG DISCARDABLE  0, 0, 251, 101
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Color Space Conversion"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "RGB ---> YUV",IDC_RADIO_RGB_TO_YUV,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,18,15,95,10
+    CONTROL         "RGB ---> YIQ",IDC_RADIO_RGB_TO_YIQ,"Button",
+                    BS_AUTORADIOBUTTON,18,33,95,10
+    CONTROL         "RGB ---> YCRCB 4:4:4",IDC_RADIO_RGB_TO_YCRCB_4_4_4,
+                    "Button",BS_AUTORADIOBUTTON,18,51,95,10
+    CONTROL         "RGB ---> YCRCB 4:2:2",IDC_RADIO_RGB_TO_YCRCB_4_2_2,
+                    "Button",BS_AUTORADIOBUTTON,125,15,95,10
+    CONTROL         "RGB ---> YCBCR 4:2:2",IDC_RADIO_RGB_TO_YCBCR_4_2_2,
+                    "Button",BS_AUTORADIOBUTTON,125,33,95,10
+    CONTROL         "RGB ---> HSI          ",IDC_RADIO_RGB_TO_HSI,"Button",
+                    BS_AUTORADIOBUTTON,125,51,95,10
+    PUSHBUTTON      "OK",IDOK,67,80,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,133,80,50,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Imaging Technology\0"
+            VALUE "FileDescription", "Seqsnap MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "Seqsnap\0"
+            VALUE "LegalCopyright", "Copyright (C) 1998-1999 Imaging Technology Inc.\0"
+            VALUE "LegalTrademarks", "PCDig\0"
+            VALUE "OriginalFilename", "seqsnap.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "seqsnap Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DLGSNAP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 447
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 66
+    END
+
+    IDD_CAMSEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 139
+    END
+
+    IDD_LUTFLOOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_OUTPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 155
+    END
+
+    IDD_DLGWIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 314
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 102
+    END
+
+    IDD_HWZOOM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 200
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 123
+    END
+
+    IDD_GRABTRIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 265
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 427
+    END
+
+    IDD_COLOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 244
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 112
+    END
+
+    IDD_COLOR_SPACE_CONV, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 244
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 94
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  32, 31
+BEGIN
+    BUTTON      ID_CMDS_SEQSNAP
+    BUTTON      ID_CMDS_SELECTCAM
+    BUTTON      ID_CMDS_TRIGOPS
+    BUTTON      ID_CMDS_WRITETIFF
+    BUTTON      ID_CMDS_READTIFF
+    BUTTON      ID_CMDS_SWOVERLAY
+    BUTTON      ID_CMDS_PERFORMANCE
+    SEPARATOR
+    BUTTON      ID_LUT_LINEAR
+    BUTTON      ID_LUT_INVERT
+    BUTTON      ID_LUT_THRESH
+    BUTTON      ID_CMDS_OUTPORT
+    BUTTON      ID_CMDS_INPORT
+    BUTTON      ID_CMDS_WINDOWGEN
+    BUTTON      ID_CMDS_HWZOOM
+    BUTTON      ID_CMDS_OVERSAMPLE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  DISCARDABLE     "res\\Toolbar.bmp"
+IDB_RED_BUTTON          BITMAP  DISCARDABLE     "res\\red_button.bmp"
+IDB_RGB_BUTTON          BITMAP  DISCARDABLE     "res\\rgb_button.bmp"
+IDB_GREEN_BUTTON        BITMAP  DISCARDABLE     "res\\green_button.bmp"
+IDB_BLUE_BUTTON         BITMAP  DISCARDABLE     "res\\blue_button.bmp"
+IDB_RGB_24_BUTTON       BITMAP  DISCARDABLE     "res\\rgb_24_button.bmp"
+IDB_aRGB_PLANAR_BUTTON  BITMAP  DISCARDABLE     "res\\a_rgb_planar_button.bmp"
+IDB_RGB_PLANAR_BUTTON   BITMAP  DISCARDABLE     "res\\rgb_planar_button.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "seqsnap\n\nSeqsna\n\n\nSeqsnap.Document\nSeqsna Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "seqsnap"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_CMDS_SEQSNAP         "Perform a Sequential Snap\nSequential Snap"
+    ID_CMDS_TRIGOPS         "Triggered Acquistion Operations\nTriggered Acq"
+    ID_CMDS_SELECTCAM       "Select the active Camera\nSelect Camera"
+    ID_CMDS_WRITETIFF       "Snap a Camera Image and Save to a File\nSave Image File"
+    ID_CMDS_READTIFF        "Read an image file and display\nRead Image File"
+    ID_CMDS_HWOVERLAY       "Generate a Hardware Overlay\nHardware Overlay"
+    ID_CMDS_PERFORMANCE     "Image Read Performance\nPerformance"
+    ID_LUT_LINEAR           "Linearize the Acquisition LUT\nLinearize LUT"
+    ID_LUT_INVERT           "Load an Invert function in the LUT\nInvert LUT"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_LUT_THRESH           "Load a threshold function in the LUT\nLUT Thresholding"
+    ID_CMDS_OUTPORT         "Set Output Port value\nOutPort Value"
+    ID_CMDS_INPORT          "Read the Inport Value\nRead InPort"
+    ID_CMDS_WINDOWGEN       "Set the Window Generator Dimensions\nSet Window Generator"
+    ID_CMDS_HWZOOM          "Set the Hardware Zoom\nSet the Hardware Zoom"
+    ID_CMDS_SWOVERLAY       "Generate a Software Overlay\nSoftware Overlay"
+    ID_CMDS_DUALTAP         "Start Dual Tap Grab\nDual Tap Grab"
+    ID_PARAMS               "Display Board Parameters\nDisplay Board Parameters"
+    ID_CMDS_SNAP            "Snap"
+    ID_CMDS_COLOR           "Set the Color Mode\nSet the Color Mode"
+    ID_CMDS_COLOR_SPACE_CONV 
+                            "Select a Color Space Conversion Method\nSelect a Color Space Conversion Method"
+    ID_CMDS_OVERSAMPLE      "Toggle on and off Over Sample mode\nOversample"
+    ID_OVERSAMPLE           "Toggle oversample mode\nOversample"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\seqsnap.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

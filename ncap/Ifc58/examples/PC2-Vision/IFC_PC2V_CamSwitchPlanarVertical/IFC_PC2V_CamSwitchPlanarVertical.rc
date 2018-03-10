@@ -1,0 +1,247 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\IFC_PC2V_CamSwitchPlanarVertical.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\coreco_pc2.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 325, 126
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About IFC_PC2V_CamSwitchPlanarVertical"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,27,23,21,20
+    LTEXT           "IFC_PC2V_CamSwitchPlanarVertical Version 1.0",
+                    IDC_STATIC,103,30,119,8,SS_NOPREFIX
+    DEFPUSHBUTTON   "OK",IDOK,137,96,50,14,WS_GROUP
+    LTEXT           "Coreco Imaging 2003",IDC_STATIC_CORECO,127,58,71,8
+END
+
+IDD_IFC_PC2V_CAMSWITCHPLANARVERTICAL_DIALOG DIALOGEX 0, 0, 633, 411
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "IFC_PC2V_CamSwitchPlanarVertical"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Display1",IDC_STATIC_DISPLAY1,29,33,179,333
+    PUSHBUTTON      "Camera Type",IDC_BUTTON_TYPE_CAM,449,358,160,14
+    EDITTEXT        IDC_EDIT_TYPE_CAM,449,339,160,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    GROUPBOX        "Group # 1",IDC_STATIC_GROUP1,19,17,201,357
+    GROUPBOX        "Acquisition",IDC_STATIC_ACQ,446,17,166,74
+    PUSHBUTTON      "Grab",IDC_BUTTON_GRAB,460,36,65,14
+    PUSHBUTTON      "Freeze",IDC_BUTTON_FREEZE,533,62,65,14
+    LTEXT           "Display2",IDC_STATIC_DISPLAY2,243,33,179,333
+    GROUPBOX        "Group # 2",IDC_STATIC_GROUP2,233,17,201,357
+    DEFPUSHBUTTON   "Enter Trap",IDC_BUTTON_TRAP,499,238,50,10,NOT 
+                    WS_VISIBLE
+    LTEXT           "SOT Light",IDC_STATIC_SOT_LIGHT,493,180,71,17
+    LTEXT           "Trigger Presence",IDC_STATIC_TRIG_PRESENCE,500,206,57,8
+    LTEXT           "Group 1 Light",IDC_STATIC_GROUP1_LIGHT,29,384,179,11
+    EDITTEXT        IDC_EDIT_FR,477,125,33,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "per group",IDC_STATIC_FR,479,143,34,8
+    EDITTEXT        IDC_EDIT_FR_TOTAL,549,125,33,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "total",IDC_STATIC_FR_TOTAL,559,143,16,8
+    GROUPBOX        "Frame Rate (fps)",IDC_STATIC_STAT,446,102,166,60
+    PUSHBUTTON      "Soft Trigger",IDC_BUTTON_TRIGGER,460,62,65,14
+    PUSHBUTTON      "Snap",IDC_BUTTON_SNAP,533,36,65,14
+    LTEXT           "Group 2 Light",IDC_STATIC_GROUP2_LIGHT,244,384,179,11
+END
+
+IDD_CAMSEL DIALOG DISCARDABLE  0, 0, 186, 158
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Camera"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_CAMNAME,31,29,123,54,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,20,129,145,14
+    GROUPBOX        "Camera Type",-1,20,16,145,79
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "IFC_PC2V_CamSwitchPlanarVertical MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "IFC_PC2V_CamSwitchPlanarVertical\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "IFC_PC2V_CamSwitchPlanarVertical.EXE\0"
+            VALUE "ProductName", "IFC_PC2V_CamSwitchPlanarVertical Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 318
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 119
+    END
+
+    IDD_IFC_PC2V_CAMSWITCHPLANARVERTICAL_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 626
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 404
+    END
+
+    IDD_CAMSEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 151
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About IFC_PC2V_CamSwitchPlanarVertical..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\IFC_PC2V_CamSwitchPlanarVertical.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,22 @@
+:Base IFCconfig.hlp
+1 Introduction
+2 Overview=Overview
+2 Starting the Camera Configurator=Starting_the_Camera_Configurator
+2 Config View=Config_View
+2 Camera View=Camera_View
+2 Selecting or Changing Cameras=Selecting_or_Changing_Cameras
+2 Log View=Log_View
+1 How To
+2 Use the Camera Configurator=Use_the_Camera_Configurator
+2 Create Modules=Create_Modules
+2 Change Camera Assignment=Change_Camera_Assignment
+2 Edit Camera Parameters=Edit_Camera_Parameters
+2 Using List View=Using_List_View
+2 Using Tree View=Using_Tree_View
+2 Using Block Diagram=Using_Block_Diagram
+2 Save Configuration Files=Save_Configuration_Files
+2 File Names=File_Names
+2 Save Image Files=Save_Image_Files
+2 Compression for TIF Files=Compression_for_TIF_Files
+2 Compression for JPEG Files=Compression_for_JPEG_Files
+2 Use the Histogram Feature=Use_the_Histogram_Feature

@@ -1,0 +1,19 @@
+// CNStimStringPatchParam.cpp: implementation of the CNStimStringPatchParam class.
+//
+//////////////////////////////////////////////////////////////////////
+#include <string.h>
+#include "CNStimStringPatchParam.h"
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+CNStimStringPatchParam::CNStimStringPatchParam()
+{
+	strcpy(m_Data, "");
+}
+
+CNStimStringPatchParam::~CNStimStringPatchParam()
+{
+
+}

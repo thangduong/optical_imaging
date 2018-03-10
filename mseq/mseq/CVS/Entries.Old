@@ -1,0 +1,65 @@
+D/dsl////
+D/eegexp////
+D/given////
+D/klein////
+D/nidsim////
+/animatedata.m/0/dummy timestamp//
+/arraypeaksdemo.m/0/dummy timestamp//
+/createbcplut.m/0/dummy timestamp//
+/detectpeaks.m/0/dummy timestamp//
+/fastm.m/0/dummy timestamp//
+/fastsimresponse.m/0/dummy timestamp//
+/fastwalsh.m/0/dummy timestamp//
+/findmseqseed.m/0/dummy timestamp//
+/findshift.m/0/dummy timestamp//
+/fixfastm.m/0/dummy timestamp//
+/genmseq.m/0/dummy timestamp//
+/getkernellocation.m/0/dummy timestamp//
+/getmseqk.m/0/dummy timestamp//
+/makemkernel.m/0/dummy timestamp//
+/makemseq.m/0/dummy timestamp//
+/makeseg.m/0/dummy timestamp//
+/makewalsh.m/0/dummy timestamp//
+/mergedata.m/0/dummy timestamp//
+/mergedtest.m/0/dummy timestamp//
+/mergedtest2.m/0/dummy timestamp//
+/mergedtest3.m/0/dummy timestamp//
+/mexmseqfindprod.m/0/dummy timestamp//
+/mfromwalsh.m/0/dummy timestamp//
+/mseqmult.m/0/dummy timestamp//
+/nmfastm.m/0/dummy timestamp//
+/nmfastwalsh.m/0/dummy timestamp//
+/nmpostwalshperm.m/0/dummy timestamp//
+/nmprewalshperm.m/0/dummy timestamp//
+/peaksdemo.m/0/dummy timestamp//
+/perfdump.m/0/dummy timestamp//
+/postwalshperm.m/0/dummy timestamp//
+/prewalshperm.m/0/dummy timestamp//
+/readme.txt/0/dummy timestamp//
+/rotatevector.m/0/dummy timestamp//
+/rotatevectortest.m/0/dummy timestamp//
+/simpleresample.m/0/dummy timestamp//
+/sliceseq.m/0/dummy timestamp//
+/slowseqp.m/0/dummy timestamp//
+/thingy.m/0/dummy timestamp//
+/validatemseq.m/0/dummy timestamp//
+/xcorrdirect.m/0/dummy timestamp//
+/xcorrfast.m/0/dummy timestamp//
+/createbcplut.dll/0/dummy timestamp/-kb/
+/detectpeaks.dll/0/dummy timestamp/-kb/
+/fastsimresponse.dll/0/dummy timestamp/-kb/
+/fastwalsh.dll/0/dummy timestamp/-kb/
+/findmseqseed.dll/0/dummy timestamp/-kb/
+/genmseq.dll/0/dummy timestamp/-kb/
+/getkernellocation.dll/0/dummy timestamp/-kb/
+/mexmseqfindprod.dll/0/dummy timestamp/-kb/
+/nmfastwalsh.dll/0/dummy timestamp/-kb/
+/nmpostwalshperm.dll/0/dummy timestamp/-kb/
+/nmprewalshperm.dll/0/dummy timestamp/-kb/
+/perfdump.dll/0/dummy timestamp/-kb/
+/postwalshperm.dll/0/dummy timestamp/-kb/
+/prewalshperm.dll/0/dummy timestamp/-kb/
+/rotatevector.dll/0/dummy timestamp/-kb/
+/simpleresample.dll/0/dummy timestamp/-kb/
+/slowseqp.dll/0/dummy timestamp/-kb/
+/xcorrdirect.dll/0/dummy timestamp/-kb/

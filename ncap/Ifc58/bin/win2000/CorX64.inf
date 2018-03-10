@@ -1,0 +1,110 @@
+; CorX64.INF For X64 Frame Grabber
+;
+; Installation inf for the X64 driver
+;
+; Copyright (c) 2001 Coreco Inc.
+;
+
+
+[Version]
+Signature="$CHICAGO$"
+Provider=%Coreco%
+ClassGUID={6bdd1fc6-810f-11d0-bec7-08002be2092f}
+class=Image
+
+[DestinationDirs]
+DefaultDestDir   = 11
+CorX64.sys		 = 12
+CorX64.inf		 = 11
+
+;
+; Driver information
+;
+
+[Manufacturer]
+%Coreco%   = Coreco.Mfg
+
+;
+; This section should be modified to reflect the chip strings the
+; user will see in the Displays applet when the new driver is being
+; installed from the driver diskette.
+;
+
+[Coreco.Mfg]
+Coreco Imaging X64 Driver= CorX64,PCI\VEN_11EC&DEV_2064
+
+
+
+;
+; General installation section
+;
+
+[CorX64]
+;CopyFiles=CorX64.kdrv,CorX64.Inf
+AddReg=CorX64.AddRegs
+DelReg=CorX64.DelRegs
+;DelFiles = CorX64.kdrv
+
+;
+; File sections
+;
+
+[CorX64.kdrv]
+CorX64.sys     ; X64 Kernel Driver
+
+[CorX64.Inf]
+CorX64.inf	     ; X64 Inf File
+
+[CorX64.AddRegs]
+
+[CorX64.DelRegs]
+
+;
+; Service Installation
+;
+
+[CorX64.Services]
+AddService = CorX64, 0x00000002, CorX64_Service_Inst
+
+[CorX64_Service_Inst]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Coreco Drivers
+ServiceBinary  = %12%\CorX64.sys
+
+
+;
+; Source file information
+;
+
+[SourceDisksNames.x86]
+1 = %DiskId%,,,""
+
+[SourceDisksFiles]
+CorX64.sys       = 1      ; all files on Disk 1
+CorX64.inf       = 1
+
+[Strings]
+
+;
+; Non-Localizable Strings
+;
+
+REG_SZ         = 0x00000000
+REG_MULTI_SZ   = 0x00010000
+REG_DWORD      = 0x00010001
+
+;
+; Localizable Strings
+;
+
+DiskId      = "Coreco Imaging X64 Installation DISK"
+Coreco      = "Coreco Imaging"
+WinNTDir    = "Windows NT"
+Coreco      = "Coreco Imaging"
+CURVER      = "Software\Microsoft\Windows\CurrentVersion"
+
+
+
+

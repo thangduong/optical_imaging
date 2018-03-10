@@ -1,0 +1,369 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\IntrEx.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\IntrEx.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 217, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About IntrEx"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "IntrEx Version 2.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) Imaging Technology, Inc.1999",IDC_STATIC,
+                    40,25,145,10
+    DEFPUSHBUTTON   "OK",IDOK,178,7,32,14,WS_GROUP
+END
+
+IDD_INTREX_DIALOG DIALOGEX 0, 0, 235, 306
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "IntrEx"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "PCD_INTR_VB",IDC_STATIC,10,20,80,8
+    LTEXT           "PCD_INTR_HB",IDC_STATIC,10,40,80,8
+    LTEXT           "PCD_INTR_TRIG0",IDC_STATIC,10,60,80,8
+    LTEXT           "PCD_INTR_TRIG1",IDC_STATIC,10,80,80,8
+    LTEXT           "PCD_INTR_SOACQ",IDC_STATIC,10,100,80,8
+    LTEXT           "PCD_INTR_EOACQ",IDC_STATIC,10,120,80,8
+    LTEXT           "PCD_INTR_INPORT",IDC_STATIC,10,140,80,8
+    LTEXT           "PCD_INTR_ACQ_ADRS",IDC_STATIC,10,160,80,8
+    LTEXT           "PCD_INTR_BMDONE",IDC_STATIC,10,180,80,8
+    LTEXT           "PCD_INTR_SW_TIMER",IDC_STATIC,10,200,80,8
+    EDITTEXT        IDC_EDIT_VB,95,20,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_HB,95,40,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_TRIG0,95,60,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_TRIG1,95,80,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_SOACQ,95,100,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_EOACQ,95,120,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_BMDONE,95,180,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_ACQ_ADRS,95,160,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_SW_TIMER,95,200,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "Enable",IDC_BUTTON1,140,20,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON2,140,40,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON3,140,60,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON4,140,80,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON5,140,100,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON6,140,120,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON7,140,140,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON8,140,160,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON9,140,180,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON0A,140,200,35,14
+    PUSHBUTTON      "Disable",IDC_BUTTON10,175,20,35,14,WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON11,175,40,35,14,WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON12,175,60,35,14,WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON13,175,80,35,14,WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON14,175,100,35,14,WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON15,175,120,35,14,WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON16,176,140,35,14,WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON17,175,160,35,14,WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON18,175,180,35,14,WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON19,175,200,35,14,WS_DISABLED
+    PUSHBUTTON      "Generate Software Trig0",IDC_SOFT_TRIG,7,271,88,21,
+                    BS_MULTILINE
+    PUSHBUTTON      "Trigger Setup",IDC_SETUP_TRIG,10,241,55,14
+    CONTROL         "Inactive",IDC_GRAB_ACTIVE,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | BS_MULTILINE | WS_TABSTOP,171,237,40,15
+    LTEXT           "Grab to Host status:",IDC_STATIC,95,237,74,8
+    PUSHBUTTON      "Reset Counters",IDC_RESET,140,5,70,10
+    EDITTEXT        IDC_EDIT_INPORT,96,143,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "Generate Software Trig1",IDC_SOFT_TRIG1,107,271,88,21,
+                    BS_MULTILINE
+END
+
+IDD_PROPTRG DIALOG DISCARDABLE  0, 0, 245, 217
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Trigger"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Differential",IDC_TrigDifferential,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,36,47,49,10
+    CONTROL         "TTL",IDC_TTLTRIG,"Button",BS_AUTORADIOBUTTON,36,61,29,
+                    10
+    CONTROL         "Opto-Coupled",IDC_OPTO_COUPLED,"Button",
+                    BS_AUTORADIOBUTTON,36,75,59,10
+    CONTROL         "Falling Edge",IDC_POLFALL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,135,33,55,10
+    CONTROL         "Rising Edge",IDC_TACTHIGH,"Button",BS_AUTORADIOBUTTON,
+                    135,48,54,10
+    CONTROL         "Disable",IDC_GD_DISABLE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,143,95,39,10
+    CONTROL         "Enable",IDC_GD_ENABLE,"Button",BS_AUTORADIOBUTTON,143,
+                    110,38,10
+    PUSHBUTTON      "Cancel",IDCANCEL,25,155,50,14
+    DEFPUSHBUTTON   "Apply",ID_APPLY,115,155,50,14
+    GROUPBOX        "Trigger Source",IDC_STATIC,21,18,79,87
+    GROUPBOX        "Trigger Polarity",IDC_STATIC,120,18,71,53
+    GROUPBOX        "Trigger Glitch Dectector",IDC_STATIC,120,78,90,57
+END
+
+IDD_GRABTRIG DIALOG DISCARDABLE  0, 0, 272, 226
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Triggered Grab"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Trigger Mode Disable",IDC_TRIG_START_DISABLE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,29,35,83,10
+    CONTROL         "HW Trig 0 Assert",1050,"Button",BS_AUTORADIOBUTTON,29,
+                    50,70,10
+    CONTROL         "HW Trig 0 Deassert",1051,"Button",BS_AUTORADIOBUTTON,29,
+                    65,79,10
+    CONTROL         "HW Trig 1 Assert",1052,"Button",BS_AUTORADIOBUTTON,29,
+                    80,70,10
+    CONTROL         "HW Trig 1 Deassert",1053,"Button",BS_AUTORADIOBUTTON,29,
+                    95,79,10
+    CONTROL         "SW Trig 0",1049,"Button",BS_AUTORADIOBUTTON,29,110,48,
+                    10
+    CONTROL         "SW Trig 1",1054,"Button",BS_AUTORADIOBUTTON,29,125,48,
+                    10
+    GROUPBOX        "Trigger Start Event",-1,10,15,110,135
+    CONTROL         "Trigger Mode Disable",IDC_TRIG_END_DISABLE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,150,36,83,10
+    CONTROL         "HW Trig 0 Assert",1056,"Button",BS_AUTORADIOBUTTON,150,
+                    50,70,10
+    CONTROL         "HW Trig 0 Deassert",IDC_RADIO11,"Button",
+                    BS_AUTORADIOBUTTON,150,66,79,10
+    CONTROL         "HW Trig 1 Assert",1058,"Button",BS_AUTORADIOBUTTON,150,
+                    81,70,10
+    CONTROL         "HW Trig 1 Deassert",IDC_RADIO13,"Button",
+                    BS_AUTORADIOBUTTON,150,95,79,10
+    CONTROL         "SW Trig 0",IDC_RADIO14,"Button",BS_AUTORADIOBUTTON,150,
+                    111,48,10
+    CONTROL         "SW Trig 1",IDC_RADIO15,"Button",BS_AUTORADIOBUTTON,150,
+                    126,48,10
+    GROUPBOX        "Trigger End Event",-1,130,15,110,135
+    PUSHBUTTON      "Apply",IDC_APPLY,20,181,50,14
+    PUSHBUTTON      "Cancel",IDC_CANCEL,83,181,50,14
+END
+
+IDD_CAMSEL DIALOG DISCARDABLE  0, 0, 263, 146
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Camera"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,206,125,50,14
+    LISTBOX         IDC_LIST_CAMNAME,58,34,123,54,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Camera Type",IDC_STATIC,47,21,145,79
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "IntrEx MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "IntrEx\0"
+            VALUE "LegalCopyright", "Copyright (C) 1998-1999\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "IntrEx.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "IntrEx Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_INTREX_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 299
+    END
+
+    IDD_PROPTRG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 238
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 210
+    END
+
+    IDD_GRABTRIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 265
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 219
+    END
+
+    IDD_CAMSEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 256
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 139
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About IntrEx..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STR_TRIG0           "Trig 0"
+    IDS_STR_TRIG1           "Trig 1"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\IntrEx.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

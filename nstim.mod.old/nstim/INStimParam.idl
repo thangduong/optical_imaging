@@ -1,0 +1,29 @@
+import "objidl.idl";
+import "unknwn.idl";
+import "wtypes.idl";
+
+[
+	object,
+	uuid(F255BC07-A99E-45e6-80C7-152997B4344F),
+	helpstring("INStimParam Interface"),
+	pointer_default(unique)
+]
+interface INStimParam : IUnknown
+{
+	HRESULT GetParamType(char** pType);
+	HRESULT GetParamInt(int* pInt);
+	HRESULT GetParamDouble(double* pDouble);
+	HRESULT GetParamName(char** ppName);
+
+	HRESULT SetParamInt(int pInt);
+	HRESULT SetParamDouble(double pDouble);
+	HRESULT SetParamName(char* pName);
+	HRESULT GetSize(DWORD* pSize);
+	HRESULT GetByte(int index, char* pData);
+	HRESULT GetRawData(char** ppRawdata);
+
+	HRESULT GetParamFloat(float* pFloat);
+	HRESULT SetParamFloat(float value);
+	HRESULT SetParamString(char* pStr);
+	HRESULT GetParamString(char* buff, int buffSize);
+};

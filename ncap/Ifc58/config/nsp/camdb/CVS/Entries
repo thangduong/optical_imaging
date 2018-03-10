@@ -1,0 +1,95 @@
+/AP-MC-P60-120FPS-FR.txt/1.1/Wed Jan  5 11:59:51 2005//
+/AP-MC-P60-120FPS-PLL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/AP-MC-P60-120FPS-XTAL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/AP-MC-P60-240FPS-FR.txt/1.1/Wed Jan  5 11:59:51 2005//
+/AP-MC-P60-240FPS-PLL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/AP-MC-P60-240FPS-XTAL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/AP-MC-P60-60FPS-FR.txt/1.1/Wed Jan  5 11:59:51 2005//
+/AP-MC-P60-60FPS-PLL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/AP-MC-P60-60FPS-XTAL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/CC760x574-Xtal.txt/1.1/Wed Jan  5 11:59:51 2005//
+/CC760x574P-RGB.txt/1.1/Wed Jan  5 11:59:51 2005//
+/CV-M1-PLL-RMN.txt/1.1/Wed Jan  5 11:59:51 2005//
+/CVM10-640PLL-NI.txt/1.1/Wed Jan  5 11:59:51 2005//
+/CVM10-640Xtal-NI.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Costar-SI-M100-1292x1024-FR.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Costar-SI-M100-1292x1024-PLL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Costar-SI-M100-1292x1024-XTAL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI A1 1376x1035 PWC x3.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI A1 1376x1035 PWC.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI A1 1376x1035 XTAL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI A11 648x492 NI PLL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI A11 648x492 NI XTAL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI A11 XTAL 640x480 nom.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI A11 XTAL FR EPS 648 .txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI A11 XTAL FR PWC 648 .txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI A11 XTAL FR PWC 648 x3.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI CV-A1 H-Bin PLL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI CV-A1 V-Bin PLL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI CV-A1-20PLL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI CV-M10 CCIR NI.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI CV-M40.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI CV-M77 EPS.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI CV-M77 Frame Delay PWC.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI CV-M77 LTE Ext Trig.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI CV-M77 LTE.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI CV-M77 PWC.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI CV-M77 XTAL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI-CV-A1-Long-Exp.-Ext.Trig.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI-CV-A1-Long-Exp.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI-CV-A1-PLL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI-CV-A11-648x490-LTE-Ext-trig.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI-CV-A11-648x490-LTE.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI-CV-A1_PWC.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI_CV-M10C_PLL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI_CV-M10C_XTAL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI_CV-M10E_PLL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI_CV-M10E_XTAL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI_CV-M40_BIN.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI_CV-M40_PS120L.txt/1.1/Wed Jan  5 11:59:51 2005//
+/JAI_CV-M40_XTAL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Jai CV-M10BX EPS.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Jai CV-M10SX EIA FreeRunning.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Jai-CV-M77-PLL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/P2V Template.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Pulnix TM-1020-15.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Pulnix TM9701AN XTAL NI.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Pulnix TMC-6700 AsyncReset.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Pulnix TMC-6700.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Pulnix-TM-9701NI-Async-Reset.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Pulnix-TM-9701NI-PLL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/RS640x480P-RGB.txt/1.1/Wed Jan  5 11:59:51 2005//
+/RS640x480Xtal.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Sentech STC-1100 30I XTAL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Sentech STC-1100 30I.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Sentech STC-1100 30NI XTAL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Sentech STC-1100 30NI.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Sentech STC-1100 60I XTAL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Sentech STC-1100 60I.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Sentech STC-1100 60NI XTAL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Sentech STC-1100 60NI.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Sony XC-HR50 PWC M2.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Sony XC-HR50 XTAL.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Sony XC-HR70_Bin_RR_HScanModeA_120fps.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Sony XC-HR70_RR_HScanModeA_120fps.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Sony-XC-55-Donpisha.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Sony-XC-7500-1N.txt/1.1/Wed Jan  5 11:59:51 2005//
+/Sony-XC-7500-2I-ExtTrig.txt/1.1/Wed Jan  5 11:59:52 2005//
+/Sony-XC-7500-Dual2N.txt/1.1/Wed Jan  5 11:59:52 2005//
+/Sony-XC-HR50 Binning.txt/1.1/Wed Jan  5 11:59:52 2005//
+/Sony-XC-HR50-R.R.+Partial-Scan-120fps.txt/1.1/Wed Jan  5 11:59:52 2005//
+/Sony-XC-HR50-R.R.-Ext.Trigger.txt/1.1/Wed Jan  5 11:59:52 2005//
+/Sony-XC-HR50-R.R.txt/1.1/Wed Jan  5 11:59:52 2005//
+/Sony-XC-HR50.txt/1.1/Wed Jan  5 11:59:52 2005//
+/Sony-XC-HR70-Bin-RR-Ext-trig.txt/1.1/Wed Jan  5 11:59:52 2005//
+/Sony-XC-HR70-Bin-RR.txt/1.1/Wed Jan  5 11:59:52 2005//
+/Sony-XC-HR70-Mode1-Bin-PS180fps.txt/1.1/Wed Jan  5 11:59:52 2005//
+/Sony-XC-HR70-Mode1-Bin.txt/1.1/Wed Jan  5 11:59:52 2005//
+/Sony-XC-HR70-Mode1.txt/1.1/Wed Jan  5 11:59:52 2005//
+/Sony-XC-HR70-PLL.txt/1.1/Wed Jan  5 11:59:52 2005//
+/Sony-XC-HR70-XTAL-BIN.txt/1.1/Wed Jan  5 11:59:52 2005//
+/Sony-XC-HR70-XTAL.txt/1.1/Wed Jan  5 11:59:52 2005//
+/TELI-CS8550D-Interlaced.txt/1.1/Wed Jan  5 11:59:52 2005//
+/TELI-CS8550D-Progressive.txt/1.1/Wed Jan  5 11:59:52 2005//
+/vssver.scc/1.1/Wed Jan  5 11:59:52 2005/-kb/
+D

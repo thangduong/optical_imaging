@@ -1,0 +1,1 @@
+patch grating stimpatch { centerx 480; centery 540; width 100; height 100; spatialfrequency 29; temporalfrequency 1.00; textureorientation 0; contrast 50.00; alpha 255; shape 0 }

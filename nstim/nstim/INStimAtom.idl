@@ -1,0 +1,37 @@
+import "objidl.idl";
+import "unknwn.idl";
+import "wtypes.idl";
+import "IPort.idl";
+interface INStimParam;
+interface INStimEngine;
+
+[
+	object,
+	uuid(EE1FE002-5B82-435e-B143-DBA49F2CF18B),
+	helpstring("INStimAtom Interface"),
+	pointer_default(unique)
+]
+interface INStimAtom : IUnknown
+{
+	HRESULT AdvanceFrame(int numFrames);
+	HRESULT Exec(INStimEngine* pEngine);
+	HRESULT Init(INStimEngine* pEngine);
+	HRESULT FindParam(char* param, INStimParam** ppParam);
+	HRESULT Reset(INStimEngine* pEngine);
+
+	HRESULT GetType(char** ppType);
+	HRESULT GetName(char** ppName);
+	HRESULT SetName(char* pName);
+	HRESULT IsAtom(unsigned char* pName);
+
+	HRESULT GetParamCount(int* pParamCount);
+	HRESULT GetParam(int index, INStimParam** ppParam);
+	HRESULT SetParam(unsigned char* pParamName, unsigned char* pParamValue);
+
+	HRESULT List(IPort* pPort);
+	HRESULT Preview();
+	HRESULT SetPreview(int shouldPreview);
+};
+
+import "INStimEngine.idl";
+import "INStimParam.idl";

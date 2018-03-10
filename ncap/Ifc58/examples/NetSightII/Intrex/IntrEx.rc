@@ -1,0 +1,439 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\IntrEx.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\IntrEx.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 217, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About IntrEx"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "IntrEx Version 2.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) Coreco Imaging, Inc.2001-2004",IDC_STATIC,
+                    40,25,145,10
+    DEFPUSHBUTTON   "OK",IDOK,178,7,32,14,WS_GROUP
+END
+
+IDD_INTREX_DIALOG DIALOGEX 0, 0, 390, 316
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "IntrEx"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "VB",IDC_STATIC,8,8,29,8
+    LTEXT           "ODD_VB",IDC_STATIC,8,28,41,8
+    LTEXT           "EVEN_VB",IDC_STATIC,8,48,44,8
+    LTEXT           "EOFRM",IDC_STATIC,8,68,34,8
+    LTEXT           "SOT",IDC_STATIC,8,88,30,8
+    LTEXT           "BMDONE",IDC_STATIC,8,108,38,8
+    LTEXT           "START_OF_FIELD",IDC_STATIC,8,126,64,8
+    LTEXT           "START_OF_ODD",IDC_STATIC,8,145,63,8
+    LTEXT           "START_OF_EVEN",IDC_STATIC,8,166,64,8
+    LTEXT           "START_OF_FRAME",IDC_STATIC,8,185,68,8
+    LTEXT           "BMDONE2",IDC_STATIC,8,205,48,8
+    LTEXT           "BMDONE3",IDC_STATIC,8,225,41,8
+    LTEXT           "SKIPPED_FIELD",IDC_STATIC,8,245,60,8
+    EDITTEXT        IDC_EDIT_VB,77,6,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_ODD_VB,77,26,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_EVEN_VB,77,46,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_EOFRM,77,66,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_SOT,77,86,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_BMDONE,77,106,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_START_OF_FIELD,77,124,40,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_START_OF_ODD,77,144,40,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_START_OF_EVEN,77,164,40,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_START_OF_FRAME,77,184,40,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_BMDONE2,77,204,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_BMDONE3,77,224,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_SKIPPED_FIELD,77,244,40,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_VB,121,6,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_ODD_VB,121,26,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_EVEN_VB,121,46,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_EOFRM,121,66,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_SOT,121,86,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_BMDONE,121,106,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_SO_FIELD,121,124,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_SO_ODD,121,144,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_SO_EVEN,121,164,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_SO_FRAME,121,184,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_BMDONE2,121,204,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_BMDONE3,121,224,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_SKIPPED_FIELD,121,244,35,14
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_VB,157,6,35,14,WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_ODD_VB,157,26,35,14,
+                    WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_EVEN_VB,157,46,35,14,
+                    WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_EOFRM,157,66,35,14,
+                    WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_SOT,157,86,35,14,
+                    WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_BMDONE,157,106,35,14,
+                    WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_SO_FIELD,157,124,35,14,
+                    WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_SO_ODD,157,144,35,14,
+                    WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_SO_EVEN,157,164,35,14,
+                    WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_SO_FRAME,157,184,35,14,
+                    WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_BMDONE2,157,204,35,14,
+                    WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_BMDONE3,157,224,35,14,
+                    WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_SKIPPED_FIELD,157,244,35,14,
+                    WS_DISABLED
+    PUSHBUTTON      "Generate Software Trig",IDC_SOFT_TRIG,209,290,88,21,
+                    BS_MULTILINE
+    PUSHBUTTON      "Trigger Setup",IDC_SETUP_TRIG,209,270,55,14
+    CONTROL         "Inactive",IDC_GRAB_ACTIVE,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | BS_MULTILINE | WS_TABSTOP,345,268,40,15
+    LTEXT           "Grab to Host status:",IDC_STATIC,278,272,66,8
+    PUSHBUTTON      "Reset Counters",IDC_RESET,312,294,70,16
+    LTEXT           "LOSS_OF_SYNC",IDC_STATIC,8,283,60,8
+    EDITTEXT        IDC_EDIT_LOSS_OF_SYNC,77,282,40,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_LOSS_OF_SYNC,121,282,35,14
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_LOSS_OF_SYNC,157,282,35,14,
+                    WS_DISABLED
+    LTEXT           "INPORT",IDC_STATIC,8,264,28,8
+    EDITTEXT        IDC_EDIT_INPORT,77,263,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_INPORT,121,263,35,14
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_INPORT,157,263,35,14,
+                    WS_DISABLED
+    LTEXT           "TRIG_SKIPPED",IDC_STATIC,216,9,54,8
+    EDITTEXT        IDC_EDIT_TRIG_SKIP,269,7,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_TRIGSKIP,312,7,35,14
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_TRIGSKIP,348,7,35,14,
+                    WS_DISABLED
+    LTEXT           "SW_TIMER",IDC_STATIC,216,28,41,8
+    LTEXT           "DATAPIN0",IDC_STATIC,216,107,44,8
+    EDITTEXT        IDC_EDIT_ODD_SWT,269,27,40,14,ES_RIGHT | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT_EVEN_DP0,269,105,40,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_ODD_SWT,312,27,35,14
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_EVEN_DP0,312,105,35,14
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_ODD_SWT,348,27,35,14,
+                    WS_DISABLED
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_EVEN_DP0,348,105,35,14,
+                    WS_DISABLED
+    LTEXT           "DATAPIN1",IDC_STATIC,216,127,44,8
+    EDITTEXT        IDC_EDIT_EVEN_DP1,269,125,40,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_EVEN_DP1,312,125,35,14
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_EVEN_DP1,348,125,35,14,
+                    WS_DISABLED
+    LTEXT           "DATAPIN2",IDC_STATIC,216,146,44,8
+    EDITTEXT        IDC_EDIT_EVEN_DP2,269,145,40,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_EVEN_DP2,312,145,35,14
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_EVEN_DP2,348,145,35,14,
+                    WS_DISABLED
+    LTEXT           "DATAPIN3",IDC_STATIC,216,166,44,8
+    EDITTEXT        IDC_EDIT_EVEN_DP3,269,165,40,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_EVEN_DP3,312,165,35,14
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_EVEN_DP3,348,165,35,14,
+                    WS_DISABLED
+    LTEXT           "DATAPIN4",IDC_STATIC,216,186,44,8
+    EDITTEXT        IDC_EDIT_EVEN_DP4,269,185,40,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_EVEN_DP4,312,185,35,14
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_EVEN_DP4,348,185,35,14,
+                    WS_DISABLED
+    LTEXT           "DATAPIN5",IDC_STATIC,216,206,44,8
+    EDITTEXT        IDC_EDIT_EVEN_DP5,269,205,40,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_EVEN_DP5,312,205,35,14
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_EVEN_DP5,348,205,35,14,
+                    WS_DISABLED
+    LTEXT           "DATAPIN6",IDC_STATIC,216,226,44,8
+    EDITTEXT        IDC_EDIT_EVEN_DP6,269,225,40,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_EVEN_DP6,312,225,35,14
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_EVEN_DP6,348,225,35,14,
+                    WS_DISABLED
+    LTEXT           "DATAPIN7",IDC_STATIC,216,248,44,8
+    EDITTEXT        IDC_EDIT_EVEN_DP7,269,245,40,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_EVEN_DP7,312,245,35,14
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_EVEN_DP7,348,245,35,14,
+                    WS_DISABLED
+    LTEXT           "AIO_FIFO_\nOVERFLOW",IDC_STATIC,216,44,47,15
+    EDITTEXT        IDC_EDIT_AIO_FIFO_OVR,269,44,40,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_AIO_FIFO_OVR,311,44,35,14
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_AIO_FIFO_OVR,347,44,35,14,
+                    WS_DISABLED
+    LTEXT           "AIO_DECISION\nABSENT",IDC_STATIC,216,64,52,16
+    EDITTEXT        IDC_EDIT_DECISION_ABSENT,269,64,40,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_DECISION_ABSENT,311,64,35,14
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_DECISION_ABSENT,347,64,35,
+                    14,WS_DISABLED
+    LTEXT           "AIO_DECISION\nLATE",IDC_STATIC,215,84,51,17
+    EDITTEXT        IDC_EDIT_DECISION_LATE,269,84,40,14,ES_RIGHT | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE_DECISION_LATE,311,84,35,14
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE_DECISION_LATE,347,84,35,14,
+                    WS_DISABLED
+END
+
+IDD_CAMSEL DIALOG DISCARDABLE  0, 0, 263, 146
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Camera"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,206,125,50,14
+    LISTBOX         IDC_LIST_CAMNAME,58,34,123,54,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Camera Type",IDC_STATIC,47,21,145,79
+END
+
+IDD_GRABTRIG DIALOG DISCARDABLE  0, 0, 247, 242
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Triggered Grab"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Software Trigger",IDC_SW_TRIG,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,21,23,68,10
+    CONTROL         "TTL 0",IDC_TTL_0,"Button",BS_AUTORADIOBUTTON,21,40,35,
+                    10
+    CONTROL         "Falling Edge",IDC_FALLING_EDGE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,23,84,55,10
+    CONTROL         "Rising Edge",IDC_RISING_EDGE,"Button",
+                    BS_AUTORADIOBUTTON,124,84,54,10
+    PUSHBUTTON      "Apply",IDC_TRGAPPLY,7,213,50,14
+    GROUPBOX        "Trigger Source",IDC_STATIC,7,7,233,59
+    GROUPBOX        "Trigger Polarity",IDC_STATIC,7,70,233,31
+    GROUPBOX        "Instructions",IDC_STATIC,7,152,233,53
+    LTEXT           "Select Trigger options, then press Apply.",IDC_STATIC,
+                    19,165,141,11
+    LTEXT           "Note: A new ""Grab to Host"" must be issued to incorporate any changed properties.",
+                    IDC_STATIC,19,177,138,20
+    PUSHBUTTON      "Exit",IDOK,109,213,50,14
+    GROUPBOX        "Trigger Enable",IDC_STATIC,7,112,233,33
+    CONTROL         "Disable",IDC_TRG_ENABLE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,23,125,39,10
+    CONTROL         "Enable",IDC_TRG_DISABLE,"Button",BS_AUTORADIOBUTTON,124,
+                    125,38,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,0,0
+ PRODUCTVERSION 1,0,0,2
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "Coreco Imaging, Inc.\0"
+            VALUE "FileDescription", "IntrEx IFC Application\0"
+            VALUE "FileVersion", "2, 0, 0, 0\0"
+            VALUE "InternalName", "IntrEx\0"
+            VALUE "LegalCopyright", "Copyright (C) 2001-2004\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "IntrEx.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "IntrEx Application\0"
+            VALUE "ProductVersion", "2, 0, 0, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_INTREX_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 308
+    END
+
+    IDD_CAMSEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 256
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 139
+    END
+
+    IDD_GRABTRIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 240
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 235
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About IntrEx..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STR_INPORT          "Trig 0"
+    IDS_STR_SW_TIMER        "Trig 1"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\IntrEx.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

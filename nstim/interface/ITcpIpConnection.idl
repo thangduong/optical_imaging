@@ -1,0 +1,15 @@
+import "objidl.idl";
+import "unknwn.idl";
+import "wtypes.idl";
+import "IPort.idl";
+
+[
+	object,
+	uuid(4FAFFAAD-598D-4020-8C5E-9791F319FA1F),
+	helpstring("IPort Interface"),
+	pointer_default(unique)
+]
+interface ITcpIpConnection : IPort
+{
+	HRESULT Test();
+};

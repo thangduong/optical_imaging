@@ -1,0 +1,74 @@
+/******************************************************************************
+ *
+ * MODULE
+ *    seqsnapD.h
+ *
+ * REVISION INFORMATION
+ *    $Logfile: /ifc/examples/PCVision2/SeqSnap/SEQSNAPD.H $
+ *    $Revision: 1.1 $
+ *    $Modtime: 9/16/02 9:35a $
+ *
+ * ABSTRACT
+ *    PCVision2 Example Program
+ *
+ * TECHNICAL NOTES
+ *
+ *
+ * Copyright (c) 2001 Coreco Imaging, Inc.  All rights reserved.
+ *
+ ******************************************************************************/
+
+#if !defined(AFX_SEQSNAPDOC_H__17D20ADC_3064_11D1_AE31_00A0C959E757__INCLUDED_)
+#define AFX_SEQSNAPDOC_H__17D20ADC_3064_11D1_AE31_00A0C959E757__INCLUDED_
+
+#if _MSC_VER >= 1000
+#pragma once
+#endif // _MSC_VER >= 1000
+
+
+class CSeqsnapDoc : public CDocument
+{
+protected: // create from serialization only
+	CSeqsnapDoc();
+	DECLARE_DYNCREATE(CSeqsnapDoc)
+
+// Attributes
+public:
+
+// Operations
+public:
+
+// Overrides
+	// ClassWizard generated virtual function overrides
+	//{{AFX_VIRTUAL(CSeqsnapDoc)
+	public:
+	virtual BOOL OnNewDocument();
+	virtual void Serialize(CArchive& ar);
+	virtual BOOL OnOpenDocument(LPCTSTR lpszPathName);
+	//}}AFX_VIRTUAL
+
+// Implementation
+public:
+	virtual ~CSeqsnapDoc();
+#ifdef _DEBUG
+	virtual void AssertValid() const;
+	virtual void Dump(CDumpContext& dc) const;
+#endif
+
+protected:
+
+// Generated message map functions
+protected:
+	//{{AFX_MSG(CSeqsnapDoc)
+		// NOTE - the ClassWizard will add and remove member functions here.
+		//    DO NOT EDIT what you see in these blocks of generated code !
+	//}}AFX_MSG
+	DECLARE_MESSAGE_MAP()
+};
+
+/////////////////////////////////////////////////////////////////////////////
+
+//{{AFX_INSERT_LOCATION}}
+// Microsoft Developer Studio will insert additional declarations immediately before the previous line.
+
+#endif // !defined(AFX_SEQSNAPDOC_H__17D20ADC_3064_11D1_AE31_00A0C959E757__INCLUDED_)

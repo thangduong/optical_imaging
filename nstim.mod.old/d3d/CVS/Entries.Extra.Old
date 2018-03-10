@@ -1,0 +1,15 @@
+/CDirect3D.cpp////
+/CDirect3D.h////
+/CDirect3DDevice.h////
+/CDirect3DSurface.cpp////
+/CDirect3DSurface.h////
+/CDirect3DVertexBuffer.cpp////
+/CDirect3DVertexBuffer.h////
+/CDirect3DWnd.h////
+/CDirect3DXSprite.cpp////
+/CDirect3DXSprite.h////
+/d3d.dsp////
+/CDirect3DTexture.h////
+/CDirect3DDevice.cpp////
+/CDirect3DTexture.cpp////
+/CDirect3DWnd.cpp////

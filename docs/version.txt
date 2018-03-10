@@ -1,0 +1,3 @@
+rel-1-0		Ncap all working
+rel-1-1		- Nstim working but takes up a lot of memory for gratings
+		- smsync working but klunky

@@ -1,0 +1,16 @@
+import "objidl.idl";
+import "unknwn.idl";
+import "wtypes.idl";
+import "IPortServerCallback.idl";
+import "IPortCallback.idl";
+
+[
+	object,
+	uuid(8EA6019A-3FB3-447c-B2A1-F25E654972B7),
+	helpstring("INStimCmdEngine Interface"),
+	pointer_default(unique)
+]
+interface INStimCmdEngine : IUnknown
+{
+	HRESULT Test();
+};

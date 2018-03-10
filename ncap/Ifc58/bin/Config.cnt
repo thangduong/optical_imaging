@@ -1,0 +1,17 @@
+:Base Config.hlp
+1 Configurator Help
+2 Welcome=Welcome
+2 Config View=HID_Configview
+2 Camera View=HID_Cameraview
+2 Log View=HID_Logview
+2 File menu commands=menu_file
+2 View menu commands=menu_view
+2 Tools menu commands=Tools_menu_commands
+2 Window menu commands=menu_window
+2 Help menu commands=menu_help
+2 File Open dialog box=AFX_HIDD_FILEOPEN
+2 Save As dialog box=AFX_HIDD_FILESAVE
+2 Status Bar=AFX_HIDW_STATUS_BAR
+2 Single Click Assignment=HID_SINGLE_CLICK_ASSIGN
+2 About Histogram=HID_HISTOGRAM_APP
+2 Camera Rule Editor=HID_RULE_EDITOR

@@ -1,0 +1,448 @@
+// VnVidSrc.idl : IDL source for VnVidSrc.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (VnVidSrc.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+//import "VnVaridl.idl";
+// import rather than include so that redeclaration do not get put into generated header
+import "vidsrct.h";
+
+//import "IDstribOS.idl";
+#include "IDstribOS.idl"
+
+//import "VnImgCon.idl";
+
+
+
+	[
+		object,
+		uuid(5B2FC362-775F-11D4-B132-00105A0F576C),
+		dual,
+		helpstring("IVideoSrc Interface"),
+		pointer_default(unique)
+	]
+	interface IVideoSrc : IDistribOS
+	{
+		[id(1), helpstring("Connect to a Video Source")] 
+		HRESULT Connect([string] LPSTR videoSrcName,[in] DWORD numParams,
+			[in,out,size_is(numParams)] VSPARAM params[],[in]VARIANT_BOOL isLocal);
+
+		[propget, id(2), helpstring("Name of video source config file, e.g., pcdtest.txt .")]
+		HRESULT ConfigFile([out, retval] BSTR *pVal);
+
+		[propput, id(2), helpstring("Name of video source config file, e.g., pcdtest.txt .")] 
+		HRESULT ConfigFile([in] BSTR newVal);
+
+		[id(4), helpstring("method GrabWaitFrameRead: Waits for a frame and encodes it.")] 
+		HRESULT GrabWaitFrameRead([in] DWORD grabID,VS_FRAME_ENCODE encodeKind,
+			[out, size_is(bytesAvailable),length_is(*bytesRead)] BYTE *dest, [in] DWORD bytesAvailable,
+			[out] DWORD *bytesRead,int FrameSeqNum, DWORD milliseconds, [out] VS_GRAB_EXT_ATTR *extAttr);
+
+		[id(5), helpstring("method Freeze: Stop the specified grab operation, or stop all grabs if none specified.")] 
+		HRESULT Freeze([defaultvalue(0)]DWORD grabID);
+
+		[id(6), helpstring("method CreateInterruptObject: Creates an interrupt Object.")] 
+		HRESULT CreateInterruptObject ( VS_ICAP_INTR_EVENT intrEvent,VARIANT_BOOL eventSetting,[out,retval] HVSINTERRUPT *hIntrObj);
+
+		[id(8), helpstring("method AcqParamSupported: Gets the support of acquisition paramID.")] 
+		HRESULT AcqParamSupported (VS_ACQ_PARAMS_TYPE paramID);
+
+		[id(9), helpstring("method GetAcqParam: Gets the value of a parameter.")]
+		HRESULT GetAcqParam (VS_ACQ_PARAMS_TYPE paramID,[out] double *value,[defaultvalue(0)] DWORD index);
+
+		[id(10), helpstring("method SetAcqParam: Sets the value of a parameter.")] 
+		HRESULT SetAcqParam (VS_ACQ_PARAMS_TYPE paramID, double value,[defaultvalue(0)] DWORD index);
+
+		[id(11), helpstring("method GetParamCaps: Gets the capabilities of a parameter.")] 
+		HRESULT GetParamCaps (VS_ACQ_PARAMS_TYPE paramID,[out]PVS_PARAM_CAPS lpParamCaps);
+
+		[id(12), helpstring("method GetFirstParam: Get the first supported parameter for the specified parameter group(s).")]
+		HRESULT GetFirstParam (DWORD paramGroupMask,VARIANT_BOOL includeChildGroups,[out,retval] VS_ACQ_PARAMS_TYPE *firstParam);
+
+		[id(13), helpstring("method GetNextParam: Get the next supported parameter for the specified parameter group(s).")]
+		HRESULT GetNextParam ( VS_ACQ_PARAMS_TYPE paramID,DWORD paramGroupMask,
+			VARIANT_BOOL includeChildGroups,[out,retval] VS_ACQ_PARAMS_TYPE *nextParam);
+
+		[id(14), helpstring("method GetFirstParamGroup: Get the first parameter group in the set specified by parentGroupID.")] 
+		HRESULT GetFirstParamGroup ( VS_PARAM_GROUP_TYPE parentGroupID,[out,retval] VS_PARAM_GROUP_TYPE *firstParmGrp);
+
+		[id(15), helpstring("method GetNextParamGroup: Get the parameter group which comes after groupID.")] 
+		HRESULT GetNextParamGroup ( VS_PARAM_GROUP_TYPE groupID,[out,retval] VS_PARAM_GROUP_TYPE *nextParmGrp);
+
+		[id(16), helpstring("method GetGroupProperties: Get the properties of groupID.")] 
+		HRESULT GetGroupProperties (VS_PARAM_GROUP_TYPE groupID, [out]PVS_PARAM_GROUP_PROPS lpGroupProps);
+
+		[id(17), helpstring("method GetParentGroup: Get the parent group of parameter group childGroupID.")]
+		HRESULT GetParentGroup (VS_PARAM_GROUP_TYPE childGroupID,[out,retval] VS_PARAM_GROUP_TYPE *parentGroupID);
+
+
+		[id(18), helpstring("method GetFirstEnumArg: Get the first valid Enum value for paramID.")]
+		HRESULT GetFirstEnumArg (VS_ACQ_PARAMS_TYPE paramID, [out] VS_ENUM_ARG *arg);
+
+		[id(19), helpstring("method GetNextEnumArg: Get the next valid Enum value for paramID.")]
+		HRESULT GetNextEnumArg ( VS_ACQ_PARAMS_TYPE paramID, [in,out] VS_ENUM_ARG *arg);
+
+		[id(20), helpstring("method IsArgSupported: Is arg a valid value for paramID.")] 
+		HRESULT IsArgSupported ( VS_ACQ_PARAMS_TYPE paramID, double arg);
+
+		[id(21), helpstring("method ClosestArgSupported: Get the valid parameter value which is closest to arg.")] 
+		HRESULT ClosestArgSupported ( VS_ACQ_PARAMS_TYPE paramID, double arg,[out,retval] double *retVal);
+
+		[id(22), helpstring("method GetArgName: Get the string representation of dArg.")]
+		HRESULT GetArgName ( VS_ACQ_PARAMS_TYPE paramID, double dArg,[in,out,string] LPSTR argName);
+
+		[id(23), helpstring("method GetArgValue: Get the parameter value specified by the string szArgName.")]
+		HRESULT GetArgValue ( VS_ACQ_PARAMS_TYPE paramID, [string]LPSTR szArgName,[out,retval] double *argVal);
+
+		[id(24), helpstring("method SetLutFunction: Load the specified LUT so as to implement the function func.")] 
+		HRESULT SetLutFunction ( VS_LUTID_TYPE lutID, VSLUTFUNC func,DWORD *constants,[defaultvalue(VS_LUT_INTELLI_WIDTH)] VS_LUT_PORTION_TYPE lutPortion);
+
+		[id(25), helpstring("method ReadLutByteBuf: Read the specified portion of a LUT.")]
+		HRESULT ReadLutByteBuf (VS_LUTID_TYPE lutID, DWORD lutAdr, DWORD numEntries, [out,size_is(numEntries)] BYTE *buf,[defaultvalue(VS_LUT_FULL_WORD)]VS_LUT_PORTION_TYPE lutPortion);
+
+		[id(26), helpstring("method WriteLutByteBuf: Write the specified portion of a LUT.")]
+		HRESULT WriteLutByteBuf (VS_LUTID_TYPE lutID, DWORD lutAdr,DWORD numEntries,[in,size_is(numEntries)] BYTE *buf,[defaultvalue(VS_LUT_FULL_WORD)]VS_LUT_PORTION_TYPE lutPortion);
+
+		[id(27), helpstring("method WriteLutToFile: Write the specified LUT contents to a file.")] 
+		HRESULT WriteLutToFile ( VS_LUTID_TYPE lutID, DWORD lutAdr, DWORD numEntries, [string]LPSTR szFileName, [defaultvalue(VS_LUT_FULL_WORD)]VS_LUT_PORTION_TYPE lutPortion);
+
+		[id(28), helpstring("method LoadLutFromFile: Load the specified LUT from a LUT file.")]
+		HRESULT LoadLutFromFile ( VS_LUTID_TYPE lutID, [string]LPSTR szFileName);
+
+		[id(29), helpstring("method ReadLutLoc: Read an individual LUT location.")]
+		HRESULT ReadLutLoc ( VS_LUTID_TYPE lutID, DWORD lutAdr,VS_LUT_PORTION_TYPE lutPortion,[out,retval] DWORD *retVal);
+
+		[id(30), helpstring("method WriteLutLoc: Write an individual LUT location")]
+		HRESULT WriteLutLoc (VS_LUTID_TYPE lutID,DWORD lutAdr,DWORD val, [defaultvalue(VS_LUT_FULL_WORD)] VS_LUT_PORTION_TYPE lutPortion);
+
+		[id(31), helpstring("method LinearizeLut: Load the LUTs to effect a linear function.")] 
+		HRESULT LinearizeLut (VS_LUTID_TYPE lutID,[defaultvalue(VS_LUT_INTELLI_WIDTH)] VS_LUT_PORTION_TYPE lutPortion);
+
+		[id(32), helpstring("method FloodLUT: Flood the LUT so that all inputs map to val.")] 
+		HRESULT FloodLUT (VS_LUTID_TYPE lutID,DWORD val,[defaultvalue(VS_LUT_INTELLI_WIDTH)] VS_LUT_PORTION_TYPE lutPortion);
+
+		[id(33), helpstring("method InvertLut: Load a linear inversion into the LUT.")]
+		HRESULT InvertLut (VS_LUTID_TYPE lutID,[defaultvalue(VS_LUT_INTELLI_WIDTH)] VS_LUT_PORTION_TYPE lutPortion);
+
+		[id(34), helpstring("method ThresholdLut: Make the LUT implement a threshold function")]
+		HRESULT ThresholdLut (VS_LUTID_TYPE lutID, const DWORD dwThreshold,[defaultvalue(VS_LUT_INTELLI_WIDTH)] VS_LUT_PORTION_TYPE lutPortion);
+
+		[id(35), helpstring("method OffsetLut: Make the LUT implement a offset function")] 
+		HRESULT OffsetLut (VS_LUTID_TYPE lutID, const long lOffset,[defaultvalue(VS_LUT_INTELLI_WIDTH)] VS_LUT_PORTION_TYPE lutPortion);
+
+		[id(36), helpstring("method BitReverseLinearLut: Make the LUT implement a bit reversal function")] 
+		HRESULT BitReverseLinearLut (VS_LUTID_TYPE lutID,[defaultvalue(VS_LUT_INTELLI_WIDTH)] VS_LUT_PORTION_TYPE lutPortion);
+
+		[id(37), helpstring("method RgbToHsiLUT: Make the LUT implement a RgbToHsi function")]
+		HRESULT RgbToHsiLUT (VS_LUTID_TYPE lutID, VS_LUT_PORTION_TYPE lutPortion);
+
+		[id(38), helpstring("method GetLUTCaps: Get the video sources LUT capabilities.")]
+		HRESULT GetLUTCaps ([out]LPVS_LUTCAP caps);
+
+		[id(39), helpstring("method SetLutPathPage: Set the Active LUT page for the video acqusition path.")]
+		HRESULT SetLutPathPage (VS_LUTID_TYPE lutID,VS_LUT_PIX_SIZE_TYPE pxSize,DWORD pageNum);
+
+		[id(40), helpstring("method SetLutHostPage: Set the Active LUT page for programmatic LUT loading.")]
+		HRESULT SetLutHostPage (VS_LUTID_TYPE lutID,VS_LUT_PIX_SIZE_TYPE pxSize,DWORD pageNum,VARIANT_BOOL leftJustify);
+		
+		[id(41), helpstring("method SetWindowGen: Set/crop the active video acquisition window.")] 
+		HRESULT SetWindowGen (int x, int y, int dx, int dy);
+
+		[id(42), helpstring("method SetCameraType: Set the active video camera type.")] 
+		HRESULT SetCameraType ( [string]LPSTR  camName, [defaultvalue(TRUE)] VARIANT_BOOL updateHW);
+
+		[id(43), helpstring("method GetNextCamType: Get the name of the next supported camera type.")] 
+		HRESULT GetNextCamType ([string,in,out] LPSTR nextCamType);
+
+		[id(44), helpstring("method GetFirstCamType: Get the name of the first supported camera type.")] 
+		HRESULT GetFirstCamType ([string,in,out] LPSTR firstCamType);
+
+		[id(46), helpstring("method GrabOn: Turn on the video source acqusition mode.")]
+		HRESULT GrabOn (void);
+
+		[id(48), helpstring("method GrabMultiDest: Grab to a ring buffer composed of non-contiguous frames (For local Video Sources only).")] 
+		HRESULT GrabMultiDest ([out] HVSGRAB *grabID, DWORD dwOptions,[in,size_is(ringNumFrames)] pBYTE dests[], 
+			int ringNumFrames,int totalNumFrames, [defaultvalue(0)]int x, [defaultvalue(0)]int y, [defaultvalue(0)]int dx, [defaultvalue(0)]int dy);
+
+		[id(49), helpstring("method GrabAoi: Start a grab to a frame ring buffer.")] 
+		HRESULT GrabAoi ([out] HVSGRAB *grabID, DWORD dwOptions,DWORD dest, int ringNumFrames, int totalNumFrames, [in]LPVS_AOI_DESC aoiDesc);
+
+		[id(50), helpstring("method GrabLock: Lock (prevent further update to) a ring buffer frame.")] 
+		HRESULT GrabLock (HVSGRAB grabID, int seqNum);
+
+		[id(51), helpstring("method GrabRelease: Allow a previously locked ring buffer frame to be subsequently updated.")] 
+		HRESULT GrabRelease (HVSGRAB grabID, int seqNum);
+
+		[id(52), helpstring("method GrabWaitFrame: Wait for a ring buffer frame to arrive.")] 
+		HRESULT GrabWaitFrame (HVSGRAB grabID, [out]BYTE **frameAddr, int FrameSeqNum, DWORD milliseconds, 
+			VARIANT_BOOL lock, [out]VS_GRAB_EXT_ATTR *ExtendedAttr);
+
+		[id(54), helpstring("method DecodeFrame: Decode/Decompress a received frame (can only be called locally).")] 
+		HRESULT DecodeFrame ( BYTE *src,DWORD numSrcBytes,VS_FRAME_ENCODE frameEncode, DWORD dx, DWORD dy,
+			VS_COLOR color, DWORD bitsPerPixel, BYTE *dest);
+
+		[id(57), helpstring("method GrabGetExtAttr: Get extended attributes of a received ring buffer frame.")] 
+		HRESULT GrabGetExtAttr ( HVSGRAB grabID, int seqNum, [out]VS_GRAB_EXT_ATTR *ExtendedAttr);
+
+		[id(58), helpstring("method Snap: Snap/acquire one image to memory.")] 
+		HRESULT Snap ( [out,size_is(bytesPerFrame)] pBYTE dest,DWORD bytesPerFrame,[defaultvalue(0)] int x,[defaultvalue(0)] int y,[defaultvalue(0)] int dx,[defaultvalue(0)] int dy);
+
+		[id(59), helpstring("method SeqSnap: Snap/acquire a sequence of images to memory.")] 
+		HRESULT SeqSnap ([out,size_is(bytesPerFrame*numFrames)] pBYTE dest,DWORD bytesPerFrame, int numFrames, [defaultvalue(0)] int x,[defaultvalue(0)] int y,[defaultvalue(0)] int dx, [defaultvalue(0)] int dy,[defaultvalue(-1)] DWORD dwMilliseconds);
+
+		[id(62), helpstring("method SetZoom: Set the zoom parameters.")] 
+		HRESULT SetZoom ( float xZoom, float yZoom);
+
+		[id(63), helpstring("method GetZoomCaps: Get the video source zoom capabilities.")] 
+		HRESULT GetZoomCaps ([out]LPVS_ZOOMCAP lpCaps);
+
+		[id(64), helpstring("method ReadArea")] 
+		HRESULT ReadArea (int x,int y,int dx,int dy,[out,size_is(dy*dest_dx)]BYTE *destadr, [defaultvalue(0)] DWORD dest_dx, [defaultvalue(0)] DWORD readOptions);
+
+		[id(65), helpstring("method LineReverseRead")] 
+		HRESULT LineReverseRead (int x,int y,int dx,int dy,int destlinebytes, [out,size_is(dx*dy)]BYTE *destadr,[defaultvalue(0)] DWORD readOptions);
+
+		[id(66), helpstring("method ReadDestPitchArea")] 
+		HRESULT ReadDestPitchArea (int x,int y,int dx,int dy, int destlinebytes, DWORD physdest, [defaultvalue(0)] DWORD readOptions);
+
+		[id(67), helpstring("method GetAttr: Get the video source acquisition attributes.")] 
+		HRESULT GetAttr ([out]LPVS_CAM_ATTR lpAttr,[defaultvalue(TRUE)] VARIANT_BOOL zoomCorrected);
+
+		[id(68), helpstring("method SetReadColorRemap")] 
+		HRESULT SetReadColorRemap (VARIANT_BOOL bEnabled);
+
+		[id(69), helpstring("method ReadReg")] HRESULT ReadReg (REGID reg, [out,retval] DWORD *regVal);
+		[id(70), helpstring("method WriteReg")] HRESULT WriteReg (REGID reg, DWORD val);
+
+
+		[id(71), helpstring("method ParamValToString")] 
+		HRESULT ParamValToString ( VS_ACQ_PARAMS_TYPE paramID, double dVal, [in,out,string]LPSTR szResult);
+
+		[id(72), helpstring("method ParamStringToVal")] 
+		HRESULT ParamStringToVal (VS_ACQ_PARAMS_TYPE paramID, [string] LPSTR szVal,[out,retval] double *retVal);
+
+		[id(73), helpstring("method QueryUIParamUpdate")] 
+		HRESULT QueryUIParamUpdate ( [in,out]double *dVal,VS_ACQ_PARAMS_TYPE paramID,DWORD index);
+
+		[id(74), helpstring("method ParamGroupEditDlgExist")] 
+		HRESULT ParamGroupEditDlgExist ( VS_PARAM_GROUP_TYPE GroupID);
+
+		[id(75), helpstring("method DoParamGroupEditDialog")] 
+		HRESULT DoParamGroupEditDialog ( VS_PARAM_GROUP_TYPE GroupID, VS_ACQ_PARAMS_TYPE focalParam);
+
+		[id(76), helpstring("method ParamIsApplicable: Determine if a parameter is currently applicable, in light of other current parameters.")]
+		HRESULT ParamIsApplicable (VS_ACQ_PARAMS_TYPE paramID, DWORD index, [in,out,string]LPSTR ReasonNotApplicable);
+
+		[id(77), helpstring("method GroupIsApplicable: Determine if a parameter group is currently applicable.")] 
+		HRESULT GroupIsApplicable (VS_PARAM_GROUP_TYPE groupID, [in,out,string]LPSTR ReasonNotApplicable);
+
+		[id(78), helpstring("method PrintParamAttributes")] HRESULT PrintParamAttributes (VS_ACQ_PARAMS_TYPE paramID,VS_PARAM_GROUP_TYPE parentGroupID,[string] LPSTR file);
+
+		[id(79), helpstring("method CameraIsReserved: Determine if camera is a reserved one.")] 
+		HRESULT CameraIsReserved ([string] LPSTR camName);
+
+		[id(80), helpstring("method TransformSupported: Determine if an image acquisition transformation is supported.")] 
+		HRESULT TransformSupported ( VS_TRANSFORM_TYPE eTransform);
+
+		[id(81), helpstring("method SetTransform: Set the active image acquisition transformation.")] 
+		HRESULT SetTransform ( VS_TRANSFORM_TYPE eTransform);
+
+		[id(82), helpstring("method GetCurrentTransform: Get the active image acquisition transformation.")] 
+		HRESULT GetCurrentTransform ( [out,retval]VS_TRANSFORM_TYPE *currentTransform);
+
+		[id(83), helpstring("method QueryUICameraType")] HRESULT QueryUICameraType (void);
+
+		[id(84), helpstring("method GetPortNum: Get the current video input port number.")] 
+		HRESULT GetPortNum ([out,retval] DWORD *portNum);
+
+		[id(85), helpstring("method GetProps: Get the top-level properties this video source.")] 
+		HRESULT GetProps([out]VSPROPS *props);
+
+		[id(86), helpstring("method SetPortNum: Set the current video input port.")] 
+		HRESULT SetPortNum(DWORD portNum);
+
+		[id(87), helpstring("method GetNumPorts: Get the number of video input ports for this video source.")] 
+		HRESULT GetNumPorts([out,retval]DWORD *numPorts);
+
+		[id(88), helpstring("method AddCameraType: Add a new camera type definition based on an existing definition.")] 
+		HRESULT AddCameraType(LPSTR strNewCamName, LPSTR strExistCamName,[out,retval] DWORD *defHhandle);
+
+		[id(89), helpstring("method Grab: Grab frames to a ring buffer.")] 
+		HRESULT Grab([out] ULONG *grabID, [in] DWORD dwOptions,DWORD dest, int ringNumFrames,int totalNumFrames , [defaultvalue(0)] int x, [defaultvalue(0)] int y, [defaultvalue(0)] int dx, [defaultvalue(0)] int dy);
+
+		[id(90), helpstring("method CreateVideoStream: Create a video stream.")] 
+		HRESULT CreateVideoStream(PVS_STREAM_PARAMS params, [out,retval]HVIDSTREAMSRV *vidStream);
+
+		[id(91), helpstring("method DeleteVideoStream: Delete a video stream.")] 
+		HRESULT DeleteVideoStream(HVIDSTREAMSRV vidStream);
+
+		[id(92), helpstring("private method WaitStreamPacket")] 
+		HRESULT WaitStreamPacket(HVIDSTREAMSRV srvStream,[out, size_is(bytesAvailable),length_is(*bytesRead)] BYTE *dest, [in] DWORD bytesAvailable,[out] DWORD *bytesRead, DWORD milliseconds);
+
+		[id(93), helpstring("private method GetDriverHandle")] 
+		HRESULT GetDriverHandle([out,retval]DWORD *handle);
+
+		[id(113), helpstring("method WriteCameraFile")] 
+		HRESULT WriteCameraFile([string] LPSTR cameraFileName,VS_FILESYS_DOMAIN_TYPE fileSysDomain,[string] LPSTR cameraName);
+
+		[id(114), helpstring("method ReadCamerasInFile")] 
+		HRESULT ReadCamerasInFile([string] LPSTR cameraFileName,VS_FILESYS_DOMAIN_TYPE fileSysDomain);
+
+		[id(115), helpstring("method ReadUserConfigFile")] 
+		HRESULT ReadUserConfigFile([string] LPSTR configFileName,VS_FILESYS_DOMAIN_TYPE fileSysDomain);
+
+		[id(116), helpstring("method WriteUserConfigFile")] 
+		HRESULT WriteUserConfigFile([string] LPSTR configFileName,VS_FILESYS_DOMAIN_TYPE fileSysDomain);
+
+		[id(117), helpstring("method ConnectOutputTo")] 
+		HRESULT ConnectOutputTo(DWORD OutputId,IDispatch *sink);
+
+		[id(118), helpstring("method ProduceTo:Internally used to connect to image sink.")] 
+		HRESULT ProduceTo([in]LPDISPATCH imgNode, DWORD srcOutputId);
+
+		[id(119), helpstring("method NotifyDetachProducer: Called before our consumer node detaches from us.")] 
+		HRESULT NotifyDetachProducer(IDispatch *node, DWORD srcOutputId);
+
+		[id(120), helpstring("method ActivateProducer")] 
+		HRESULT ActivateProducer(DWORD srcOutputId, VS_REF_VAL_KIND enQKind, VARIANT_BOOL areRemote);
+
+		[id(121), helpstring("method GrabToImgNode")] 
+		HRESULT GrabToImgNode(VS_FRAME_ENCODE remoteUseEncode, DWORD dwOptions,  int NumFrames, [defaultvalue(0)]int x, [defaultvalue(0)]int y, [defaultvalue(0)]int dx, [defaultvalue(0)]int dy);
+
+		[id(122), helpstring("method FreezeImgNode")] 
+		HRESULT FreezeImgNode();
+
+		[id(123), helpstring("method ReleaseEleRef")] 
+		HRESULT ReleaseEleRef(DWORD srcOutputId,HBYREFELE deRefHandle);
+
+		[id(124), helpstring("method WaitInterrupt")] 
+		HRESULT WaitInterrupt(HVSINTERRUPT hIntrObj, DWORD milliSeconds);
+
+		[id(125), helpstring("method DeleteInterruptObject")] 
+		HRESULT DeleteInterruptObject(HVSINTERRUPT hIntrObj);
+
+		[id(126), helpstring("method ClearInterrupt")] 
+		HRESULT ClearInterrupt(HVSINTERRUPT hIntrObj);
+
+		[id(127), helpstring("method GetReadCaps")] 
+		HRESULT GetReadCaps([out]VS_READCAP *lpCaps);
+
+		[id(128), helpstring("method Close: Must be called before the last Release of this object.")] 
+		HRESULT Close( [defaultvalue(0)] DWORD dwFlags);
+
+		[id(129), helpstring("method OutportStrobeVal")] 
+		HRESULT OutportStrobeVal(VS_LEVEL_TYPE val,[defaultvalue(0)]DWORD channelNum);
+
+		[id(130), helpstring("method OutportVal")] 
+		HRESULT OutportVal(DWORD val,DWORD channelNum);
+
+		[id(131), helpstring("method InportMode")] 
+		HRESULT InportMode(BOOL strobed,VS_EDGE_TYPE latchEdge,[defaultvalue(0)]DWORD channelNum);
+
+		[id(132), helpstring("method InportVal")] 
+		HRESULT InportVal(DWORD channelNum,DWORD *valRead);
+
+		[id(133), helpstring("method InportInterruptPolarity")] 
+		HRESULT InportInterruptPolarity( VS_EDGE_TYPE intrEdge,[defaultvalue(0)]DWORD channelNum);
+
+		[id(134), helpstring("method GetOutputNode")] 
+		HRESULT GetOutputNode([out]LPDISPATCH *imgNode);
+
+		[id(135), helpstring("method LockObject")] 
+		HRESULT LockObject(VARIANT_BOOL lock);
+
+		[id(136), helpstring("method DisconnectOutput")] 
+		HRESULT DisconnectOutput(DWORD OutputId);
+
+		[id(137), helpstring("method SetOutputQueuePolicy")] 
+		HRESULT SetOutputQueuePolicy([in]VS_INODE_QMNG_ATTR *attr);
+
+
+
+	};
+
+	[
+		object,
+		uuid(4593FCF6-040B-11D5-B181-00105A0F576C),
+		dual,
+		helpstring("IVidSrcCfg Interface"),
+		pointer_default(unique)
+	]
+	interface IVidSrcCfg : IDispatch
+	{
+		[id(1), helpstring("method GetEnumVideoSrc: Get the properties of the index(0..n) video source on nodeName.")] 
+		HRESULT GetEnumVideoSrc([string] LPSTR nodeName,[in] DWORD index, [in,out]VSPROPS *props);
+
+		[id(2), helpstring("method CreateVideoSrc: Create a video source (identified by nodeName and videoSrcName) with the provided creation parameters.")] 
+		HRESULT CreateVideoSrc([string] LPSTR nodeName,[string] LPSTR videoSrcName,[in] DWORD numParams,[in,out,size_is(numParams)] VSPARAM params[],[out]IVideoSrc **videoSrc);
+
+		[id(3), helpstring("method SetUser: Set the UserName, password and optional domain name for the specified node.")] 
+		HRESULT SetUser([string] LPSTR nodeName,[in,out]VSAUTHIDENTITY *user);
+
+		[id(4), helpstring("method GetLastError")] 
+		HRESULT GetLastError([out]DWORD *error);
+
+		[id(5), helpstring("method AddDetectedVideoSrcs: Detect and register all video sources on nodeName which the driver driverDllName recognizes.")] 
+		HRESULT AddDetectedVideoSrcs([string]LPSTR nodeName, [string]LPSTR driverDllName, DWORD options);
+
+		[id(6), helpstring("method SyncSysTime: Synchronize the system time so that the node nodeName has the same time as this node.")] 
+		HRESULT SyncSysTime([string] LPSTR nodeName);
+
+		[id(7), helpstring("method GetSysTimeMilliSecs")] 
+		HRESULT GetSysTimeMilliSecs([out,retval]ULONGLONG *sysTimeMillisecs);
+
+		[id(8), helpstring("method SetSysTimeMilliSecs")] 
+		HRESULT SetSysTimeMilliSecs([in]ULONGLONG sysTimeMillisecs);
+
+		[id(9), helpstring("method AdjustSysTimeMilliSecs")] 
+		HRESULT AdjustSysTimeMilliSecs([in]LONGLONG numMillisecsAdj);
+	};
+
+
+
+
+[
+	uuid(5B2FC355-775F-11D4-B132-00105A0F576C),
+	version(1.0),
+	helpstring("VnVidSrc 1.0 Type Library")
+]
+library VNVIDSRCLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(5B2FC363-775F-11D4-B132-00105A0F576C),
+		helpstring("VideoSrc Class")
+	]
+	coclass VideoSrc
+	{
+		interface IDistribOS;
+		[default] interface IVideoSrc;
+	};
+
+
+/*
+	[
+		uuid(7C396994-C9E7-11D4-B15D-00105A0F576C),
+		helpstring("DistribOS Class")
+	]
+	coclass DistribOS
+	{
+		[default] interface IDistribOS;
+	};
+*/
+
+	[
+		uuid(4593FCF7-040B-11D5-B181-00105A0F576C),
+		helpstring("VidSrcCfg Class")
+	]
+	coclass VidSrcCfg
+	{
+		[default] interface IVidSrcCfg;
+	};
+};
+

@@ -1,0 +1,87 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>New Page 1</title>
+</head>
+
+<body>
+
+<p>
+&nbsp; <b><font color="#000080" size="5">&nbsp; VegaNet Configurator</font></b>
+
+</p>
+
+
+
+
+<p>
+<OBJECT id=VnVideoSrc1 style="LEFT: 0px; TOP: 0px" classid=clsid:5AF5BCDB-0E45-11D5-B186-00105A0F576C
+    codebase="http://ftp.corecoimaging.com/Public/Engineering/vegadply.cab"
+	width=82 height=19 VIEWASTEXT>
+	<PARAM NAME="_Version" VALUE="65536">
+	<PARAM NAME="_ExtentX" VALUE="3175">
+	<PARAM NAME="_ExtentY" VALUE="1535">
+	<PARAM NAME="_StockProps" VALUE="0"></OBJECT>
+
+</p>
+<p>
+<OBJECT id=VnDisplay1 classid=clsid:5AF5BCDF-0E45-11D5-B186-00105A0F576C 
+width=762 height=476>
+  <param name="_Version" value="65536">
+  <param name="_ExtentX" value="20161">
+  <param name="_ExtentY" value="12594">
+  <param name="_StockProps" value="8">
+  <param name="ForeColor" value="0">
+  <param name="YcrcbKeyColor" value="32896">
+  <param name="ScrollBars" value="0">
+  <param name="StretchToFit" value="0">
+  <param name="DrawStyle" value="0">
+  <param name="DrawWidth" value="4">
+  <param name="OverlayKind" value="0">
+  <param name="EnableToolBar" value="0">
+  <param name="ZoomX" value="1">
+  <param name="ZoomY" value="1"></OBJECT>
+</p>
+<p>
+<object classid="clsid:B7EEFA99-1A3E-11D5-B192-00105A0F576C" id="VnConfig1" width="539" height="367">
+  <param name="_Version" value="65536">
+  <param name="_ExtentX" value="14261">
+  <param name="_ExtentY" value="9710">
+  <param name="_StockProps" value="0">
+</object>
+
+</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>
+&nbsp;
+</p>
+<SCRIPT LANGUAGE=javascript>
+<!--
+
+//-->
+</SCRIPT>
+
+<SCRIPT LANGUAGE=vbscript>
+<!--
+
+VnDisplay1.ScrollBars = 3
+VnDisplay1.EnableToolBar = 1
+
+VnVideoSrc1.QueryConnect 
+VnVideoSrc1.ConnectOutputTo 0,VnDisplay1
+VnVideoSrc1.GrabToImgNode 1,1,-1,0,0,0,0
+VnConfig1.AttachVideoSrc VnVideoSrc1
+
+
+//-->
+</SCRIPT>
+
+</body>
+
+</html>

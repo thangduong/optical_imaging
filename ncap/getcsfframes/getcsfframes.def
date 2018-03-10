@@ -1,0 +1,2 @@
+LIBRARY INITCAM.DLL
+EXPORTS mexFunction 

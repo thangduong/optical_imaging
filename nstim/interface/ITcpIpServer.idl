@@ -1,0 +1,15 @@
+import "objidl.idl";
+import "unknwn.idl";
+import "wtypes.idl";
+import "IPortServer.idl";
+
+[
+	object,
+	uuid(B2C0F657-524E-4e2a-B59A-69500A0A7201),
+	helpstring("ITcpIpServer Interface"),
+	pointer_default(unique)
+]
+interface ITcpIpServer : IPortServer
+{
+	HRESULT Test();
+};

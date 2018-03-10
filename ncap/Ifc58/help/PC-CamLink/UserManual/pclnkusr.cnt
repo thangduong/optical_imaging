@@ -1,0 +1,73 @@
+:Base pclnkusr.hlp
+1 Installation
+2 Introduction and Overview=Introduction_and_Overview
+2 Installation and Setup=Installation_and_Setup
+2 Software Installation=Software_Installation
+2 Environment Changes=Environment_Changes
+2 Configuration Jumpers=Configuration_Jumpers
+2 Factory Default Configuration=Factory_Default_Configuration
+2 Hardware Installation=Hardware_Installation
+2 Run the Diagnostic Utility=Run_the_Diagnostic_Utility
+2 Connect a Camera and Acquire an Image=Connect_a_Camera_and_Acquire_an_Image
+2 Configurator Utility=Configurator_Utility
+2 Save Files=Save_Files
+1 Hardware
+2 FEATURES=FEATURES
+2 Acquisition Mode=Acquisition_Mode
+2 Normal Acquisition=Normal_Acquisition
+2 External Trigger Acquisition=External_Trigger_Acquisition
+2 Multiple Frame Acquire Mode=Multiple_Frame_Acquire_Mode
+2 Programmable Window Generator=Programmable_Window_Generator
+2 External Triggering=External_Triggering
+2 PC-CamLink Triggers=PC_CamLink_Triggers
+2 Trigger Input Divider=Trigger_Input_Divider
+2 Using the Opto-Coupled I/O=Using_the_Opto_Coupled_I/O
+2 Input Circuits=Input_Circuits
+2 Output Circuits=Output_Circuits
+2 Sync Output=Sync_Output
+2 Programmable Integration=Programmable_Integration
+2 Input LUTs=Input_LUTs
+2 LUT Input Modes=LUT_Input_Modes
+2 Parallel I/O=Parallel_I_O
+2 MULTI-TAP FORMATS=MULTI_TAP_FORMATS
+2 Single Tap=Single_Tap
+2 Odd-Even Pixels=Odd_Even_Pixels
+2 Dual Tap with Line Segments=Dual_Tap_with_Line_Segments
+2 Dual Tap with Reversed Line Segments=Dual_Tap_with_Reversed_Line_Segments
+2 Dual Tap with Converging Line Segments=Dual_Tap_with_Converging_Line_Segments
+2 Dual Tap Interline=Dual_Tap_Interline
+2 Three Tap with Line Segments=Three_Tap_with_Line_Segments
+1 Software
+2 Software Overview=Software_Overview
+2 Visual C++ Programming with MFC=Visual_C_Programming_with_MFC
+2 Multiple Instances=Multiple_Instances
+2 Multi-Threading=Multi_Threading
+2 Creating a Project File=Creating_a_Project_File
+1 Examples
+2 Introduction to Examples=Introduction_to_Examples
+2 Quick Config=Quick_Config
+2 Grab Example=Grab_Example
+2 Interrupt Example=Interrupt_Example
+2 Sequence Acquire=Sequence_Acquire
+2 Video & Overlay=Video_Overlay
+2 Large Format Acquire=Large_Format_Acquire
+2 Multi-Threaded Processing Application=Multi_Threaded_Processing_Application
+2 Visual Basic Example=Visual_Basic_Example
+1 Connectors and Cables
+2 CONNECTORS=CONNECTORS
+2 Camera Connector Part Numbers=Camera_Connector_Part_Numbers
+2 Camera Connector=Camera_Connector
+2 I/O Connector=I_O_Connector
+2 Parallel I/O Connector=Parallel_I_O_Connector
+2 CAMERA CABLES=CAMERA_CABLES
+2 I/O CABLES=I_O_CABLES
+2 Power Cable=Power_Cable
+1 Video Overlay
+2 Video Overlay=Video_Overlay_1
+2 Destructive Overlay=Destructive_Overlay
+2 Destructive Mix in VGA Memory=Destructive_Mix_in_VGA_Memory
+2 Destructive Mix in Host Memory=Destructive_Mix_in_Host_Memory
+2 Non-Destructive Overlay=Non_Destructive_Overlay
+2 Bus Master to the Primary Surface=Bus_Master_to_the_Primary_Surface
+2 Limitations=Limitations
+2 Bus-Master to the Secondary Surface=Bus_Master_to_the_Secondary_Surface

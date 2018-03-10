@@ -1,0 +1,23 @@
+###################################################
+# IFC Generated Configuration File
+# Filename: DalsaCAD1-256T.txt
+# Date: 12/09/04
+###################################################
+# Start manually added comment lines which are to be preserved with a semi-colon ';'.
+
+ 
+#########################################
+# IFC Generated Section Start
+#########################################
+ 
+[PCD:0]
+ 
+# Camera tdalsa Definition
+ 
+Name = "dalsatest"
+Camera_Structure = Default_Structure
+ 
+#########################################
+# IFC Generated Section End
+#########################################
+ 

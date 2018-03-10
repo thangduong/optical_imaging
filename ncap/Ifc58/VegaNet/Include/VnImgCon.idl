@@ -1,0 +1,435 @@
+// VnImgCon.idl : IDL source for VnImgCon.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (VnImgCon.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+import "vidsrct.h";
+//#include "IDstribOS.idl"
+
+import "VnVidSrc.idl";
+
+
+	[
+		object,
+		uuid(DB5D3F04-CC44-11D4-B15E-00105A0F576C),
+		dual,
+		helpstring("IImgNode Interface"),
+		pointer_default(unique)
+	]
+	interface IImgNode : IDistribOS
+	{
+		[id(1), helpstring("method AttachProducer")] 
+		HRESULT AttachProducer([in]IDispatch *producer,DWORD srcOutputId, [in]VS_PRODUCER_ATTR *attr);
+
+		[id(2), helpstring("method AttachConsumer")] 
+		HRESULT AttachConsumer([in]IDispatch *consumer,[in]VS_CONSUMER_ATTR *attr);
+
+		[id(3), helpstring("method ActivateNode")] 
+		HRESULT ActivateNode([in]VS_INODE_QMNG_ATTR *attr);
+
+		[id(4), helpstring("method QueryDequeue")] 
+		HRESULT QueryDequeue([out]VS_INODE_IMG_ATTR *imgAttr, [out]DWORD *frameSize, [out]VS_FRAME_ENCODE *Encode);
+
+		[id(5), helpstring("method DequeueByRef")] 
+		HRESULT DequeueByRef([out]VS_INODE_IMG_ATTR *imgAttr, [out]pBYTE *frameAddr, [out]DWORD *frameSize, [out]VS_FRAME_ENCODE *Encode, [out]HBYREFELE *deRefEle, DWORD waitMilliSecs ,HVSEVENT preemptEvent);
+
+		[id(6), helpstring("method DequeueByVal")] 
+		HRESULT DequeueByVal([out]VS_INODE_IMG_ATTR *imgAttr, [out, size_is(bytesAvailable),length_is(*frameSize)]BYTE *frameDest,[in] DWORD bytesAvailable,[out]DWORD *frameSize,[out]VS_FRAME_ENCODE *Encode, DWORD waitMilliSecs ,HVSEVENT preemptEvent);
+
+		[id(7), helpstring("method Detach: called by producer and consumer to detach themselves from this image node.")] 
+		HRESULT Detach(VS_PROD_CONSMR_ID_KIND proConId);
+
+		[id(8), helpstring("method Enqueue")] 
+		HRESULT Enqueue([in]VS_INODE_IMG_ATTR *imgAttr,[in,size_is(frameSize)]BYTE *frameAddr, DWORD frameSize, VARIANT_BOOL byRef, VS_FRAME_ENCODE Encode, HBYREFELE deRefHandle);
+
+		[id(9), helpstring("method ReleaseEleRef: Release a dequeued element reference")] 
+		HRESULT ReleaseEleRef(HBYREFELE deRefHandle);
+
+		[id(10), helpstring("method GetAttributes")] 
+		HRESULT GetAttributes([out]VS_IMGNODE_ATTR *attr);
+
+		[id(11), helpstring("method Close")] 
+		HRESULT Close(DWORD dwFlags);
+
+		[id(12), helpstring("method GetProductionInterval")] 
+		HRESULT GetProductionInterval([out]double *milliSecPerEnq);
+
+		[id(13), helpstring("method ClearProductionInterval")] 
+		HRESULT ClearProductionInterval();
+
+		[id(14), helpstring("method EnqueueData")] 
+		HRESULT EnqueueData([in,size_is(numBytes)]BYTE *data, DWORD numBytes);
+
+		[id(15), helpstring("method DequeueData")] 
+		HRESULT DequeueData([out, size_is(bytesAvailable),length_is(*numBytes)]BYTE *dest,[in] DWORD bytesAvailable,[out]DWORD *numBytes, DWORD waitMilliSecs ,HVSEVENT preemptEvent);
+
+		[id(16), helpstring("method FlushData")] 
+		HRESULT FlushData();
+
+		[id(17), helpstring("method FlushImages")] 
+		HRESULT FlushImages();
+
+		[id(18), helpstring("method EnqueuePayload")] 
+		HRESULT EnqueuePayload([in]VS_INODE_IMG_ATTR *imgAttr,[in,size_is(frameSize)]BYTE *frameAddr, DWORD frameSize, VARIANT_BOOL byRef, VS_FRAME_ENCODE Encode, HBYREFELE deRefHandle,[in,size_is(payloadNumBytes)]BYTE *userPayload,DWORD payloadNumBytes);
+
+		[id(19), helpstring("method DequeueByRefPayload")] 
+		HRESULT DequeueByRefPayload([out]VS_INODE_IMG_ATTR *imgAttr, [out]pBYTE *frameAddr, [out]DWORD *frameSize, [out]VS_FRAME_ENCODE *Encode, [out]HBYREFELE *deRefEle, DWORD waitMilliSecs ,HVSEVENT preemptEvent,[out]BYTE *userPayload,[in,out]DWORD *payloadNumBytes);
+
+		[id(20), helpstring("method DequeueByValPayload")] 
+		HRESULT DequeueByValPayload([out]VS_INODE_IMG_ATTR *imgAttr, [out, size_is(bytesAvailable),length_is(*frameSize)]BYTE *frameDest,[in] DWORD bytesAvailable,[out]DWORD *frameSize,[out]VS_FRAME_ENCODE *Encode, DWORD waitMilliSecs ,HVSEVENT preemptEvent,[out,size_is(*payloadNumBytes)]BYTE *userPayload,[in,out]DWORD *payloadNumBytes);
+		[id(21), helpstring("method IsActivated")] 
+		HRESULT IsActivated();
+
+		[id(22), helpstring("method GetProducer")] 
+		HRESULT GetProducer([out]LPDISPATCH *producer);
+
+		[id(23), helpstring("method SetQueuePolicy")] 
+		HRESULT SetQueuePolicy([in]VS_INODE_QMNG_ATTR *attr);
+
+		[id(24), helpstring("method AddDirectDerefHandler: Set DerefHandler when direct production is used.")] 
+		HRESULT AddDirectDerefHandler(VS_DIRECT_DEREF_FUNC handler, pBYTE p1);
+
+	};
+
+	[
+		object,
+		uuid(CA5097A0-E567-11D4-B16B-00105A0F576C),
+		dual,
+		helpstring("IImgDisplay Interface"),
+		pointer_default(unique)
+	]
+	interface IImgDisplay : IDispatch
+	{
+		[id(1), helpstring("method NotifyDetachConsumer: Invoked to notify that the producer is detaching")] 
+		HRESULT NotifyDetachConsumer(IDispatch *node);
+
+		[id(2), helpstring("method ActivateConsumer")] 
+		HRESULT ActivateConsumer(VS_REF_VAL_KIND deQKind,VARIANT_BOOL areRemote);
+
+		[id(3), helpstring("method ConsumeFrom")] 
+		HRESULT ConsumeFrom(LPDISPATCH imgNode);
+
+		[id(4), helpstring("method CreateDisplay")] 
+		HRESULT CreateDisplay(VS_HWND hwnd, DWORD Flags, DWORD NodeProcFunc , BYTE *pArg);
+
+		[id(5), helpstring("method Close")] HRESULT Close();
+
+		[id(6), helpstring("method GetOverlayDC: Get a handle to the overlay device context (HDC).")] 
+		HRESULT GetOverlayDC([out]VS_HDC *overlayDC);
+
+		[id(7), helpstring("method ReleaseOverlayDC: Release a handle to the overlay device context (HDC).")] 
+		HRESULT ReleaseOverlayDC(VS_HDC overlayDC);
+
+		[id(8), helpstring("method EnableOverlay")] 
+		HRESULT EnableOverlay(VARIANT_BOOL bEnable);
+
+		[id(9), helpstring("method GetMaxStretch")] 
+		HRESULT GetMaxStretch([out,retval]DWORD *maxStretch);
+
+		[id(10), helpstring("method GetMinStretch")] 
+		HRESULT GetMinStretch([out,retval]DWORD *minStretch);
+
+		[id(11), helpstring("method SetSinkAoiPos")] 
+		HRESULT SetSinkAoiPos(DWORD wxAoiStart,  DWORD wyAoiStart);
+
+		[id(12), helpstring("method SetZoom")] 
+		HRESULT SetZoom(double ZoomX, double ZoomY);
+
+		[id(13), helpstring("method ResizeWindow: Resize the client window to the dimensions of the image source feeding this object.")] 
+		HRESULT ResizeWindow();
+
+		[id(14), helpstring("method SetDestColorKey: Sets the color key of a YCRCB image sink.")] 
+		HRESULT SetDestColorKey(DWORD dwNewColorKey);
+
+		[id(15), helpstring("method CreateVideoSrcDisplay")] 
+		HRESULT CreateVideoSrcDisplay(IVideoSrc *pVidSrc, VS_HWND hwnd, DWORD Flags, [defaultvalue(VS_ICAP_INTR_EOF)] VS_ICAP_INTR_EVENT intrEvent, [defaultvalue(1)]int iScale);
+
+		[id(16), helpstring("method Display")] 
+		HRESULT Display();
+		[id(17), helpstring("method CreateBuffDisplay")] 
+		HRESULT CreateBuffDisplay(BYTE *pImgBuffer, DWORD wWidth, DWORD wHeight, DWORD wImgBitsPP, VS_HWND hwnd, VS_COLOR eColor, DWORD Flags);
+
+		[id(18), helpstring("method SetBufferAddr: Sets pointer to the image source data buffer, only valid for an object created by a call to VsCreateBuffDisplay.")] 
+		HRESULT SetBufferAddr(BYTE *buffer);
+
+		[id(19), helpstring("method StartLiveImage: Start a live image display interrupt driven from a IVideoSrc object.")] 
+		HRESULT StartLiveImage(IVideoSrc *vidSrc, [defaultvalue(VS_ICAP_INTR_EOF)] VS_ICAP_INTR_EVENT intrEvent , [defaultvalue(1)]WORD InterruptScale);
+
+		[id(20), helpstring("method StopLiveImage: Stop a live image display started by StartLiveImage.")] 
+		HRESULT StopLiveImage();
+
+		[id(21), helpstring("method SetSrcAoiPos")] 
+		HRESULT SetSrcAoiPos(DWORD wxAoiStart,  DWORD wyAoiStart);
+
+		[id(22), helpstring("method SetRemapColor: Sets an image sink remapping color for the range of pixel values indicated by iFirstIndex .. iLastIndex.")] 
+		HRESULT SetRemapColor(int iFirstIndex, int iLastIndex, COLORREF RemapColor);
+
+		[id(23), helpstring("method GetImgNode")] 
+		HRESULT GetImgNode([out]IImgNode **imgNode);
+
+		[id(24), helpstring("method GetDestColorKey")] 
+		HRESULT GetDestColorKey(COLORREF *color);
+
+		[id(25), helpstring("method SetTransform")] 
+		HRESULT SetTransform(VS_TRANSFORM_TYPE eTransform);
+
+	};
+
+	[
+		object,
+		uuid(5CFAE486-F149-11D4-B16E-00105A0F576C),
+		dual,
+		helpstring("IProcNode Interface"),
+		pointer_default(unique)
+	]
+	interface IProcNode : IDistribOS
+	{
+		[id(1), helpstring("method ProduceTo:Internally used to connect to image sink.")] 
+		HRESULT ProduceTo([in]LPDISPATCH imgNode, DWORD srcOutputId);
+
+		[id(2), helpstring("method NotifyDetachProducer: Called before our consumer node detaches from us.")] 
+		HRESULT NotifyDetachProducer(IDispatch *node, DWORD srcOutputId);
+
+		[id(3), helpstring("method ActivateProducer")] 
+		HRESULT ActivateProducer(DWORD srcOutputId, VS_REF_VAL_KIND enQKind, VARIANT_BOOL areRemote);
+
+		[id(4), helpstring("method ReleaseEleRef")] 
+		HRESULT ReleaseEleRef(DWORD srcOutputId, HBYREFELE deRefHandle);
+
+		[id(5), helpstring("method NotifyDetachConsumer")] 
+		HRESULT NotifyDetachConsumer(IDispatch *node);
+
+		[id(6), helpstring("method ActivateConsumer")] 
+		HRESULT ActivateConsumer(VS_REF_VAL_KIND deQKind,VARIANT_BOOL areRemote);
+
+		[id(7), helpstring("method ConsumeFrom")] 
+		HRESULT ConsumeFrom(LPDISPATCH imgNode);
+
+		[id(8), helpstring("method Close: Must be called before the last Release of this object.")] 
+		HRESULT Close();
+
+		[id(9), helpstring("method CreateThread: Create a thread which is local to this object,with prototype: DWORD IVSAPI MyThreadFunc(CProcThread *threadObj); ")] 
+		HRESULT CreateThread([out]HPROCESSTHREAD *hSrvThread,[string] LPSTR dllName,[string] LPSTR funcName,[in,size_is(numParamBytes)]BYTE *paramBlock,[in]DWORD numParamBytes);
+
+		[id(10), helpstring("method DeleteThread")] 
+		HRESULT DeleteThread(HPROCESSTHREAD hSrvThread);
+
+		[id(11), helpstring("method SetVideoSrc: Sets the Video Source object (if any) associated with this node.")] 
+		HRESULT SetVideoSrc(IVideoSrc *videoSrc);
+
+		[id(12), helpstring("method ConnectOutputTo: Connect a specified output to a specified image node.")] 
+		HRESULT ConnectOutputTo(DWORD OutputId, IDispatch *sink);
+
+		[id(13), helpstring("method CreateClientObjThread")] 
+		HRESULT CreateClientObjThread([out]HPROCESSTHREAD *hSrvThread,[string] LPSTR dllName,[string] LPSTR funcName,[in,size_is(numParamBytes)]BYTE *paramBlock,[in]DWORD numParamBytes,[in,size_is(numUserObjs)]IDispatch **userObjs,DWORD numUserObjs);
+
+		[id(14), helpstring("method CreateServerObjThread: Create a thread and server-side object, the object must offer a method with prototype HRESULT ThreadFunction(HCProcThread threadObj); ")] 
+		HRESULT CreateServerObjThread([out]HPROCESSTHREAD *hSrvThread, REFCLSID rclsid,REFIID riid,[out]IDispatch **obj);
+
+		[id(15), helpstring("method DisconnectOutput")] 
+		HRESULT DisconnectOutput(DWORD OutputId);
+
+		[id(16), helpstring("method GetVideoSource")] 
+		HRESULT GetVideoSource([out]IVideoSrc **videoSrc);
+		[id(17), helpstring("method SetOutputQueuePolicy")] HRESULT SetOutputQueuePolicy(DWORD outputId, VS_INODE_QMNG_ATTR *attr);
+
+
+	};
+	[
+		object,
+		uuid(A8037116-08D8-11D5-B183-00105A0F576C),
+		dual,
+		helpstring("IVideoStream Interface"),
+		pointer_default(unique)
+	]
+	interface IVideoStream : IDispatch
+	{
+		[id(1), helpstring("method ConnectOutputTo")] 
+		HRESULT ConnectOutputTo(IDispatch *sink);
+
+		[id(2), helpstring("method SetClientObject")] 
+		HRESULT SetClientObject(HVIDSTREAM clientvStream);
+
+		[id(3), helpstring("method ProduceTo:Internally used to connect to image sink.")] 
+		HRESULT ProduceTo([in]LPDISPATCH imgNode, DWORD srcOutputId);
+
+		[id(4), helpstring("method NotifyDetachProducer: Called before our consumer node detaches from us.")] 
+		HRESULT NotifyDetachProducer(IDispatch *node, DWORD srcOutputId);
+
+		[id(5), helpstring("method ActivateProducer")] 
+		HRESULT ActivateProducer(DWORD srcOutputId, VS_REF_VAL_KIND enQKind, VARIANT_BOOL areRemote);
+
+		[id(6), helpstring("method ReleaseEleRef")] 
+		HRESULT ReleaseEleRef(DWORD srcOutputId,HBYREFELE deRefHandle);
+
+		[id(7), helpstring("method Close: Must be called before the last Release of this object.")] 
+		HRESULT Close(DWORD dwFlags);
+		[id(8), helpstring("method WaitStreamFrame")] HRESULT WaitStreamFrame( BYTE *dest, PVS_STREAM_FRAME_ATTR frameAttr, DWORD milliseconds);
+
+	};
+	[
+		object,
+		uuid(B5938B66-9344-11D5-B1EC-00105A0F576C),
+		dual,
+		helpstring("IFileNode Interface"),
+		pointer_default(unique)
+	]
+	interface IFileNode : IDispatch
+	{
+		[id(1), helpstring("method StartWrite: Start writing frames routed into this node to the specified file.")] 
+		HRESULT StartWrite([string]LPSTR fileName, VS_FRAME_ENCODE Encode);
+
+		[id(2), helpstring("method StopWrite: Stop a file write operation.")] 
+		HRESULT StopWrite();
+
+		[id(3), helpstring("method StartRead: Start reading the frames in the specified VNM file, frames are automatically routed to the output specified by ConnectOutputTo.")]
+		HRESULT StartRead([string]LPSTR fileName);
+
+		[id(4), helpstring("method StopRead: Stop an existing read operation.")] 
+		HRESULT StopRead();
+
+		[id(5), helpstring("method ThreadFunction: Internal usage only.")] 
+		HRESULT ThreadFunction(HCProcThread threadObj);
+
+		[id(6), helpstring("method SetProcNode: Internal usage only.")] 
+		HRESULT SetProcNode(IProcNode *procNode);
+
+		[id(7), helpstring("method ConnectOutputTo: Route the output of this file node to another node.")] 
+		HRESULT ConnectOutputTo(DWORD OutputId, IDispatch *sink);
+
+		[id(8), helpstring("method NotifyDetachConsumer: Internal usage only.")] 
+		HRESULT NotifyDetachConsumer(IDispatch *node);
+
+		[id(9), helpstring("method ActivateConsumer: Internal usage only.")] 
+		HRESULT ActivateConsumer(VS_REF_VAL_KIND deQKind,VARIANT_BOOL areRemote);
+
+		[id(10), helpstring("method ConsumeFrom: Internal usage only.")] 
+		HRESULT ConsumeFrom(LPDISPATCH imgNode);
+
+		[id(11), helpstring("method Close: Internal use only, call VsDeleteFileNode to delete an IFileNode object.")] 
+		HRESULT Close();
+
+		[id(12), helpstring("method SetRec: Internal usage only.")] 
+		HRESULT SetRec(DWORD rec);
+
+		[id(13), helpstring("method GetRec: Internal usage only.")] 
+		HRESULT GetRec([out]DWORD *rec);
+
+		[id(14), helpstring("method ReadIsComplete: Determine if a read started by StartRead is complete.")] 
+		HRESULT ReadIsComplete();
+
+		[id(15), helpstring("method StartRandomRead: Open access to a file to read frames in a random order, see ReadRandom.")] 
+		HRESULT StartRandomRead([string]LPSTR fileName, [out]DWORD *numFrames);
+
+		[id(16), helpstring("method ReadRandom: Read the specified frame and route to the connected output node, must call StartRandomRead prior to this function.")]
+		HRESULT ReadRandom(DWORD frameNum);
+
+		[id(17), helpstring("method SetWriteQuality: Set the write image quality, value between 1 and 100(highest quality).")] 
+		HRESULT SetWriteQuality(int quality);
+
+		[id(18), helpstring("method DisconnectOutput: Disconnect the output of this node from the node it was connected to with ConnectOutputTo.")] 
+		HRESULT DisconnectOutput(DWORD OutputId);
+
+		[id(19), helpstring("method GetSaveStats: Get the status of an ongoing file write operation, determine if write is keeping up with frames acquired.")] 
+		HRESULT GetSaveStats([out]DWORD *numFramesSaved, [out]DWORD *numFramesAcquired);
+
+		[id(20), helpstring("method SetReadRate: Set the rate frames are read with the StartRead method.")] 
+		HRESULT SetReadRate(double framesPerSecond);
+
+		[id(21), helpstring("method StartReadFrom: Start read from startIndex, every readIndexAdjust(th) frame is read.")] 
+		HRESULT StartReadFrom(LPSTR fileName, DWORD startIndex, int readIndexAdjust);
+
+		[id(22), helpstring("method GetReadFilePos")] 
+		HRESULT GetReadFilePos(DWORD *readIndex, DWORD *fileNumFrames);
+
+		[id(23), helpstring("method StartWriteEx: Start writing frames routed into this node to the specified file and include sound.")] 
+		HRESULT StartWriteEx(LPSTR fileName, VS_FRAME_ENCODE Encode, FN_SOUND_DESC *sound, GUID* pSndDeviceGuid);
+
+		[id(24), helpstring("method Pause: Pause the write or read of a VNM file")] 
+		HRESULT Pause();
+
+		[id(25), helpstring("method Resume: Resume the write or read of a VNM file")] 
+		HRESULT Resume();
+
+		[id(26), helpstring("method SetVolume: Set the sound volume Range 0(max)  to -10000(min) ")] 
+		HRESULT SetVolume(LONG lVolume);
+
+		[id(27), helpstring("method GetVolume: Get the sound volume Range 0(max)  to -10000(min)")] 
+		HRESULT GetVolume([out]LONG *plVolume);
+
+		[id(28), helpstring("method SetRecordParam: Set the value of a file recording parameter")] 
+		HRESULT SetRecordParam(VS_RECORD_PARM paramID, double value);
+
+		[id(29), helpstring("method StartWriteAVI")] 
+		HRESULT StartWriteAVI([string]LPSTR fileName, VS_AVICOMPRESSOPTIONS *options, FN_SOUND_DESC *sound, GUID* pSndDeviceGuid, DWORD flags);
+
+		[id(30), helpstring("method SetBayer")] 
+		HRESULT SetBayer(VS_BAYER_FILTER_TYPE filter, VS_BAYER_EXT_ATTR *bayerExtAttr, DWORD options);
+
+	};
+
+
+
+[
+	uuid(DB5D3EF8-CC44-11D4-B15E-00105A0F576C),
+	version(1.0),
+	helpstring("VnImgCon 1.0 Type Library")
+]
+library VNIMGCONLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(DB5D3F05-CC44-11D4-B15E-00105A0F576C),
+		helpstring("ImgNode Class")
+	]
+	coclass ImgNode
+	{
+		interface IDistribOS;
+		[default] interface IImgNode;
+	};
+
+
+	[
+		uuid(CA5097A1-E567-11D4-B16B-00105A0F576C),
+		helpstring("ImgDisplay Class")
+	]
+	coclass ImgDisplay
+	{
+		[default] interface IImgDisplay;
+	};
+
+
+	[
+		uuid(5CFAE487-F149-11D4-B16E-00105A0F576C),
+		helpstring("ProcNode Class")
+	]
+	coclass ProcNode
+	{
+		interface IDistribOS;
+		[default] interface IProcNode;
+	};
+
+
+	[
+		uuid(A8037117-08D8-11D5-B183-00105A0F576C),
+		helpstring("VideoStream Class")
+	]
+	coclass VideoStream
+	{
+		[default] interface IVideoStream;
+	};
+	[
+		uuid(B5938B67-9344-11D5-B1EC-00105A0F576C),
+		helpstring("FileNode Class")
+	]
+	coclass FileNode
+	{
+		[default] interface IFileNode;
+	};
+};

@@ -1,0 +1,331 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\IFC_PC2V_ThreadTrig.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\coreco_pc2.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_IFC_PC2V_THREADTRIG_DIALOG DIALOGEX 0, 0, 514, 201
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "IFC_PC2V_ThreadTrig"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Display",IDC_STATIC_DISPLAY,17,17,213,148
+    EDITTEXT        IDC_EDIT_FR,330,60,40,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Frame Rate",IDC_STATIC_FR,331,74,38,8
+    PUSHBUTTON      "Camera and Port Select",IDC_BUTTON_CAM,333,162,108,14
+    EDITTEXT        IDC_EDIT_CUR_PORT,461,146,24,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Camera #",IDC_STATIC_CUR_PORT,457,162,32,8
+    EDITTEXT        IDC_EDIT_CUR_CAM,333,146,108,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    PUSHBUTTON      "Soft Trigger",IDC_BUTTON_TRIGGER,249,87,50,14
+    GROUPBOX        "Acquisition",IDC_STATIC_ACQ,239,13,69,98
+    PUSHBUTTON      "Grab",IDC_BUTTON_GRAB,249,27,50,14
+    PUSHBUTTON      "Freeze",IDC_BUTTON_FREEZE,249,67,50,14
+    EDITTEXT        IDC_EDIT_FC,330,31,40,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Frame Count",IDC_STATIC_FC,330,46,41,8
+    EDITTEXT        IDC_EDIT_FL,330,89,40,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Not Displayed",IDC_STATIC_ND,327,105,47,8
+    LTEXT           "SOT Light",IDC_STATIC_SOT_LIGHT,404,27,84,15
+    PUSHBUTTON      "Cam. Signals",IDC_BUTTON_CAM_SIG_PARAM,249,135,50,14
+    GROUPBOX        "Statistic",IDC_STATIC_STAT,318,13,63,112
+    LTEXT           "SOF Light",IDC_STATIC_SOF_LIGHT,404,52,84,15
+    LTEXT           "EOF Light",IDC_STATIC_EOF_LIGHT,404,77,84,15
+    GROUPBOX        "Trigger to Image",IDC_STATIC_TTI,393,13,108,112
+    LTEXT           "EOT Light",IDC_STATIC_EOT_LIGHT,404,102,84,15
+    GROUPBOX        "Input",IDC_STATIC_INPUT,318,130,183,53
+    PUSHBUTTON      "Strobe Signal",IDC_BUTTON_STROBE_PARAM,249,161,50,14
+    GROUPBOX        "Parameters",IDC_STATIC_PARAM,239,118,69,65
+    DEFPUSHBUTTON   "Enter Trap",IDC_BUTTON_TRAP,95,173,50,14,NOT WS_VISIBLE
+    PUSHBUTTON      "Snap",IDC_BUTTON_SNAP,249,47,50,14
+    CONTROL         "Trigger Beeper",IDC_CHECK_TRIG_BEEP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,159,177,62,10
+END
+
+IDD_CAMSEL DIALOG DISCARDABLE  0, 0, 261, 159
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Camera"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_CAMNAME,31,29,123,54,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Port 0",IDC_PORT0,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,187,32,35,10
+    CONTROL         "Port 1",IDC_PORT1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,187,46,35,10
+    CONTROL         "Port 2",IDC_PORT2,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,187,60,35,10
+    CONTROL         "Port 3",IDC_PORT3,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,187,74,35,10
+    CONTROL         "Port 4",IDC_PORT4,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,187,88,35,10
+    CONTROL         "Port 5",IDC_PORT5,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,187,102,35,10
+    DEFPUSHBUTTON   "OK",IDOK,20,129,218,14
+    GROUPBOX        "Camera Type",-1,20,16,145,79
+    GROUPBOX        "Port Number",IDC_STATIC_PORT,175,16,62,106
+END
+
+IDD_CAM_SIG_PARAM_DIALOG DIALOG DISCARDABLE  0, 0, 430, 382
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Camera Signals Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,238,354,173,14
+    GROUPBOX        "Trigger Event",IDC_STATIC_TRIG,17,18,393,77
+    GROUPBOX        "Frame Reset",IDC_STATIC_FR,17,104,393,77
+    PUSHBUTTON      "Low",IDC_BUTTON_FR_LO,339,130,50,14
+    LTEXT           "FR",IDC_STATIC_FR_TIMING,29,117,267,8
+    PUSHBUTTON      "High",IDC_BUTTON_FR_HI,339,150,50,14
+    EDITTEXT        IDC_EDIT_FR_DELAY,29,150,40,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Delay",IDC_STATIC_FR_DELAY,39,166,21,8
+    EDITTEXT        IDC_EDIT_FR_WIDTH,133,151,40,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Width",IDC_STATIC_FR_WIDTH,143,168,21,8
+    LTEXT           "microsec.",IDC_STATIC_MS,177,152,33,8
+    PUSHBUTTON      "Low",IDC_BUTTON_TRIG_LO,339,46,50,14
+    PUSHBUTTON      "High",IDC_BUTTON_TRIG_HI,339,65,50,14
+    EDITTEXT        IDC_EDIT_TRIG_DEBOUNCE,29,65,40,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Debounce",IDC_STATIC_TRIG_DEBOUNCE,31,82,35,8
+    LTEXT           "microsec.",IDC_STATIC_MS2,73,67,33,8
+    LTEXT           "TRIG",IDC_STATIC_TRIG_TIMING,30,34,267,8
+    GROUPBOX        "Vertical Sync",IDC_STATIC_VS,17,190,393,77
+    PUSHBUTTON      "Low",IDC_BUTTON_VS_LO,339,219,50,14
+    LTEXT           "VS",IDC_STATIC_VS_TIMING,31,206,267,8
+    PUSHBUTTON      "High",IDC_BUTTON_VS_HI,339,238,50,14
+    EDITTEXT        IDC_EDIT_VS_DELAY,31,238,40,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Delay",IDC_STATIC_VS_DELAY,40,254,21,8
+    EDITTEXT        IDC_EDIT_VS_WIDTH,133,238,40,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Width",IDC_STATIC_VS_WIDTH,145,255,21,8
+    LTEXT           "microsec.",IDC_STATIC_MS3,177,240,33,8
+    LTEXT           "microsec.",IDC_STATIC_MS4,76,240,33,8
+    LTEXT           "millisec.",IDC_STATIC_MS5,286,239,28,8
+    LTEXT           "millisec.",IDC_STATIC_MS6,286,150,28,8
+    LTEXT           "millisec.",IDC_STATIC_MS7,286,65,28,8
+    GROUPBOX        "Polarity",IDC_STATIC_POL,327,30,74,57
+    GROUPBOX        "Polarity",IDC_STATIC_POL2,327,116,74,57
+    GROUPBOX        "Polarity",IDC_STATIC_POL3,327,204,74,57
+    DEFPUSHBUTTON   "Default Values",IDC_DEFAULT,18,354,173,14
+    LTEXT           "microsec.",IDC_STATIC_MS8,73,152,33,8
+    GROUPBOX        "Strobe",IDC_STATIC_STROBE,17,277,393,65
+    LTEXT           "STROBE",IDC_STATIC_STROBE_TIMING,31,293,267,8
+    LTEXT           "millisec.",IDC_STATIC_MS11,286,326,28,8
+    PUSHBUTTON      "Parameters",IDC_BUTTON_STROBE_PARM,339,300,50,14
+END
+
+IDD_STROBE_PARAM_DIALOG DIALOG DISCARDABLE  0, 0, 232, 225
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Strobe Pulse Output Parameters"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,49,194,136,14
+    GROUPBOX        "Mode",IDC_STATIC_MODE,15,85,201,60
+    PUSHBUTTON      "Slow",IDC_BUTTON_MODE_SLOW,28,121,50,14
+    PUSHBUTTON      "Fast",IDC_BUTTON_MODE_FAST,28,101,50,14
+    LTEXT           "Occurs delay count after the Vsync",
+                    IDC_STATIC_SLOW_DESC,87,124,114,8
+    LTEXT           "Occurs immediately after the Trigger",
+                    IDC_STATIC_FAST_DESC,87,105,119,8
+    GROUPBOX        "Polarity",1008,122,17,93,62
+    PUSHBUTTON      "High",IDC_BUTTON_POL_HI,133,34,70,14
+    PUSHBUTTON      "Low",IDC_BUTTON_POL_LO,133,55,70,14
+    EDITTEXT        IDC_EDIT_DURATION,127,157,43,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Duration",IDC_STATIC_DUR,135,170,30,8
+    EDITTEXT        IDC_EDIT_DELAY,65,157,43,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Delay",IDC_STATIC_DELAY,77,170,21,8
+    LTEXT           "(microsec.)",IDC_STATIC_MICROSEC,69,178,34,8
+    LTEXT           "(microsec.)",IDC_STATIC_MICROSEC2,131,178,34,8
+    GROUPBOX        "Signal Generation",IDC_STATIC_SIG_GEN,15,17,93,62
+    PUSHBUTTON      "Enable",IDC_BUTTON_ENABLE,27,34,70,14
+    PUSHBUTTON      "Disable",IDC_BUTTON_DISABLE,27,55,70,14
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,0,0
+ PRODUCTVERSION 2,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "Coreco Imaging, Inc.\0"
+            VALUE "FileDescription", "IFC_PC2V_ThreadTrig IFC Application\0"
+            VALUE "FileVersion", "2, 0, 0, 0\0"
+            VALUE "InternalName", "IFC_PC2V_ThreadTrig\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003-2004\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "IFC_PC2V_ThreadTrig.EXE\0"
+            VALUE "ProductName", "IFC_PC2V_ThreadTrig Application\0"
+            VALUE "ProductVersion", "2, 0, 0, 0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_IFC_PC2V_THREADTRIG_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 507
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+    END
+
+    IDD_CAMSEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 254
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_CAM_SIG_PARAM_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 423
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 375
+    END
+
+    IDD_STROBE_PARAM_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 225
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 218
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\IFC_PC2V_ThreadTrig.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

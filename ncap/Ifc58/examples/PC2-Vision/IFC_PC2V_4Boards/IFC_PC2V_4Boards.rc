@@ -1,0 +1,289 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\IFC_PC2V_4Boards.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\coreco_pc2.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_IFC_PC2V_4BOARDS_DIALOG DIALOGEX 0, 0, 593, 294
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "IFC_PC2V_4Boards"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Display1",IDC_STATIC_DISPLAY1,27,27,107,74
+    EDITTEXT        IDC_EDIT_FR_CAM1,100,110,33,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Frame Rate",IDC_STATIC_FR,98,124,38,8
+    PUSHBUTTON      "Camera Type and Port Select",IDC_BUTTON_TYPE_CAM1,27,
+                    156,106,14
+    EDITTEXT        IDC_EDIT_TYPE_CAM1,27,140,106,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_FC_CAM1,27,110,33,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Frame Count",IDC_STATIC_FC_CAM1,23,124,41,8
+    GROUPBOX        "Board # 1",IDC_STATIC_BOARD1,15,14,131,166
+    LTEXT           "Display2",IDC_STATIC_DISPLAY2,171,27,106,74
+    EDITTEXT        IDC_EDIT_FR_CAM2,242,110,33,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Frame Rate",IDC_STATIC_FR2,239,124,38,8
+    PUSHBUTTON      "Camera Type and Port Select",IDC_BUTTON_TYPE_CAM2,170,
+                    156,106,14
+    EDITTEXT        IDC_EDIT_TYPE_CAM2,170,140,106,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_FC_CAM2,169,110,33,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Frame Count",IDC_STATIC_FC_CAM2,165,124,41,8
+    GROUPBOX        "Board # 2",IDC_STATIC_BOARD2,158,14,131,166
+    LTEXT           "Display3",IDC_STATIC_DISPLAY3,314,27,106,74
+    EDITTEXT        IDC_EDIT_FR_CAM3,386,110,33,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Frame Rate",IDC_STATIC_FR3,383,124,38,8
+    PUSHBUTTON      "Camera Type and Port Select",IDC_BUTTON_TYPE_CAM3,313,
+                    156,106,14
+    EDITTEXT        IDC_EDIT_TYPE_CAM3,313,140,106,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_FC_CAM3,313,110,33,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Frame Count",IDC_STATIC_FC_CAM3,310,124,41,8
+    GROUPBOX        "Board # 3",IDC_STATIC_BOARD3,301,14,131,166
+    LTEXT           "Display4",IDC_STATIC_DISPLAY4,457,27,106,74
+    EDITTEXT        IDC_EDIT_FR_CAM4,531,110,33,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Frame Rate",IDC_STATIC_FR4,529,124,38,8
+    PUSHBUTTON      "Camera Type and Port Select",IDC_BUTTON_TYPE_CAM4,456,
+                    156,106,14
+    EDITTEXT        IDC_EDIT_TYPE_CAM4,456,140,106,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_FC_CAM4,458,110,33,12,ES_CENTER | 
+                    ES_AUTOHSCROLL
+    LTEXT           "Frame Count",IDC_STATIC_FC_CAM4,455,124,41,8
+    GROUPBOX        "Board # 4",IDC_STATIC_BOARD4,444,14,131,166
+    EDITTEXT        IDC_EDIT_PORT1,70,110,20,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Cam #",IDC_STATIC_PORT1,69,124,22,8
+    EDITTEXT        IDC_EDIT_PORT2,212,110,20,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Cam #",IDC_STATIC_PORT2,211,124,22,8
+    EDITTEXT        IDC_EDIT_PORT3,356,110,20,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Cam #",IDC_STATIC_PORT3,355,124,22,8
+    EDITTEXT        IDC_EDIT_PORT4,501,110,20,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Cam #",IDC_STATIC_PORT4,501,124,22,8
+    GROUPBOX        "Acquisition # 1",IDC_STATIC_ACQ1,15,188,131,59
+    PUSHBUTTON      "Grab",IDC_BUTTON_GRAB1,25,204,50,14
+    PUSHBUTTON      "Snap",IDC_BUTTON_SNAP1,85,204,50,14
+    PUSHBUTTON      "Freeze",IDC_BUTTON_FREEZE1,25,225,50,14
+    GROUPBOX        "Acquisition # 2",IDC_STATIC_ACQ2,158,188,131,59
+    PUSHBUTTON      "Grab",IDC_BUTTON_GRAB2,167,204,50,14
+    PUSHBUTTON      "Snap",IDC_BUTTON_SNAP2,227,204,50,14
+    PUSHBUTTON      "Freeze",IDC_BUTTON_FREEZE2,167,225,50,14
+    GROUPBOX        "Acquisition # 3",IDC_STATIC_ACQ3,301,188,131,59
+    PUSHBUTTON      "Grab",IDC_BUTTON_GRAB3,311,204,50,14
+    PUSHBUTTON      "Snap",IDC_BUTTON_SNAP3,371,204,50,14
+    PUSHBUTTON      "Freeze",IDC_BUTTON_FREEZE3,311,225,50,14
+    GROUPBOX        "Acquisition # 4",IDC_STATIC_ACQ4,444,188,131,59
+    PUSHBUTTON      "Grab",IDC_BUTTON_GRAB4,453,204,50,14
+    PUSHBUTTON      "Snap",IDC_BUTTON_SNAP4,513,204,50,14
+    PUSHBUTTON      "Freeze",IDC_BUTTON_FREEZE4,453,225,50,14
+    DEFPUSHBUTTON   "Enter Trap",IDC_BUTTON_TRAP,248,182,50,9,NOT WS_VISIBLE
+    PUSHBUTTON      "Soft Trigger",IDC_BUTTON_TRIGGER1,85,225,50,14
+    PUSHBUTTON      "Soft Trigger",IDC_BUTTON_TRIGGER2,227,225,50,14
+    PUSHBUTTON      "Soft Trigger",IDC_BUTTON_TRIGGER3,371,225,50,14
+    PUSHBUTTON      "Soft Trigger",IDC_BUTTON_TRIGGER4,513,225,50,14
+    EDITTEXT        IDC_EDIT_SN1,55,258,47,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Board Serial Number",IDC_STATIC_SN1,46,274,66,8
+    EDITTEXT        IDC_EDIT_SN2,197,258,47,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Board Serial Number",IDC_STATIC_SN2,188,274,66,8
+    EDITTEXT        IDC_EDIT_SN3,343,258,47,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Board Serial Number",IDC_STATIC_SN3,334,274,66,8
+    EDITTEXT        IDC_EDIT_SN4,486,258,47,12,ES_CENTER | ES_AUTOHSCROLL
+    LTEXT           "Board Serial Number",IDC_STATIC_SN4,476,274,66,8
+END
+
+IDD_CAMSEL DIALOG DISCARDABLE  0, 0, 261, 159
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Camera"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_LIST_CAMNAME,31,29,123,54,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Port 0",IDC_PORT0,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,187,32,35,10
+    CONTROL         "Port 1",IDC_PORT1,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,187,46,35,10
+    CONTROL         "Port 2",IDC_PORT2,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,187,60,35,10
+    CONTROL         "Port 3",IDC_PORT3,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,187,74,35,10
+    CONTROL         "Port 4",IDC_PORT4,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,187,88,35,10
+    CONTROL         "Port 5",IDC_PORT5,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,187,102,35,10
+    DEFPUSHBUTTON   "OK",IDOK,20,129,218,14
+    GROUPBOX        "Camera Type",-1,20,16,145,79
+    GROUPBOX        "Port Number",IDC_STATIC_PORT,175,16,62,106
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,0,0,0
+ PRODUCTVERSION 2,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "Coreco Imaging, Inc.\0"
+            VALUE "FileDescription", "IFC_PC2V_4Boards IFC Application\0"
+            VALUE "FileVersion", "2, 0, 0, 0\0"
+            VALUE "InternalName", "IFC_PC2V_4Boards\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003-2004\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "IFC_PC2V_4Boards.EXE\0"
+            VALUE "ProductName", "IFC_PC2V_4Boards Application\0"
+            VALUE "ProductVersion", "2, 0, 0, 0\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_IFC_PC2V_4BOARDS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 586
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 287
+    END
+
+    IDD_CAMSEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 254
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\IFC_PC2V_4Boards.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

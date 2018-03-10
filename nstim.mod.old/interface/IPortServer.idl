@@ -1,0 +1,19 @@
+import "objidl.idl";
+import "unknwn.idl";
+import "wtypes.idl";
+import "IPortServerCallback.idl";
+
+[
+	object,
+	uuid(F3956155-128E-4457-B08E-F17BC620D410),
+	helpstring("IPortServer Interface"),
+	pointer_default(unique)
+]
+interface IPortServer : IUnknown
+{
+	HRESULT UnregisterCallback(IPortServerCallback* pCallback);
+	HRESULT RegisterCallback(IPortServerCallback* pCallback);	
+	HRESULT Start(const char* info);
+	HRESULT Stop();
+	HRESULT IsStarted();
+};

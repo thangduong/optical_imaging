@@ -1,0 +1,123 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: interface - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "link.exe -lib /nologo /out:"Debug\interface.lib"  .\Debug\IPort_i.obj .\Debug\IPortCallback_i.obj .\Debug\IPortServer_i.obj .\Debug\IPortServerCallback_i.obj .\Debug\ITcpIpConnection_i.obj .\Debug\ITcpIpServer_i.obj \oi\nstim\ui\Debug\ui.lib "
+<h3>Output Window</h3>
+Creating library...
+<h3>
+--------------------Configuration: ncaplib - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\thang\LOCALS~1\Temp\RSP8B5.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I "../../WinIo/include" /I "../Ifc58/include" /I "../../nstim/tcpip" /I "../../nstim/interface" /I "../../nstim/ui" /I "../camstoragelib" /I "../../nstim/nstim" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /Fp"Debug/ncaplib.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\oi\nstim\nstim\CIniFile.cpp"
+"C:\oi\ncap\ncaplib\CNCapCmdEngine.cpp"
+"C:\oi\ncap\ncaplib\CNCapEngine.cpp"
+"C:\oi\ncap\ncaplib\CNCapProfile.cpp"
+"C:\oi\ncap\ncaplib\CPrevWnd.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\thang\LOCALS~1\Temp\RSP8B5.tmp" 
+Creating temporary file "C:\DOCUME~1\thang\LOCALS~1\Temp\RSP8B6.tmp" with contents
+[
+/nologo /out:"Debug\ncaplib.lib" 
+.\Debug\CHistPlot.obj
+.\Debug\CImgPreviewWnd.obj
+.\Debug\CIniFile.obj
+.\Debug\CLinePlot.obj
+.\Debug\CNCapCmdEngine.obj
+.\Debug\CNCapEngine.obj
+.\Debug\CNCapProfile.obj
+.\Debug\CPrevWnd.obj
+.\Debug\CTemporalPlot.obj
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\thang\LOCALS~1\Temp\RSP8B6.tmp"
+<h3>Output Window</h3>
+Compiling...
+CIniFile.cpp
+CNCapCmdEngine.cpp
+c:\oi\ncap\ncaplib\cncapcmdengine.cpp(200) : warning C4018: '<' : signed/unsigned mismatch
+CNCapEngine.cpp
+c:\oi\ncap\ncaplib\cncapengine.cpp(348) : warning C4244: 'argument' : conversion from 'unsigned long' to 'unsigned short', possible loss of data
+c:\oi\ncap\ncaplib\cncapengine.cpp(387) : warning C4018: '==' : signed/unsigned mismatch
+c:\oi\ncap\ncaplib\cncapengine.cpp(776) : warning C4244: 'argument' : conversion from 'unsigned long' to 'unsigned short', possible loss of data
+c:\oi\ncap\ncaplib\cncapengine.cpp(779) : warning C4244: 'argument' : conversion from 'unsigned long' to 'unsigned short', possible loss of data
+c:\oi\ncap\ncaplib\cncapengine.cpp(784) : warning C4244: 'argument' : conversion from 'unsigned long' to 'unsigned short', possible loss of data
+c:\oi\ncap\ncaplib\cncapengine.cpp(790) : warning C4244: 'argument' : conversion from 'unsigned long' to 'unsigned short', possible loss of data
+c:\oi\ncap\ncaplib\cncapengine.cpp(797) : warning C4244: 'argument' : conversion from 'unsigned long' to 'unsigned short', possible loss of data
+c:\oi\ncap\ncaplib\cncapengine.cpp(800) : warning C4244: 'argument' : conversion from 'unsigned long' to 'unsigned short', possible loss of data
+c:\oi\ncap\ncaplib\cncapengine.cpp(805) : warning C4244: 'argument' : conversion from 'unsigned long' to 'unsigned short', possible loss of data
+c:\oi\ncap\ncaplib\cncapengine.cpp(811) : warning C4244: 'argument' : conversion from 'unsigned long' to 'unsigned short', possible loss of data
+c:\oi\ncap\ncaplib\cncapengine.cpp(817) : warning C4091: '' : ignored on left of 'bool' when no variable is declared
+c:\oi\ncap\ncaplib\cncapengine.cpp(819) : warning C4244: 'argument' : conversion from 'unsigned long' to 'unsigned short', possible loss of data
+c:\oi\ncap\ncaplib\cncapengine.cpp(825) : warning C4244: 'argument' : conversion from 'unsigned long' to 'unsigned short', possible loss of data
+c:\oi\ncap\ncaplib\cncapengine.cpp(842) : warning C4244: 'argument' : conversion from 'unsigned long' to 'unsigned short', possible loss of data
+c:\oi\ncap\ncaplib\cncapengine.cpp(850) : warning C4244: 'argument' : conversion from 'unsigned long' to 'unsigned short', possible loss of data
+CNCapProfile.cpp
+CPrevWnd.cpp
+Creating library...
+<h3>
+--------------------Configuration: camstoragelib - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\thang\LOCALS~1\Temp\RSP8B7.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /Fp"Debug/camstoragelib.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\oi\ncap\camstoragelib\CCamStreamFile.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\thang\LOCALS~1\Temp\RSP8B7.tmp" 
+Creating command line "link.exe -lib /nologo /out:"Debug\camstoragelib.lib"  .\Debug\CCamStreamFile.obj "
+<h3>Output Window</h3>
+Compiling...
+CCamStreamFile.cpp
+Creating library...
+<h3>
+--------------------Configuration: ncap - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Debug/ncap.res" /d "_DEBUG" "C:\oi\ncap\ncap\ncap.rc"" 
+Creating temporary file "C:\DOCUME~1\thang\LOCALS~1\Temp\RSP8B8.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I "../../WinIo/include" /I "../Ifc58/include" /I "../../Ifc58\include" /I "../ncaplib" /I "../../nstim/tcpip" /I "../../nstim/interface" /I "../../nstim/ui" /I "../camstoragelib" /I "../../nstim/nstim" /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/ncap.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\oi\ncap\ncap\CNCapApp.cpp"
+"C:\oi\ncap\ncap\ncap.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\thang\LOCALS~1\Temp\RSP8B8.tmp" 
+Creating temporary file "C:\DOCUME~1\thang\LOCALS~1\Temp\RSP8B9.tmp" with contents
+[
+winmm.lib ws2_32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/ncap.pdb" /debug /machine:I386 /out:"../../bin/ncap.exe" /pdbtype:sept 
+.\Debug\CNCapApp.obj
+.\Debug\ncap.obj
+.\Debug\ncap.res
+..\Ifc58\lib\ifc21.lib
+..\Ifc58\lib\ifcdsp21.lib
+..\..\WinIo\lib\WinIo.lib
+\oi\nstim\interface\Debug\interface.lib
+\oi\ncap\ncaplib\Debug\ncaplib.lib
+\oi\nstim\tcpip\Debug\tcpip.lib
+\oi\nstim\ui\Debug\ui.lib
+\oi\ncap\camstoragelib\Debug\camstoragelib.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\thang\LOCALS~1\Temp\RSP8B9.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+CNCapApp.cpp
+c:\oi\ncap\ncap\cncapapp.h(23) : warning C4800: 'long' : forcing value to bool 'true' or 'false' (performance warning)
+ncap.cpp
+c:\oi\ncap\ncap\cncapapp.h(23) : warning C4800: 'long' : forcing value to bool 'true' or 'false' (performance warning)
+Linking...
+   Creating library ../../bin/ncap.lib and object ../../bin/ncap.exp
+
+
+
+<h3>Results</h3>
+ncap.exe - 0 error(s), 18 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: nstim - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\lab\LOCALS~1\Temp\RSPEF.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /I "../ui" /I "../debug" /I "../d3d" /I "../interface" /I "../tcpip" /I "../util" /I "../lpt" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Debug/nstim.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\oi\nstim\nstim\CNStimGratingPatch.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\lab\LOCALS~1\Temp\RSPEF.tmp" 
+Creating temporary file "C:\DOCUME~1\lab\LOCALS~1\Temp\RSPF0.tmp" with contents
+[
+ws2_32.lib d3dx9.lib dxguid.lib d3d9.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /profile /debug /machine:I386 /out:"../../bin/nstim.exe" 
+.\Debug\CIniFile.obj
+.\Debug\CNStimApp.obj
+.\Debug\CNStimAtom.obj
+.\Debug\CNStimAtomCmd.obj
+.\Debug\CNStimAtomGammaElt.obj
+.\Debug\CNStimBinaryNoisePatch.obj
+.\Debug\CNStimBitArrayPatchParam.obj
+.\Debug\CNStimBlankPatch.obj
+.\Debug\CNStimBuiltInAtomFactory.obj
+.\Debug\CNStimCmdEngine.obj
+.\Debug\CNStimColorRectPatch.obj
+.\Debug\CNStimEngine.obj
+.\Debug\CNStimExecAtom.obj
+.\Debug\CNStimFloatPatchParam.obj
+.\Debug\CNStimGratingPatch.obj
+.\Debug\CNStimIntArrayPatchParam.obj
+.\Debug\CNStimIntPatchParam.obj
+.\Debug\CNStimLeechAtom.obj
+.\Debug\CNStimListCmd.obj
+.\Debug\CNStimLptAtom.obj
+.\Debug\CNStimLptCmd.obj
+.\Debug\CNStimOIGratingPatch.obj
+.\Debug\CNStimPatch.obj
+.\Debug\CNStimPatchCmd.obj
+.\Debug\CNStimPatchParam.obj
+.\Debug\CNStimProfile.obj
+.\Debug\CNStimSequence.obj
+.\Debug\CNStimSMGratingPatch.obj
+.\Debug\CNStimStringPatchParam.obj
+.\Debug\CNStimTestGratingPatch.obj
+.\Debug\CNStimViewportAtom.obj
+.\Debug\INStimApp_i.obj
+.\Debug\INStimAtom_i.obj
+.\Debug\INStimAtomFactory_i.obj
+.\Debug\INStimCmd_i.obj
+.\Debug\INStimEngine_i.obj
+.\Debug\INStimParam_i.obj
+.\Debug\INStimPatch_i.obj
+.\Debug\INStimProfile_i.obj
+.\Debug\nstim.res
+..\..\WinIo\lib\WinIo.lib
+\oi\nstim\d3d\Debug\d3d.lib
+\oi\nstim\debug\Debug\debug.lib
+\oi\nstim\interface\Debug\interface.lib
+\oi\nstim\tcpip\Debug\tcpip.lib
+\oi\nstim\ui\Debug\ui.lib
+\oi\nstim\util\Debug\util.lib
+\oi\nstim\lpt\Debug\lpt.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\lab\LOCALS~1\Temp\RSPF0.tmp"
+<h3>Output Window</h3>
+Compiling...
+CNStimGratingPatch.cpp
+c:\oi\nstim\nstim\cnstimprofile.h(151) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+c:\oi\nstim\nstim\cnstimprofile.h(152) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+c:\oi\nstim\nstim\cnstimprofile.h(153) : warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+c:\oi\nstim\nstim\cnstimintpatchparam.h(40) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\oi\nstim\nstim\cnstimgratingpatch.cpp(28) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\oi\nstim\nstim\cnstimgratingpatch.cpp(29) : warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+c:\oi\nstim\nstim\cnstimgratingpatch.cpp(284) : warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+c:\oi\nstim\nstim\cnstimgratingpatch.cpp(386) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+c:\oi\nstim\nstim\cnstimgratingpatch.cpp(396) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+c:\oi\nstim\nstim\cnstimgratingpatch.cpp(397) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+c:\oi\nstim\nstim\cnstimgratingpatch.cpp(418) : warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+c:\oi\nstim\nstim\cnstimgratingpatch.cpp(586) : warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+c:\oi\nstim\nstim\cnstimgratingpatch.cpp(587) : warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+c:\oi\nstim\nstim\cnstimgratingpatch.cpp(603) : warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
+Linking...
+
+
+
+<h3>Results</h3>
+nstim.exe - 0 error(s), 14 warning(s)
+</pre>
+</body>
+</html>

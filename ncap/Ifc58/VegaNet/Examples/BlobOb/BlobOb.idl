@@ -1,0 +1,43 @@
+// BlobOb.idl : IDL source for BlobOb.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (BlobOb.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+import "vidsrct.h";
+
+	[
+		object,
+		uuid(ADC7FF13-00EA-11D5-B17A-00105A0F576C),
+		dual,
+		helpstring("IBlobAnlz Interface"),
+		pointer_default(unique)
+	]
+	interface IBlobAnlz : IDispatch
+	{
+		[id(1), helpstring("method ThreadFunction")] HRESULT ThreadFunction(HCProcThread threadObj);
+		[id(2), helpstring("method SetBlobAreas")] HRESULT SetBlobAreas(DWORD minArea, DWORD maxArea);
+	};
+
+[
+	uuid(ADC7FF06-00EA-11D5-B17A-00105A0F576C),
+	version(1.0),
+	helpstring("BlobOb 1.0 Type Library")
+]
+library BLOBOBLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(ADC7FF14-00EA-11D5-B17A-00105A0F576C),
+		helpstring("BlobAnlz Class")
+	]
+	coclass BlobAnlz
+	{
+		[default] interface IBlobAnlz;
+	};
+};

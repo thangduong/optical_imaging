@@ -1,0 +1,101 @@
+import "objidl.idl";
+import "unknwn.idl";
+import "wtypes.idl";
+interface INStimAtom;
+
+cpp_quote("interface IDirect3DDevice9;")
+cpp_quote("#if 0")
+struct _D3DVIEWPORT9 {
+    DWORD       X;
+    DWORD       Y;            /* Viewport Top left */
+    DWORD       Width;
+    DWORD       Height;       /* Viewport Dimensions */
+    float       MinZ;         /* Min/max of clip Volume */
+    float       MaxZ;
+} ;
+struct _D3DDISPLAYMODE {
+    UINT            Width;
+    UINT            Height;
+    UINT            RefreshRate;
+    DWORD       Format;
+};
+struct _D3DGAMMARAMP {
+    WORD                red  [256];
+    WORD                green[256];
+    WORD                blue [256];
+};
+
+cpp_quote("#endif")
+
+cpp_quote("#define	GE_IDLE			0")
+cpp_quote("#define	GE_PAUSE		1")
+cpp_quote("#define	GE_STIMULATING	2")
+cpp_quote("#define	GE_SIMULATING	3")
+cpp_quote("#define	GE_PREVIEW		4")
+
+
+
+#ifndef IDirect3DDevice9
+cpp_quote("#if 0")
+cpp_quote("// Bogus definition used to make MIDL compiler happy")
+typedef long IDirect3DDevice9;
+cpp_quote("#endif")
+#endif
+
+[
+	object,
+	uuid(3C107E66-B05A-4641-A6DC-4B45757A3FB1),
+	helpstring("INStimEngine Interface"),
+	pointer_default(unique)
+]
+interface INStimEngine : IUnknown
+{
+	HRESULT CalibFramerate(int NFRAMES);
+	HRESULT Run();
+	HRESULT GetDirect3DDevice(IDirect3DDevice9** pDevice);
+	HRESULT SetState(DWORD state);
+	HRESULT GetState(DWORD* pState);
+	HRESULT Stop();
+	HRESULT AddAtom(INStimAtom* pAtom);
+	HRESULT FindAtom(char* pName, INStimAtom** ppAtom);
+	HRESULT GetAtomCount(int* pAtomCount);
+	HRESULT GetAtom(int iAtomIndex, INStimAtom** ppAtom);
+	HRESULT Stimulate(DWORD numFrames, unsigned char* stimName);
+	HRESULT Simulate(DWORD numFrames, unsigned char* stimName);
+	HRESULT AddSequenceMarker(int frameMarker, int type, char* patchName, DWORD list, int order);
+	HRESULT ClearAtom();
+	HRESULT ClearSequence();
+	HRESULT GetFrameRate(double* frameRate);
+	HRESULT GetBkColor(unsigned long* pBkColor);
+	HRESULT SetBkColor(unsigned long bkColor);
+
+	// VIEWPORT manipulation code
+/*	HRESULT AddViewport(unsigned char* pName, struct _D3DVIEWPORT9* pViewport);
+	HRESULT FindViewport(unsigned char* pName, int* pIndex);
+	HRESULT GetViewport(int index, unsigned char** pName, struct _D3DVIEWPORT9* pViewport);
+	HRESULT SelectViewport(int index);
+	HRESULT SelectViewportByName(unsigned char* pName);
+	HRESULT GetCurrentViewport(unsigned char** pName, struct _D3DVIEWPORT9* pViewport);
+	HRESULT DeleteViewport(int index);
+	HRESULT DeleteViewportByName(unsigned char* pName);
+	HRESULT CountViewport(int* pCount);
+*/	
+	HRESULT ApplyViewport(struct _D3DVIEWPORT9* pViewport);
+	HRESULT GetViewportCenter(int* x, int* y);
+	HRESULT SetViewportCenter(int x, int y);
+
+	HRESULT SetGammaRampElement(int index, unsigned short r, unsigned short g, unsigned short b);
+	HRESULT GetGammaRampElement(int index, unsigned short* r, unsigned short* g, unsigned short* b);
+
+	HRESULT SetGammaRamp(struct _D3DGAMMARAMP* pRamp);
+	HRESULT GetGammaRamp(struct _D3DGAMMARAMP* pRamp);
+
+	HRESULT GetDisplayMode(struct _D3DDISPLAYMODE** pMode);
+
+	// END VIEWPORT code
+	HRESULT Snap(const unsigned char* filename);
+
+};
+
+import "INStimAtom.idl";
+//import "INStimPatch.idl";

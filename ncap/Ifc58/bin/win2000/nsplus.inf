@@ -1,0 +1,80 @@
+; NSPLUS.inf
+;
+; Installation inf for the  adapter.
+;
+; (c) Copyright 2000-2004 Coreco Imaging 
+;
+
+[Version]
+Signature="$CHICAGO$"
+Provider=%coreco%
+ClassGUID={6bdd1fc6-810f-11d0-bec7-08002be2092f}
+class=Image
+DriverVer=11/25/2003,1.21
+
+
+[DestinationDirs]
+DefaultDestDir   = 11
+nsplus.Sys       = 12   ; drivers
+nsplus.Inf       = 11
+
+
+[Manufacturer]
+%coreco%   = coreco.Mfg
+
+[coreco.Mfg]
+%coreco.DeviceDesc0% = NSPLUS, PCI\VEN_11EC&DEV_2011&SUBSYS_00000000
+
+[PCV2]
+;CopyFiles =NSPLUS.Sys, NSPLUS.Inf 
+DelFiles = NSPLUS.Sys
+
+;
+; File sections
+;
+
+[NSPLUS.Sys]
+NSPLUS.sys     
+
+[NSPLUS.Inf]
+NSPLUS.inf	     
+
+[NSPLUS.AddRegs]
+
+[NSPLUS.DelRegs]
+
+;
+; Service Installation
+;
+
+[NSPLUS.Services]
+AddService = NSPLUS, 0x00000002, NSPLUS_Service_Inst
+
+[NSPLUS_Service_Inst]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 2                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Coreco Drivers
+ServiceBinary  = %12%\NSPLUS.sys
+
+;
+; Source file information
+;
+
+[SourceDisksNames.x86]
+1 = %DiskId%,,,""
+
+[SourceDisksFiles]
+NSPLUS.sys       = 1      ; all files on Disk 1
+NSPLUS.inf        = 1
+
+
+
+[Strings]
+
+DiskId = "Coreco Imaging NetSightII Vision Installation DISK (VIDEO)"
+coreco.DeviceDesc0 = "NetSightII Vision Board"
+coreco = "Coreco Imaging"
+Coreco = "Coreco Imaging"
+CURVER = "Software\Microsoft\Windows\CurrentVersion"
+

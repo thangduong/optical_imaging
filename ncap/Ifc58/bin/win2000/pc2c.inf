@@ -1,0 +1,79 @@
+; PC2C.inf
+;
+; Installation inf for the  adapter.
+;
+; (c) Copyright 2000-2003 Coreco Imaging 
+;
+
+[Version]
+Signature="$CHICAGO$"
+Provider=%coreco%
+ClassGUID={6bdd1fc6-810f-11d0-bec7-08002be2092f}
+class=Image
+
+
+[DestinationDirs]
+DefaultDestDir   = 11
+PC2c.Sys	 = 12   ; drivers
+PC2c.Inf    = 11
+
+
+[Manufacturer]
+%coreco%   = coreco.Mfg
+
+[coreco.Mfg]
+%coreco.DeviceDesc0% = PC2C, PCI\VEN_11EC&DEV_2021&SUBSYS_00000000
+
+[PC2C]
+;CopyFiles =PC2c.Sys, PC2c.Inf 
+;DelFiles = PC2c.Sys
+
+;
+; File sections
+;
+
+[PC2C.Sys]
+PC2C.sys     
+
+[PC2C.Inf]
+PC2C.inf	     
+
+[PC2C.AddRegs]
+
+[PC2C.DelRegs]
+
+;
+; Service Installation
+;
+
+[PC2C.Services]
+AddService = PC2C, 0x00000002, PC2C_Service_Inst
+
+[PC2C_Service_Inst]
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 0                  ; SERVICE_ERROR_IGNORE
+LoadOrderGroup = Coreco Drivers
+ServiceBinary  = %12%\PC2C.sys
+
+;
+; Source file information
+;
+
+[SourceDisksNames.x86]
+1 = %DiskId%,,,""
+
+[SourceDisksFiles]
+PC2C.sys       = 1      ; all files on Disk 1
+PC2C.inf        = 1
+
+
+
+[Strings]
+
+DiskId = "Coreco Imaging PC2 CamLink Installation DISK (VIDEO)"
+coreco.DeviceDesc0 = "PC2 CamLink Board"
+coreco = "Coreco Imaging"
+Coreco = "Coreco Imaging"
+CURVER = "Software\Microsoft\Windows\CurrentVersion"
+

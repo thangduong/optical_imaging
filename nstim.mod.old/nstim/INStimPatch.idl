@@ -1,0 +1,56 @@
+import "objidl.idl";
+import "unknwn.idl";
+import "wtypes.idl";
+import "INStimParam.idl";
+interface INStimEngine;
+interface INStimAtom;
+
+// PBT = Patch Blit Type
+cpp_quote("#define	PBT_COPY			0")
+cpp_quote("#define	PBT_PAUSE			1")
+cpp_quote("#define	PBT_STIMULATING		2")
+
+[
+	object,
+	uuid(361D250C-71E8-4f27-86FA-487CD3C6017A),
+	helpstring("INStimPatch Interface"),
+	pointer_default(unique)
+]
+interface INStimPatch : INStimAtom //IUnknown
+{
+	HRESULT AdvanceFrame(int numFrames);
+	HRESULT Draw(INStimEngine* pEngine);
+	HRESULT Init(INStimEngine* pEngine);
+	HRESULT FindParam(char* param, INStimParam** ppParam);
+	HRESULT GetCenterX(int* centerX);
+	HRESULT GetCenterY(int* centerY);
+
+	HRESULT Reset(INStimEngine* pEngine);
+	HRESULT SetCenterX(int centerX);
+	HRESULT SetCenterY(int centerY);
+	HRESULT SetBlitType(int blitType);
+	HRESULT GetBlitType(int* pBlitType);
+	HRESULT GetBlitAngle(float* pAngle);
+	HRESULT SetBlitAngle(float angle);
+
+	HRESULT GetType(char** ppType);
+	HRESULT GetName(char** ppName);
+	HRESULT SetName(char* pName);
+	HRESULT IsPatch(char* pName);
+
+	HRESULT GetParamCount(int* pParamCount);
+	HRESULT GetParam(int index, INStimParam** ppParam);
+
+//	HRESULT GetWidth(int* width);
+//	HRESULT GetHeight(int* height);
+//	HRESULT GetTemporalOffset(int* offset);
+//	HRESULT GetDuration(int* offset);
+//	HRESULT GetTotalFrameCount(DWORD* pFrameCount);
+//	HRESULT SetWidth(int width);
+//	HRESULT SetHeight(int height);
+//	HRESULT SetTemporalOffset(int offset);
+//	HRESULT SetDuration(int offset);
+
+};
+
+import "INStimAtom.idl";

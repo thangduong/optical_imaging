@@ -1,0 +1,201 @@
+/******************************************************************************
+ *
+ * MODULE
+ *    pcvreg.h
+ *
+ * REVISION INFORMATION
+ *    $Logfile: /ifc/INCLUDE/pcvreg.h $
+ *    $Revision: 1.1 $
+ *    $Modtime: 10/12/99 2:05p $
+ *
+ * ABSTRACT
+ *    IFC PCVision Register names
+ *
+ * TECHNICAL NOTES
+ *
+ *
+ * Copyright (c) 1994-1998 Imaging Technology, Inc.  All rights reserved.
+ *
+ ******************************************************************************/
+
+#ifndef _PCV_REG
+#define _PCV_REG
+
+/* Enable/Disable ON/OFF True/False accepted by most functons */
+#define PCV_DISABLE	0
+#define PCV_ENABLE	1
+
+/* Field command defines */
+typedef enum {
+	PCV_CMD_NEXT = 0,                   /* Next field acquisition */
+	PCV_CMD_EVEN = 2,                   /* Field status is even */
+	PCV_CMD_ODD  = 3                    /* Field status is odd */
+} PCV_FIELD_CMD;
+           
+
+typedef enum {
+	PCV_MONO,
+	PCV_RED,
+	PCV_GREEN,
+	PCV_BLUE,
+	PCV_RGB,
+	PCV_MONO_WORD_LO,
+	PCV_MONO_WORD_HI,
+	PCV_YCRCB,
+	PCV_RGB_PLANAR,
+	PCV_YCRCBMONO,
+	PCV_RGB_PACK24,
+} PCV_COLOR;
+
+
+enum {                    /* PCI configuration space registers */
+	PCV_VENDOR_ID_32,
+	PCV_DEVICE_ID_32,
+	PCV_PCICMDSTAT_32,
+	PCV_PCICMD_32,
+	PCV_IOEN_32,
+	PCV_MEMEN_32,
+	PCV_BMEN_32,
+	PCV_PAREN_32,
+	PCV_SEREN_32,
+	PCV_FBB_32,
+	PCV_PCISTAT_32,
+	PCV_DTPAR_32,
+	PCV_STABT_32,
+	PCV_RTABT_32,
+	PCV_RMABT_32,
+	PCV_SSERR_32,
+	PCV_DPARE_32,
+	PCV_REVID_32,
+	PCV_MEMSZ_32,
+	PCV_CLASSCODE_32,
+	PCV_CALN_32,
+	PCV_LAT_32,
+	PCV_HDR_32,
+	PCV_BIST_32,
+	PCV_BADR0_32,
+	PCV_BADR1_32,
+	PCV_BADR2_32,
+	PCV_BADR3_32,
+	PCV_BADR4_32,
+	PCV_BADR5_32,
+	PCV_XROM_32,
+	PCV_INTLN_32,
+	PCV_INTPIN_32,
+	PCV_MINGNT_32,
+	PCV_MAXLAT_32,
+   PCV_MAX_CFGREG
+   };
+
+enum {
+	PCV_MBOX1_32 = PCV_MAX_CFGREG,   /* PCI Interface Control Register Set  */
+	PCV_MB_FXSZ_32,
+	PCV_MB_ILACE_32,
+	PCV_MB_HSHK_32,
+	PCV_MB_FYSZ_32,
+	PCV_MB_PIX_32,
+	PCV_MBOX2_32,
+	PCV_MB_AOIXST_32,
+	PCV_MB_AOIYST_32,
+	PCV_MBOX3_32,
+	PCV_MB_AOIXSZ_32,
+	PCV_MB_AOIYSZ_32,
+	PCV_MB_FYSZHI_32,
+	PCV_MB_STFLD_32, 
+	PCV_MB_BMSEMA_32,
+	PCV_MBOX4_32,
+	PCV_MB_IMGADR_32, 
+	PCV_MB_BMINITFLG_32,
+	PCV_MB_CONT_32,
+	PCV_BMDST_32,
+	PCV_BMXC_32,
+	PCV_INTCTL_32,
+	PCV_INTEN_32,
+	PCV_BINTEN_32,
+	PCV_INTST_32,
+	PCV_BINTST_32,
+	PCV_MAINT_32,
+	PCV_TAINT_32,
+	PCV_ENDIAN_32,
+	PCV_BMCTL_32,
+	PCV_FIFOFL_32,
+	PCV_FIFO4P_32,
+	PCV_FIFOEM_32,
+	PCV_BMDONE_32,
+	PCV_BMREQ_32,
+	PCV_NVAD_32,
+	PCV_RST_32,
+	PCV_FIFOCLR_32,
+	PCV_NVCTL_32,
+	PCV_MAXREGS1
+	};
+
+enum {
+	PCV_CON=PCV_MAXREGS1,		     /* IC-PCI General Control Register Set */
+	PCV_BMSTREN,
+	PCV_BMILACE,
+	PCV_PIXSZ,
+	PCV_MEMCFG,
+	PCV_VBSTAT,
+	PCV_FLDSTAT,
+	PCV_SMSTAT,
+	PCV_AMP,
+	PCV_ACQCON,
+	PCV_TMODE,
+	PCV_FCNT,
+	PCV_FLDSEL,
+	PCV_ACQMD,
+	PCV_NEWAQ,
+	PCV_GSTAT,
+	PCV_FSTRT,
+	PCV_PITCH,
+	PCV_AOIX,
+	PCV_BMSFL,
+	PCV_BMSFH,
+	PCV_BMSSL,
+	PCV_BMSSH,
+	PCV_AQSTART,
+	PCV_AQADR,
+	PCV_INTADR,
+	PCV_INTCON,
+	PCV_VBIEN,
+	PCV_OVBIEN,
+	PCV_EVBIEN,
+	PCV_AMIEN,
+	PCV_TRIGIEN,
+	PCV_ADRIEN,
+	PCV_AQIEN,
+	PCV_VBINT,
+	PCV_OVBINT,
+	PCV_EVBINT,
+	PCV_AMINT,
+	PCV_TRIGINT,
+	PCV_ADRINT,
+	PCV_AQINT,
+	PCV_WZOOM,
+	PCV_WXZOOM,
+	PCV_WYZOOM,
+	PCV_BMCLIP,
+	PCV_SWAP,
+	PCV_ADR_INVT,
+
+	/* Following added for Build 59 */
+	PCV_BMZOOM,
+	PCV_PITCH_CON,
+
+	PCV_MDATA,
+	PCV_PORTCON,
+	PCV_OUTSTB,
+	PCV_INREG_ENB,
+	PCV_INSTB_POL,
+	PCV_INREG_CLR,
+	PCV_INPORT_IEN,
+	PCV_INPORT_IPOL,
+	PCV_INPORT_INT,
+	PCV_PAD16,
+	PCV_OUTPORT,
+	PCV_INPORT,
+
+	PCV_MAXREGS2		             /* keep it last 		 			    */
+};
+#endif

@@ -1,0 +1,19 @@
+import "objidl.idl";
+import "unknwn.idl";
+import "wtypes.idl";
+
+interface INStimAtom;
+
+[
+	object,
+	uuid(EAB0C76D-96D8-4b08-9CD6-2649867AF34B),
+	helpstring("INStimAtomFactory Interface"),
+	pointer_default(unique)
+]
+interface INStimAtomFactory : IUnknown
+{
+	HRESULT IsValidAtomType(char* AtomType);
+	HRESULT CreateAtom(char* AtomType, INStimAtom** ppAtom);
+};
+
+import "INStimAtom.idl";

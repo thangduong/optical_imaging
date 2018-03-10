@@ -1,0 +1,10 @@
+
+1.  Documentation
+	a.  copy directx's help stuff to this directory
+	b.  write some docs on the directory structure
+	b.  write some docs on how to write a patch
+2.  Extension
+3.  Add parallel port code
+3.  Details of setting up window -- please check that
+4.  Smaller texture
+

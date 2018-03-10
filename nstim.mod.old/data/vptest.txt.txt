@@ -1,0 +1,26 @@
+viewport left { x 0; y 0; width 320; height 480 }
+viewport right { x 320; y 0; width 320; height 480 }
+
+patch tgrating p0 { centerx 0; centery 0; width 320;height 100; spatialfrequency 50; temporalfrequency 1; blitangle 90; blitangle2 90; spatialphase 0; alpha 255; bidir 1; shape 0; viewport left }
+patch tgrating p1 { centerx 0; centery 0; width 320;height 100; spatialfrequency 50; temporalfrequency 1; blitangle 90; blitangle2 90; spatialphase 45; alpha 255; bidir 1; shape 0; viewport right }
+patch tgrating p2 { centerx 0; centery 0; width 320;height 100; spatialfrequency 50; temporalfrequency 1; blitangle 90; blitangle2 90; spatialphase 90; alpha 255; bidir 1; shape 0; viewport right }
+patch tgrating p3 { centerx 0; centery 0; width 320;height 100; spatialfrequency 50; temporalfrequency 1; blitangle 90; blitangle2 90; spatialphase 135; alpha 255; bidir 1; shape 0; viewport right }
+patch tgrating p4 { centerx 0; centery 0; width 320;height 100; spatialfrequency 50; temporalfrequency 1; blitangle 90; blitangle2 90; spatialphase 180; alpha 255; bidir 1; shape 0; viewport right }
+
+sequence 0 0 p0
+sequence 0 0 p1
+sequence 60 1 p0
+sequence 60 1 p1
+sequence 60 0 p0
+sequence 60 0 p2
+sequence 120 1 p0
+sequence 120 1 p2
+sequence 120 0 p0
+sequence 120 0 p3
+sequence 180 1 p0
+sequence 180 1 p3
+sequence 180 0 p0
+sequence 180 0 p4
+
+
+stimulate 200 teststim
